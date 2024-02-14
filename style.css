@@ -48,3 +48,12 @@
     align-items: center;
     min-height: 100vh;
 }
+
+.si-box{
+    background-color: #fff;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

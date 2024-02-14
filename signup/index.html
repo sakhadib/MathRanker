@@ -16,10 +16,35 @@
     <div class="si-bg">
         <div class="container">
             <div class="row si">
-                <div class="col-md-6">
-
+                <div class="col-md-5">
+                    <div class="si-box">
+                        <h3 class="text-center">Sign Up</h3>
+                        <form>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                              </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput">Full Name</label>
+                              </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput">username</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                              </div>
+                              <div class="form-floating mb-4">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                <label for="floatingPassword">Retype Password</label>
+                              </div>
+                            <button type="submit" class="btn btn-success" style="width: 100%;">Submit</button>
+                          </form>
+                    </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 offset-md-1">
                     <img src="../rsx/si-bg.svg" style="width: 40vw;" alt="">
                 </div>
             </div>
@@ -27,3 +52,28 @@
     </div>
 </body>
 </html>
+
+
+<style>
+    .form-floating{
+        border: 0;
+        outline: none;
+        /* border-bottom: 2px solid #dadada; */
+    }
+
+    .form-floating:focus {
+        box-shadow: none; /* Cancels shadow when element is focused */
+        /* border-bottom: 2px solid #007bff; */
+    }
+
+    .form-control{
+        border: 0;
+        outline: none;
+        border-bottom: 2px solid #dadada;
+    }
+
+    .form-control:focus {
+        box-shadow: none; /* Cancels shadow when element is focused */
+        border-bottom: 2px solid #007bff;
+    }
+</style>
