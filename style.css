@@ -1,0 +1,23 @@
+/* Login page */
+.bg{
+    min-height: 98vh;
+    background-image: url('rsx/login_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+
+}
+
+.lg-leftimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lg-row{
+    display: flex;
+    align-items: center;
+    min-height: 98vh;
+}
