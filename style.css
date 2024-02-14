@@ -21,3 +21,30 @@
     align-items: center;
     min-height: 98vh;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* Signup */
+.si-bg{
+    min-height: 100vh;
+    background-image: url('rsx/si-bg-bg.svg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.si{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}

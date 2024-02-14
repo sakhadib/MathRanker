@@ -1,0 +1,9 @@
+*- username [unique, not null, string, max 20 characters]
+*- Full name [not null, string, max 50 characters]
+*- Email [unique, not null, string, max 50 characters]
+*- Password [not null, string, max 50 characters]
+- Institution [string, max 50 characters]
+- Country [string, max 50 characters]
+- City [string, max 50 characters]
+
+
