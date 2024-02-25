@@ -19,7 +19,7 @@
 <body>
     <div class="container" id="container">
         <div class="row">
-            <div class="form-container sign-up">
+            <div class="form-container sign-up tr">
                 <form>
                     <h1>Create Account</h1>
                     <span>Use your email for registration</span>
@@ -30,15 +30,29 @@
                     <button>Register</button>
                 </form>
             </div>
-            <div class="form-container sign-in">
+            <div class="form-container sign-in tr">
                 <form>
-                    <h1>Sign in</h1>
-                    <span>Use your account</span>
+                    <h1>Login</h1>
                     <input type="email" placeholder="Email">
                     <input type="password" placeholder="Password">
                     <a href="#">Forgot your password?</a>
-                    <button>Sign In</button>
+                    <button>Login</button>
                 </form>
+            </div>
+            <div class="togle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Already have Account?</h1>
+                        <p>Just login and start using our services</p>
+                        <button class="hidden" id="login">Log In</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>Welcome to MathRanker</h1>
+                        <p>Enter your personal details and start journey with us</p>
+                        <button class="hidden" id="login">Register</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
