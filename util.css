@@ -101,3 +101,33 @@
 .l{
     color: #1B75BC;
 }
+
+.bg-l{
+    background-color: #1B75BC;
+    color: white;
+}
+
+.bg-d{
+    background-color: #36449C;
+    color: white;
+}
+
+.bg-t{
+    background-color: #e8e8e8;
+}
+
+.link-l{
+    color: #1B75BC;
+}
+
+.link-l:hover{
+    color: #36449C;
+}
+
+.link-d{
+    color: #36449C;
+}
+
+.link-d:hover{
+    color: #1B75BC;
+}
