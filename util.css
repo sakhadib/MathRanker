@@ -57,3 +57,47 @@
 .bs{
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
 }
+
+.btn-d{
+    background-color: #36449C;
+    color: white;
+}
+
+.btn-d:hover{
+    background-color: #1B75BC;
+    color: white;
+}
+
+.btn-d-outline{
+    background-color: transparent;
+    color: #36449C;
+    border: 1px solid #36449C;
+}
+
+.btn-d-outline:hover{
+    background-color: #36449C;
+    color: white;
+}
+
+.btn-l{
+    background-color: #1B75BC;
+}
+
+.btn-l-outline{
+    background-color: transparent;
+    color: #1B75BC;
+    border: 1px solid #1B75BC;
+}
+
+.btn-l-outline:hover{
+    background-color: #1B75BC;
+    color: rgb(255, 255, 255);
+}
+
+.d{
+    color: #36449C;
+}
+
+.l{
+    color: #1B75BC;
+}
