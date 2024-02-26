@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-bs-theme="light" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +39,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="./">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="problems.html">Problems</a>
@@ -58,6 +58,9 @@
           </li>
         </ul>
         <ul class="navbar-nav me-0 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" id="dm" aria-current="page" href="#"><i class="uil uil-moonset" id="dmi"></i></a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">Login</a>
           </li>
@@ -226,7 +229,7 @@
 
 
 <!-- Foot -->
-<div class="hm-7 vh-55 df dfc jcc aic bg-t">
+<div class="hm-7 vh-55 df dfc jcc aic">
     <div class="container">
       <div class="row">
         <div class="col-md-12 df dfc jcc aic">
@@ -246,6 +249,77 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // Function to toggle class and set cookie
+    let l_str = "uil-moonset";
+    let d_str = "uil-sun";
+    let boolVariable = false;
+    let html = document.querySelector("html");
+    function toggleClass() {
+      // Toggle the boolean variable
+      boolVariable = !boolVariable;
+  
+      // Get the element with id "dmi"
+      const dmiElement = document.getElementById("dmi");
+  
+      // If boolVariable is true, add class "d_str", otherwise add class "l_str"
+      if (boolVariable) {
+        dmiElement.classList.remove('uil-moonset');
+        dmiElement.classList.add('uil-sun');
+  
+        html.classList.add('dark');
+        html.setAttribute('data-bs-theme', 'dark');
+        // Set cookie preference to "dark"
+        document.cookie = "mode=dark";
+      } else {
+        dmiElement.classList.remove('uil-sun');
+        dmiElement.classList.add('uil-moonset');
+  
+        html.classList.remove('light');
+        html.setAttribute('data-bs-theme', 'light');
+        // Set cookie preference to "light"
+        document.cookie = "mode=light";
+      }
+    }
+  
+    // Function to check cookie preference on page load
+    function checkCookiePreference() {
+      const cookies = document.cookie.split(";").map(cookie => cookie.trim().split("="));
+      const modeCookie = cookies.find(cookie => cookie[0] === "mode");
+  
+      const html = document.querySelector("html");
+  
+      const dmiElement = document.getElementById("dmi");
+  
+      if (modeCookie) {
+        const mode = modeCookie[1];
+        if (mode === "dark") {
+          html.classList.add("dark");
+          html.setAttribute("data-bs-theme", "dark");
+          dmiElement.classList.remove('uil-moonset');
+          dmiElement.classList.add('uil-sun');
+        } else {
+          html.classList.remove("dark");
+          html.setAttribute("data-bs-theme", "light");
+          dmiElement.classList.remove('uil-sun');
+          dmiElement.classList.add('uil-moonset');
+        }
+      } else {
+        // If cookie is not set, default to light mode and set cookie
+        html.classList.remove("dark");
+        document.cookie = "mode=light";
+      }
+    }
+  
+    // Add click event listener to element with id "dm"
+    document.getElementById("dm").addEventListener("click", toggleClass);
+  
+    // Check cookie preference on page load
+    checkCookiePreference();
+  </script>
+
+  <!-- Foot end -->
     
 </div>
 </body>
@@ -264,3 +338,32 @@
 <script>
     new DataTable('#stable');
 </script>
+
+<!-- <script>
+  
+let boolV = false;
+
+function toogleClass(){
+  boolV = !boolV;
+
+  const dmiElement = document.getElementById('dmi');
+  let html = document.querySelector('html');
+
+  if(boolV){
+    dmiElement.classList.remove('uil-moonset');
+    dmiElement.classList.add('uil-sun');
+
+    html.classList.add('dark');
+    html.setAttribute('data-bs-theme', 'dark');
+  }else{
+    dmiElement.classList.remove('uil-sun');
+    dmiElement.classList.add('uil-moonset');
+    html.classList.remove('light');
+    html.setAttribute('data-bs-theme', 'light');
+  }
+}
+
+document.getElementById('dm').addEventListener('click', toogleClass);
+</script> -->
+
+
