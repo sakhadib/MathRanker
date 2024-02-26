@@ -16,36 +16,68 @@
     <link rel="stylesheet" href="util.css">
 </head>
 <body>
-   <div class="container">
-    <div class="row">
-        <div class="col-sm-4" id="left">
-            <div class="profile-pic-container">
-                <img id="profile-pic" src="./rsx/Cute Illustrative Girl Anime Avatar.png" alt="Profile Picture" class="img-fluid">
-                <button id="change-pic">Change Photo</button>
-            </div>
-            <h2>Takia Farhin</h2>
-            <h4>XP Point:120</h4>
-           <div class="info">
-            <h2>UserName: Takia Farhin</h2>
-            <h2>Email:farhintakia@gmail.com</h2>
-            <h2>Phone: 01700000000</h2>
-            <h2>Organization: IUT</h2>
-            <h2>Address: Dhaka,Bangladesh</h2>
-
-           </div>
-
-            <div class="edit-profile">
-                <a href="editProfile.html" class="btn ">Edit Profile</a>
-            </div>
-        </div>
-        <div class="col-sm-8" id="right">
-             <h1>GRAPH</h1>
-             <h1>SLOVED PROB LIST</h1>
-        </div>
-    </div>
-   </div>
      
-   
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <!-- Left section -->
+                <div class="card">
+                   
+                    
+                        <h5>Name : Takia Farhin</h5>
+                        <p class="username">takiafarhin</p>
+                        <p>Email: farhintakia@gmail.com</p>
+                        <p>Organaization : IUT</p>
+                        <P>Address : DHaka</P>
+                        <p>Phone : 01700000000</p>
+                        <p class="edit">Edit Profile</p>
+                    
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="solveProb">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+                    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+                    <script>
+                        const data = {
+                            labels: ['Easy', 'Medium', 'Hard'],
+                            datasets: [{
+                                data: [5, 10, 15], // Replace these with your actual data
+                                backgroundColor: ['indigo', 'blue', 'purple'],
+                            }]
+                        };
+                    
+                        const config = {
+                            type: 'doughnut',
+                            data: data,
+                            options: {
+                                responsive: true,
+                                title: {
+                                    display: true,
+                                    text: 'Solved Problems',
+                                    fontSize: 18, // Adjust the font size as needed
+                                }
+                            }
+                        };
+                    
+                        new Chart(document.getElementById('myChart'), config);
+                    </script>
+                    
+                </div>
+            </div>
+        </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="right">
+                    <p class="badge">Badge : Pupil</p>
+                    <p class="rating">Rating :120</p>
+                    <p class="xppoint">Total XP Point: 1200</p>
+                </div>
+                
+            </div>
+    </div>
+
+    
      
 </body>
 </html>
@@ -55,116 +87,132 @@
 
 <!-- Add your Custom Styles here -->
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #fff;
-}
+    body {
+        background-color:#fff;
+    }
 
-#profile {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-}
+    .container {
+        margin-top: 5px;
+        margin-left: 30px;
+    }
 
-#left {
-    flex: 1;
-    margin-right: 20px;
-}
+    .card {
+        margin-top: 100px;
+        padding: 1px;
+        background-color: #fff;
+        border: none;
+        box-shadow: none;
+        width: 50%
+    }
 
-#right {
-    flex: 2;
-}
+    .xppoint,
+    .rating
+     {
+        color: #063364;
+        padding: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 150px;
+        font-size: 20px;
+        font-style: italic;
+    }
 
-.profile-pic-container {
-    position: relative;
-    width: 200px;
-    margin-top: 20px;
-}
+    .badge {
+        color: #f8f9fa;
+        background-color: #0c3d72;
+        padding: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 150px;
+        font-size: 20px;
+        font-style: italic;
+    }
 
-#profile-pic {
-    width: 100%;
-    height: auto;
-   
-}
+    .username {
+        color: #3b5f86;
+        font-style: italic;
+    }
 
-.profile-pic-container :hover {
-    transform: scale(1.03);
-    opacity: 0.8;
-}
+    .edit {
+        background-color: #0c3d72;
+        color: #f8f9fa;
+        font-style: italic;
+        cursor: pointer;
+        width: 200px;
+        padding: 5px;
+        border-radius: 5px;
+    }
 
-#change-pic {
-    position: absolute;
-    bottom: 3px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    text-align: center;
-    background: rgb(36, 46, 86);
-background: radial-gradient(circle, rgba(41,51,91,0.829656862745098) 41%, rgba(5,16,41,1) 100%);
-    color: white;
-    cursor: pointer;
-}
+    .edit:hover {
+        background-color: #84b4e8;
+        color: #f8f9fa;
+        font-style: italic;
+        cursor: pointer;
+        width: 200px;
+        padding: 5px;
+        border-radius: 5px;
+        scale: 1.1;
+    }
 
-#change-pic:hover {
-    background-color: #0d0d10;
-    font-size: 17px ;
-}
+    .solveProb {
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #fff;
+        border: none;
+        box-shadow: none;
+        width: 100%;
+    }
 
-h1, h2 {
-    color: #333;
-    margin-bottom: 8px;
-    font-size: 25px;
-}
+    .chart-container {
+        width: 100%;
+        margin: auto;
+    }
 
-h4 {
-    color: #fff;
-    background-color: #165aa8;
-    margin-bottom: 20px;
-    padding: 5px;
-    font-size: 20px;
-}
-
-.info {
-    border: 1px solid #ddd;
-    padding: 10px;
-    background: #eeecec;
-
-}
-
-.info h2 {
-    margin-bottom: 10px;
-    font-size: 17px;
-    
-}
-.edit-profile {
-    margin-top: 20px;
-    
-}
-
-.edit-profile a {
-    background-color: #1e334b;
-    color: white;
-    padding: 8px 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 17px;
-}
-
-.edit-profile a:hover {
-    background-color: #8888d3;
-    transform: scale(1.05);
-}
-
-
+    .right {
+        position:absolute;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #fff;
+        border: none;
+        box-shadow: none;
+        margin-right: 20px;
+        width: 400px; /* Adjust the width as needed */
+    }
 </style>
 
-<script>
-    document.getElementById('change-pic').addEventListener('click', function() {
-    var profilePic = document.getElementById('profile-pic');
-    profilePic.src = "profile2.jpg";
-});
 
-</script>
+
+<!--<?php
+$servername = "your_mysql_server";
+$username = "your_mysql_username";
+$password = "your_mysql_password";
+$dbname = "your_database_name";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM your_table_name";
+$result = $conn->query($sql);
+
+$data = [];
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $data[] = $row['your_data_column'];
+    }
+}
+
+$conn->close();
+
+header('Content-Type: application/json');
+echo json_encode($data);
+?>
+-->
