@@ -93,7 +93,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .container{
@@ -103,7 +103,6 @@ body{
     position: relative;
     overflow: hidden;
     width: 768px;
-    max-width: 100%;
     min-height: 480px;
 }
 
@@ -151,7 +150,7 @@ body{
     justify-content: center;
     flex-direction: column;
     padding: 0 40px;
-    min-height: 100%;
+    min-height: 50vh;
 }
 
 .container input{
@@ -168,7 +167,7 @@ body{
 .form-container{
     position: absolute;
     top: 0;
-    height: 100%;
+    min-height: 50vh;
     transition: all 0.6s ease-in-out;
 }
 
@@ -241,7 +240,7 @@ body{
 
 .toggle{
     background-color: #512da8;
-    height: 100%;
+    min-height: 50vh;
     background: linear-gradient(to right, #5c6bc0, #512da8);
     color: #fff;
     position: relative;
