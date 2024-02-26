@@ -101,3 +101,13 @@
 .l{
     color: #1B75BC;
 }
+
+.bg-l{
+    background-color: #1B75BC;
+    color: white;
+}
+
+.bg-d{
+    background-color: #36449C;
+    color: white;
+}
