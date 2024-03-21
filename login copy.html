@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="util.css">
 </head>
 <body>
-    <div class="container df aic jcc" id="container">
+    <div class="container bdl df aic jcc" id="container">
         <div class="row">
             <div class="form-container sign-up tr">
-                <div class="" style="min-height: 100px;"></div>
+                <div class="" style="min-height: 250px;"></div>
                 <form>
                     <h1>Create Account</h1>
                     <span>Use your email for registration</span>
@@ -29,12 +29,12 @@
                     <input type="password" placeholder="Password">
                     <input type="password" placeholder="Confirm Password">
                     <button>Register</button>
-                    <br> <br> <br><br>
+                    <br>
                     <a href="./" class="link-d" style="text-decoration: underline;">Back to Home</a>
                 </form>
             </div>
             <div class="form-container sign-in tr">
-                <div class="" style="min-height: 100px;"></div>
+                <div class="" style="min-height: 250px;"></div>
                 <form>
                     <h1>Login</h1>
                     <input type="email" placeholder="Email">
@@ -42,7 +42,7 @@
                     <p>Forgot your password? &nbsp;&nbsp;<a href="#" style="text-decoration: underline">Click Here</a></p>
                     
                     <button>Login</button>
-                    <br> <br> <br><br>
+                    <br>
                     <a href="./" class="link-d" style="text-decoration: underline;">Back to Home</a>
                 </form>
             </div>
@@ -73,11 +73,18 @@
 
     registerBtn.addEventListener('click', () => {
     container.classList.add("active");
+    container.classList.remove("bdl");
+    container.classList.add("bdr");
     });
 
     loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
+    container.classList.add("bdl");
+    container.classList.remove("bdr");
     });
+
+
+
 </script>
 
 
@@ -108,8 +115,8 @@ body{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
-    min-width: 720px;
-    min-height: 720px;
+    min-width: 100vw;
+    min-height: 100vh;
     padding-left: 0;
     padding-right: 0;
 }
@@ -157,6 +164,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 70%;
     padding: 0 40px;
     min-height: 50vh;
 }
@@ -173,6 +181,7 @@ body{
 }
 
 .form-container{
+    padding-left: 200px;
     position: absolute;
     top: 0;
     min-height: 50vh;
@@ -302,4 +311,11 @@ body{
     flex-direction: column;
 } */
 
+.bdl{
+    border-left: 20px solid #512da8;
+}
+
+.bdr{
+    border-right: 20px solid #5C6BC0;
+}
 </style>

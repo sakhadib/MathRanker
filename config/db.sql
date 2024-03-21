@@ -22,6 +22,7 @@ CREATE TABLE user (
 
 CREATE TABLE problem (
   problemID INT,
+  problemlettter VARCHAR(2),
   Statement TEXT,
   Answer DECIMAL(22, 10),
   ContestID INT,
