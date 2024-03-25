@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathRanker</title>
+
+    <link rel="icon" href="rsx/logo.ico" type="icon">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="util.css">
+</head>
+<body>
+    <div class="container-fluid tr-grid">
+        <!-- Left Section Starts -->
+        <left-section>
+            
+            <div class="container top">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="logo">
+                            <img src="rsx/logo.png" style="width: 50px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container sidebar">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <h3>Dashboard</h3>
+                        </a>
+                    </div> 
+                </div>
+            </div>
+            
+
+
+
+
+        </left-section>
+        <!-- Left Section Ends -->
+
+        <!-- Main Section Starts -->
+        <main-section>
+            <h2>Honululu</h2>
+        </main-section>
+        <!-- Main Section Ends -->
+    </div>
+</body>
+</html>
+
+
+
+
+<!-- Add your Custom Styles here -->
+<style>
+.tr-grid{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 20vw 70vw;
+    gap: 10px;
+}
+left-section{
+    background-color: #f1f1f1;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    border-right: 1px solid #000;
+}
+.sidebar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+        text-decoration: none;
+        color: #000;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 10px 0;
+        &:hover{
+            background-color: #000;
+            color: #fff;
+        }
+    }
+
+}
+
+main-section{
+    background-color: #f59595;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>
