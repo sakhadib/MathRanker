@@ -1,0 +1,21 @@
+Material UI 
+- Font : Roboto, Poppins, Montsorret, Sans Serif
+- size : 
+    * display 1: 96px  - (h1)
+    * display 2: 60px  - (h2)
+    * display 3: 48px  - (h3)
+    .
+    .
+    .
+    * fs-1 : 3rem - (20px)
+    * fs-2 : 2.25rem - (18px)
+    * fs-3 : 1.5rem - (16px)
+    * fs-4 : 1.25rem - (14px)
+    * fs-5 : 1rem - (12px)
+    * fs-6 : 0.875rem - (10px)
+
+
+    Rayshad                                                    1890
+    <hr>
+
+    
