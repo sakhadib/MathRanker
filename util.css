@@ -45,6 +45,7 @@
 .vh-20 {min-height: 20vh;}
 .vh-15 {min-height: 15vh;}
 .vh-10 {min-height: 10vh;}
+.vh-5 {min-height: 5vh;}
 
 /* Widths */
 .w100{width: 100%;}
@@ -81,6 +82,12 @@
 
 .btn-l{
     background-color: #1B75BC;
+    color: white;
+}
+
+.btn-l:hover{
+    background-color: #36449C;
+    color: white;
 }
 
 .btn-l-outline{
