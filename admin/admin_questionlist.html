@@ -14,6 +14,14 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
+    <!-- Data Tables -->
+    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script defer src="../dt.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../util.css">
 </head>
@@ -50,14 +58,183 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav me-0 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Log out</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="dm"><i class="uil uil-moonset" id="dmi"></i></a>
+                      </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log out</a>
+                    </li>
                 </ul>
         </div>
         </div>
     </nav>
     <!-- Nav -->
+    <div class="vh-10"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="display-3 l">Question Dashboard</h3>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row mt-5" style="margin-left: 10px;">
+            <div class="col-auto df jcc aic">
+                <a href="admin_question_add.html"><button type="button" class="btn btn-l-outline btn-lg">Create New Question</button></a>
+            </div>
+        </div>
+        <div class="vh-5"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-8">
+                            <h3 class="display-6">Previous Question List</h3>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mt-2">
+            <section class="main-table" id = "standing">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <table data-order='[[3, "asc"]]' data-page-length='25' id="stable" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Max XP</th>
+                                        <th>Solved</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     <!-- <?php echo $rows; ?> -->
+                                    <tr>
+                                        <td>1A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1B</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2D</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3C</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>32A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1B</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2D</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3C</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>32A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1B</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2D</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3C</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>32A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>   
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    
+    <div class="vh-15"></div>
 
 
 
@@ -65,3 +242,73 @@
 <style>
 
 </style>
+
+
+<script>
+    // Function to toggle class and set cookie
+    let l_str = "uil-moonset";
+    let d_str = "uil-sun";
+    let boolVariable = false;
+    let html = document.querySelector("html");
+    function toggleClass() {
+      // Toggle the boolean variable
+      boolVariable = !boolVariable;
+  
+      // Get the element with id "dmi"
+      const dmiElement = document.getElementById("dmi");
+  
+      // If boolVariable is true, add class "d_str", otherwise add class "l_str"
+      if (boolVariable) {
+        dmiElement.classList.remove('uil-moonset');
+        dmiElement.classList.add('uil-sun');
+  
+        html.classList.add('dark');
+        html.setAttribute('data-bs-theme', 'dark');
+        // Set cookie preference to "dark"
+        document.cookie = "mode=dark";
+      } else {
+        dmiElement.classList.remove('uil-sun');
+        dmiElement.classList.add('uil-moonset');
+  
+        html.classList.remove('light');
+        html.setAttribute('data-bs-theme', 'light');
+        // Set cookie preference to "light"
+        document.cookie = "mode=light";
+      }
+    }
+  
+    // Function to check cookie preference on page load
+    function checkCookiePreference() {
+      const cookies = document.cookie.split(";").map(cookie => cookie.trim().split("="));
+      const modeCookie = cookies.find(cookie => cookie[0] === "mode");
+  
+      const html = document.querySelector("html");
+  
+      const dmiElement = document.getElementById("dmi");
+  
+      if (modeCookie) {
+        const mode = modeCookie[1];
+        if (mode === "dark") {
+          html.classList.add("dark");
+          html.setAttribute("data-bs-theme", "dark");
+          dmiElement.classList.remove('uil-moonset');
+          dmiElement.classList.add('uil-sun');
+        } else {
+          html.classList.remove("dark");
+          html.setAttribute("data-bs-theme", "light");
+          dmiElement.classList.remove('uil-sun');
+          dmiElement.classList.add('uil-moonset');
+        }
+      } else {
+        // If cookie is not set, default to light mode and set cookie
+        html.classList.remove("dark");
+        document.cookie = "mode=light";
+      }
+    }
+  
+    // Add click event listener to element with id "dm"
+    document.getElementById("dm").addEventListener("click", toggleClass);
+  
+    // Check cookie preference on page load
+    checkCookiePreference();
+  </script>
