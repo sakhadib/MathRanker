@@ -42,7 +42,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="admin_dashboard.html">Dashboard</a>
+                        <a class="nav-link" href="admin_dashboard.html">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="admin_userlist.html">Users</a>
@@ -51,7 +51,7 @@
                         <a class="nav-link" href="admin_questionlist.html">Questions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="admin_contestlist.html">Contest</a>
+                        <a class="nav-link active" aria-current="page" href="admin_contestlist.html">Contest</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="admin_setting.html">Settings</a>
@@ -71,12 +71,13 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3 class="display-3 l">Contest Panel</h3>
+                <h3 class="display-3 l">Edit Contest</h3>
                 <hr>
             </div>
         </div>
         <div class="vh-5"></div>
     </div>
+
 
     <div class="container">
         <div class="row">
@@ -85,7 +86,7 @@
                     <!-- Create New Contest -->
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <h3 class="display-6">Create New Contest</h3>
+                            <h3 class="display-6">Contest Details</h3>
                         </div>
                     </div>
                     
@@ -131,9 +132,47 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="vh-5"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="container">
+                    <!-- Addd Questions -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <h3 class="display-6">Question Details</h3>
+                        </div>
+                    </div>
+                    
+                   <div class="row mb-3">
+                    <div class="col-md-6 col-12">
+                        <div class="mb-3">
+                            <h5 class="l"><label for="QuestionID" class="form-label">Question ID</label></h5>
+                            <!-- <label for="exampleFormControlInput1" class="form-label">Setter ID</label> -->
+                            <input type="text" class="form-control" id="questionID" placeholder="ID">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-12">
+                        <div class="mb-3">
+                            <h5 class="l"><label for="catagory" class="form-label">Catagory</label></h5>
+                            <!-- <label for="exampleFormControlInput1" class="form-label">Setter Name</label> -->
+                            <input type="text" class="form-control" id="catagory" placeholder="Catagory">
+                        </div>
+                    </div>
+
+                   </div>
+                    
                     <div class="row mt-3">
                         <div class="col-auto">
-                            <button type="button" class="btn btn-l btn-lg">Create Contest</button>
+                            <button type="button" class="btn btn-d-outline btn-lg">Add to Contest</button>
                         </div>
                     </div>
                 </div>
@@ -141,26 +180,21 @@
             </div>
         </div>
     </div>
-
-    <div class="vh-10"></div>
-
+    <div class="vh-5"></div>
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-8">
-                            <h3 class="display-6">Upcoming Contest List</h3>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <h3 class="display-6">Question Set</h3>
                         </div>
                     </div>
                 </div>
-                <!-- <hr> -->
             </div>
         </div>
     </div>
-    <div class="vh-2"></div>
 
-    
     <div class="container">
         <div class="row mt-2">
             <section class="main-table" id = "standing">
@@ -170,39 +204,49 @@
                             <table data-order='[[3, "asc"]]' data-page-length='25' id="stable" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>Catagory</th>
+                                        <th>QuestionID</th>
                                         <th>Name</th>
-                                        <th>Date</th>
-                                        <th>Time</th>
-                                        <th>Registered</th>
-                                        <th>Standing</th>
+                                        <th>Max XP</th>
+                                        <th>Remove</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                      <!-- <?php echo $rows; ?> -->
-                                     <tr>
-                                        <td>1</td>
-                                        <td>Pi Day Challange</td>
-                                        <td>2 March, 2024 </td>
-                                        <td>8:35 PM</td>
-                                        <td>x 2789</td>
-                                        <td><a href="#" class="link-d">View Standing</a></td>
+                                    <tr>
+                                        <td>A</td>
+                                        <td>Q5647</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td><a href="#">Remove</a></td>
                                     </tr>
                                     <tr>
-                                        <td>2</td>
-                                        <td>BDMO Kids Challange</td>
-                                        <td>26 March, 2024 </td>
-                                        <td>8:35 PM</td>
-                                        <td>x 5963</td>
-                                        <td><a href="#" class="link-d">View Standing</a></td>
+                                        <td>B</td>
+                                        <td>Q5647</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td><a href="#">Remove</a></td>
                                     </tr>
                                     <tr>
-                                        <td>3</td>
-                                        <td>April Fool Challange</td>
-                                        <td>1 April, 2024 </td>
-                                        <td>8:35 PM</td>
-                                        <td>x 3685</td>
-                                        <td><a href="#" class="link-d">View Standing</a></td>
+                                        <td>C</td>
+                                        <td>Q5647</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td><a href="#">Remove</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>D</td>
+                                        <td>Q5647</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td><a href="#">Remove</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>E</td>
+                                        <td>Q5647</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td><a href="#">Remove</a></td>
                                     </tr>
                                     
                                 </tbody>
@@ -215,26 +259,18 @@
         <div class="vh-5"></div>
         <hr>
     </div>
-    <div class="vh-10"></div>
     <div class="container">
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-auto">
-                <a href="admin_contest_prevlist.html">
-                    <button type="button" class="btn btn-d-outline btn-lg">View Previous Contest List</button>
-                </a>
-            </div>
-            <div class="col-auto">
-                <a href="#">
-                    <button type="button" class="btn btn-d btn-lg">View Calendar</button>
-                </a>
+                <a href="admin_contest_details.html"><button type="button" class="btn btn-l btn-lg">Save</button></a>
             </div>
         </div>
     </div>
-
     <div class="vh-15"></div>
+
 
 
 <!-- Add your Custom Styles here -->
 <style>
-    
+
 </style>

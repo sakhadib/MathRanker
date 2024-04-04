@@ -142,7 +142,7 @@
         <div class="vh-10"></div>
 
         <div class="row">
-            <div class="col-12">
+            <div class="col-8">
                 <div class="container">
                     <div class="row mb-5">
                         <div class="col-md-12">
@@ -157,9 +157,16 @@
                                 <input type="text" class="form-control" id="questiontitle" placeholder="Question Title">
                             </div>
                         </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="mb-3">
+                                <h5 class="l"><label for="Catagory" class="form-label">Catagory</label></h5>
+                                <!-- <label for="exampleFormControlInput1" class="form-label">Setter Name</label> -->
+                                <input type="text" class="form-control" id="catagory" placeholder="Catagory">
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4 col-12">
+                        <div class="col-md-6 col-12">
                             <div class="mb-3">
                                 <h5 class="l"><label for="QuestionID" class="form-label">Question ID</label></h5>
                                 <!-- <label for="exampleFormControlInput1" class="form-label">Setter ID</label> -->
@@ -167,7 +174,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-md-4 col-12">
+                        <div class="col-md-6 col-12">
                             <div class="mb-3">
                                 <h5 class="l"><label for="xp" class="form-label">XP</label></h5>
                                 <!-- <label for="exampleFormControlInput1" class="form-label">Setter Name</label> -->
@@ -273,6 +280,9 @@
         textareas.forEach(function(textarea) {
             textarea.disabled = true;
         });
+
+        // Disbale the category select item
+        document.getElementById('categorySelect').disabled = true;
     }
 
     // Function to toggle between edit mode and save mode
@@ -292,6 +302,9 @@
         textareaFields.forEach(function(textarea) {
             textarea.disabled = false;
         });
+
+        // Enable the category select item
+        document.getElementById('categorySelect').disabled = false;
 
         // Disable setterID, setterName, and questionID
         document.getElementById('setterID').disabled = true;
@@ -317,6 +330,9 @@
         textareaFields.forEach(function(textarea) {
             textarea.disabled = true;
         });
+
+        // Enable the category select item
+        document.getElementById('categorySelect').disabled = true;
 
 }
 

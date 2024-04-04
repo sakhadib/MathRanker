@@ -118,7 +118,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-md-6 mb-3">
-                                        <h5 class="l"><label for="exampleFormControlInput1" class="form-label">Contest ID</label></h5>
+                                        <h5 class="l"><label for="ContestID" class="form-label">Contest ID</label></h5>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected>Select contest ID</option>
                                             <option value="1">MR-805</option>
@@ -148,7 +148,7 @@
             <div class="col-md-12 df jcc aic">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-8">
                             <div class="container">
                                 <div class="row mb-5">
                                     <div class="col-md-12">
@@ -158,14 +158,25 @@
                                 <div class="row">
                                     <div class="col-md-8 col-12">
                                         <div class="mb-3">
-                                            <h5 class="l"><label for="SetterName" class="form-label">Question Title</label></h5>
+                                            <h5 class="l"><label for="QuestionTitle" class="form-label">Question Title</label></h5>
                                             <!-- <label for="exampleFormControlInput1" class="form-label">Setter Name</label> -->
-                                            <input type="text" class="form-control" id="setterName" placeholder="Name">
+                                            <input type="text" class="form-control" id="questionTitle" placeholder="Title">
                                         </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <h5 class="l"><label for="catagory" class="form-label">Catagory</label></h5>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Select catagory</option>
+                                            <option value="1">A</option>
+                                            <option value="2">B</option>
+                                            <option value="3">C</option>
+                                            <option value="4">...</option>
+                                            <option value="5">n</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 col-12">
+                                    <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <h5 class="l"><label for="QuestionID" class="form-label">Question ID</label></h5>
                                             <!-- <label for="exampleFormControlInput1" class="form-label">Setter ID</label> -->
@@ -173,7 +184,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-md-4 col-12">
+                                    <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <h5 class="l"><label for="xp" class="form-label">XP</label></h5>
                                             <!-- <label for="exampleFormControlInput1" class="form-label">Setter Name</label> -->
@@ -294,8 +305,9 @@
   </script>
 
 
+
 <script>
-    // Function to clear all input fields and reset select to default value
+    // Function to clear all input fields and reset select elements to default values
     function clearFields() {
         // Select all input elements within the document
         const inputFields = document.querySelectorAll('input[type="text"], input[type="number"], textarea');
@@ -305,11 +317,13 @@
             input.value = '';
         });
 
-        // Select the select element
-        const selectElement = document.querySelector('select');
+        // Select the select elements
+        const selectElements = document.querySelectorAll('select');
 
-        // Set the select element to its default value
-        selectElement.selectedIndex = 0;
+        // Loop through each select element and set its selectedIndex to 0 (default value)
+        selectElements.forEach(select => {
+            select.selectedIndex = 0;
+        });
     }
 
     // Attach clearFields function to the click event of the "Clear" button
