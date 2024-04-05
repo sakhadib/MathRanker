@@ -14,204 +14,312 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
+    <!-- Data Tables -->
+    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script defer src="../dt.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../util.css">
 </head>
 <body>
+    
+</body>
+</html>
     <!-- Nav -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bs">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="../rsx/logo.svg" alt="Bootstrap" width="50">
-            </a>
-            <a class="navbar-brand" href="#">MathRanker</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="admin_dashboard.html">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin_userlist.html">Users</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="admin_questionlist.html">Questions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin_contestlist.html">Contest</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin_setting.html">Settings</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav me-0 mb-lg-0">
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bs">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="../rsx/logo.svg" alt="Bootstrap" width="50">
+        </a>
+        <a class="navbar-brand" href="#">MathRanker</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="admin_dashboard.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin_userlist.html">Users</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownQuestions" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Questions
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownQuestions">
+                        <li><a class="dropdown-item" href="#">View Questions</a></li>
+                        <li><a class="dropdown-item" href="#">Add New Question</a></li>
+                        <!-- Add more submenu items as needed -->
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin_contestlist.html">Contest</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin_setting.html">Settings</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-0 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" id="dm"><i class="uil uil-moonset" id="dmi"></i></a>
+                  </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Log out</a>
                 </li>
-                </ul>
-        </div>
-        </div>
-    </nav>
-    <!-- Nav -->
+            </ul>
+    </div>
+    </div>
+</nav>
+<!-- Nav -->
+
     <div class="vh-10"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="display-3 l">Question Dashboard</h3>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row mt-5" style="margin-left: 10px;">
+            <div class="col-auto df jcc aic">
+                <a href="admin_question_add.html"><button type="button" class="btn btn-l-outline btn-lg">Create New Question</button></a>
+            </div>
+        </div>
+        <div class="vh-5"></div>
+    </div>
+
+
+
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
-                            <h3 class="display-3 d">Add New Question</h3>
+                        <div class="col-8">
+                            <h3 class="display-6">Previous Question List</h3>
                         </div>
                     </div>
                 </div>
                 <hr>
             </div>
         </div>
-        <div class="row mt-5">
-            <div class="col-md-12 df jcc aic">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="container">
-                                <!-- Setter Details -->
-                                <div class="row mb-3">
-                                    <div class="col-md-6">
-                                        <h3 class="display-6">Setter Details</h3>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 col-12">
-                                        <div class="mb-3">
-                                            <h5 class="l"><label for="SetterID" class="form-label">Setter ID</label></h5>
-                                            <!-- <label for="exampleFormControlInput1" class="form-label">Setter ID</label> -->
-                                            <input type="text" class="form-control" id="setterID" placeholder="ID">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="mb-3">
-                                            <h5 class="l"><label for="SetterName" class="form-label">Setter Name</label></h5>
-                                            <!-- <label for="exampleFormControlInput1" class="form-label">Setter Name</label> -->
-                                            <input type="text" class="form-control" id="setterName" placeholder="Name">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="container">
-                                
-                                <!-- Contest Details -->
-
-                                <div class="row mb-3">
-                                    <div class="col-md-12">
-                                        <h3 class="display-6">Contest Details</h3>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-md-6 mb-3">
-                                        <h5 class="l"><label for="exampleFormControlInput1" class="form-label">Contest ID</label></h5>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>Select contest ID</option>
-                                            <option value="1">MR-805</option>
-                                            <option value="2">MR-806</option>
-                                            <option value="3">MR-809</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="mb-3">
-                                            <h5 class="l"><label for="ContestTitle" class="form-label">Contest Name</label></h5>
-                                            <!-- <label for="exampleFormControlInput1" class="form-label">Setter Name</label> -->
-                                            <input type="text" class="form-control" id="contesttitle" placeholder="Contest Title">
-                                        </div>
-                                    </div>                       
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>                
-                </div>
-            </div>
-        </div>
-
-        <div class="vh-5"></div>
-
-        <div class="row">
-            <div class="col-md-12 df jcc aic">
+    </div>
+    <div class="container">
+        <div class="row mt-2">
+            <section class="main-table" id = "standing">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="container">
-                                <div class="row mb-5">
-                                    <div class="col-md-12">
-                                        <h3 class="display-6">Question Details</h3>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-8 col-12">
-                                        <div class="mb-3">
-                                            <h5 class="l"><label for="SetterName" class="form-label">Question Title</label></h5>
-                                            <!-- <label for="exampleFormControlInput1" class="form-label">Setter Name</label> -->
-                                            <input type="text" class="form-control" id="setterName" placeholder="Name">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4 col-12">
-                                        <div class="mb-3">
-                                            <h5 class="l"><label for="QuestionID" class="form-label">Question ID</label></h5>
-                                            <!-- <label for="exampleFormControlInput1" class="form-label">Setter ID</label> -->
-                                            <input type="text" class="form-control" id="questionID" placeholder="ID">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-4 col-12">
-                                        <div class="mb-3">
-                                            <h5 class="l"><label for="xp" class="form-label">XP</label></h5>
-                                            <!-- <label for="exampleFormControlInput1" class="form-label">Setter Name</label> -->
-                                            <input type="number" class="form-control" id="xp" placeholder="XP">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="mb-3 mt-3">
-                                            <h5 class="l"><label for="QuestionBody" class="form-label">Question Body</label></h5>
-                                            <textarea class="form-control" id="questionBody" rows="20"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="vh-2"></div>
-                                <div class="row mt-5">
-                                    <div class="col-auto">
-                                        <button type="button" class="btn btn-d-outline btn-lg">Add Question</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <table data-order='[[3, "asc"]]' data-page-length='25' id="stable" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Max XP</th>
+                                        <th>Solved</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     <!-- <?php echo $rows; ?> -->
+                                    <tr>
+                                        <td>1A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1B</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2D</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3C</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>32A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1B</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2D</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3C</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>32A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1B</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2D</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3C</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>32A</td>
+                                        <td>Find the value of x in the equation: 2x + 5 = 17</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>   
                     </div>
-                    
                 </div>
-                
-            </div>
+            </section>
         </div>
-        
-        <div class="vh-10"></div>
-
-
     </div>
-
     
-</body>
-</html>
-
+    
+    <div class="vh-15"></div>
 
 
 
 <!-- Add your Custom Styles here -->
 <style>
-
+    
 </style>
+
+
+<script>
+    // Function to toggle class and set cookie
+    let l_str = "uil-moonset";
+    let d_str = "uil-sun";
+    let boolVariable = false;
+    let html = document.querySelector("html");
+    function toggleClass() {
+      // Toggle the boolean variable
+      boolVariable = !boolVariable;
+  
+      // Get the element with id "dmi"
+      const dmiElement = document.getElementById("dmi");
+  
+      // If boolVariable is true, add class "d_str", otherwise add class "l_str"
+      if (boolVariable) {
+        dmiElement.classList.remove('uil-moonset');
+        dmiElement.classList.add('uil-sun');
+  
+        html.classList.add('dark');
+        html.setAttribute('data-bs-theme', 'dark');
+        // Set cookie preference to "dark"
+        document.cookie = "mode=dark";
+      } else {
+        dmiElement.classList.remove('uil-sun');
+        dmiElement.classList.add('uil-moonset');
+  
+        html.classList.remove('light');
+        html.setAttribute('data-bs-theme', 'light');
+        // Set cookie preference to "light"
+        document.cookie = "mode=light";
+      }
+    }
+  
+    // Function to check cookie preference on page load
+    function checkCookiePreference() {
+      const cookies = document.cookie.split(";").map(cookie => cookie.trim().split("="));
+      const modeCookie = cookies.find(cookie => cookie[0] === "mode");
+  
+      const html = document.querySelector("html");
+  
+      const dmiElement = document.getElementById("dmi");
+  
+      if (modeCookie) {
+        const mode = modeCookie[1];
+        if (mode === "dark") {
+          html.classList.add("dark");
+          html.setAttribute("data-bs-theme", "dark");
+          dmiElement.classList.remove('uil-moonset');
+          dmiElement.classList.add('uil-sun');
+        } else {
+          html.classList.remove("dark");
+          html.setAttribute("data-bs-theme", "light");
+          dmiElement.classList.remove('uil-sun');
+          dmiElement.classList.add('uil-moonset');
+        }
+      } else {
+        // If cookie is not set, default to light mode and set cookie
+        html.classList.remove("dark");
+        document.cookie = "mode=light";
+      }
+    }
+  
+    // Add click event listener to element with id "dm"
+    document.getElementById("dm").addEventListener("click", toggleClass);
+  
+    // Check cookie preference on page load
+    checkCookiePreference();
+  </script>

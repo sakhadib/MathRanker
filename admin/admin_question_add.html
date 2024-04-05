@@ -19,42 +19,47 @@
 </head>
 <body>
     <!-- Nav -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bs">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="../rsx/logo.svg" alt="Bootstrap" width="50">
-            </a>
-            <a class="navbar-brand" href="#">MathRanker</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="admin_dashboard.html">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin_userlist.html">Users</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="admin_questionlist.html">Questions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin_contestlist.html">Contest</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin_setting.html">Settings</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav me-0 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Log out</a>
-                </li>
-                </ul>
-        </div>
-        </div>
-    </nav>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bs">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="../rsx/logo.svg" alt="Bootstrap" width="50">
+                </a>
+                <a class="navbar-brand" href="#">MathRanker</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin_dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin_userlist.html">Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="admin_questionlist.html">Questions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin_contestlist.html">Contest</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin_setting.html">Settings</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav me-0 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" id="dm"><i class="uil uil-moonset" id="dmi"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     <!-- Nav -->
+
+
     <div class="vh-10"></div>
     <div class="container">
         <div class="row">
@@ -113,7 +118,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-md-6 mb-3">
-                                        <h5 class="l"><label for="exampleFormControlInput1" class="form-label">Contest ID</label></h5>
+                                        <h5 class="l"><label for="ContestID" class="form-label">Contest ID</label></h5>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected>Select contest ID</option>
                                             <option value="1">MR-805</option>
@@ -143,7 +148,7 @@
             <div class="col-md-12 df jcc aic">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-8">
                             <div class="container">
                                 <div class="row mb-5">
                                     <div class="col-md-12">
@@ -153,14 +158,25 @@
                                 <div class="row">
                                     <div class="col-md-8 col-12">
                                         <div class="mb-3">
-                                            <h5 class="l"><label for="SetterName" class="form-label">Question Title</label></h5>
+                                            <h5 class="l"><label for="QuestionTitle" class="form-label">Question Title</label></h5>
                                             <!-- <label for="exampleFormControlInput1" class="form-label">Setter Name</label> -->
-                                            <input type="text" class="form-control" id="setterName" placeholder="Name">
+                                            <input type="text" class="form-control" id="questionTitle" placeholder="Title">
                                         </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <h5 class="l"><label for="catagory" class="form-label">Catagory</label></h5>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Select catagory</option>
+                                            <option value="1">A</option>
+                                            <option value="2">B</option>
+                                            <option value="3">C</option>
+                                            <option value="4">...</option>
+                                            <option value="5">n</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 col-12">
+                                    <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <h5 class="l"><label for="QuestionID" class="form-label">Question ID</label></h5>
                                             <!-- <label for="exampleFormControlInput1" class="form-label">Setter ID</label> -->
@@ -168,7 +184,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-md-4 col-12">
+                                    <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <h5 class="l"><label for="xp" class="form-label">XP</label></h5>
                                             <!-- <label for="exampleFormControlInput1" class="form-label">Setter Name</label> -->
@@ -187,7 +203,10 @@
                                 <div class="vh-2"></div>
                                 <div class="row mt-5">
                                     <div class="col-auto">
-                                        <button type="button" class="btn btn-d-outline btn-lg">Add Question</button>
+                                        <button type="button" id="addquestion" class="btn btn-l-outline btn-lg">Add Question</button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" id="clear" class="btn btn-d btn-lg">Clear</button>
                                     </div>
                                 </div>
                             </div>
@@ -215,3 +234,98 @@
 <style>
 
 </style>
+
+<script>
+    // Function to toggle class and set cookie
+    let l_str = "uil-moonset";
+    let d_str = "uil-sun";
+    let boolVariable = false;
+    let html = document.querySelector("html");
+    function toggleClass() {
+      // Toggle the boolean variable
+      boolVariable = !boolVariable;
+  
+      // Get the element with id "dmi"
+      const dmiElement = document.getElementById("dmi");
+  
+      // If boolVariable is true, add class "d_str", otherwise add class "l_str"
+      if (boolVariable) {
+        dmiElement.classList.remove('uil-moonset');
+        dmiElement.classList.add('uil-sun');
+  
+        html.classList.add('dark');
+        html.setAttribute('data-bs-theme', 'dark');
+        // Set cookie preference to "dark"
+        document.cookie = "mode=dark";
+      } else {
+        dmiElement.classList.remove('uil-sun');
+        dmiElement.classList.add('uil-moonset');
+  
+        html.classList.remove('light');
+        html.setAttribute('data-bs-theme', 'light');
+        // Set cookie preference to "light"
+        document.cookie = "mode=light";
+      }
+    }
+  
+    // Function to check cookie preference on page load
+    function checkCookiePreference() {
+      const cookies = document.cookie.split(";").map(cookie => cookie.trim().split("="));
+      const modeCookie = cookies.find(cookie => cookie[0] === "mode");
+  
+      const html = document.querySelector("html");
+  
+      const dmiElement = document.getElementById("dmi");
+  
+      if (modeCookie) {
+        const mode = modeCookie[1];
+        if (mode === "dark") {
+          html.classList.add("dark");
+          html.setAttribute("data-bs-theme", "dark");
+          dmiElement.classList.remove('uil-moonset');
+          dmiElement.classList.add('uil-sun');
+        } else {
+          html.classList.remove("dark");
+          html.setAttribute("data-bs-theme", "light");
+          dmiElement.classList.remove('uil-sun');
+          dmiElement.classList.add('uil-moonset');
+        }
+      } else {
+        // If cookie is not set, default to light mode and set cookie
+        html.classList.remove("dark");
+        document.cookie = "mode=light";
+      }
+    }
+  
+    // Add click event listener to element with id "dm"
+    document.getElementById("dm").addEventListener("click", toggleClass);
+  
+    // Check cookie preference on page load
+    checkCookiePreference();
+  </script>
+
+
+
+<script>
+    // Function to clear all input fields and reset select elements to default values
+    function clearFields() {
+        // Select all input elements within the document
+        const inputFields = document.querySelectorAll('input[type="text"], input[type="number"], textarea');
+
+        // Loop through each input field and set its value to an empty string
+        inputFields.forEach(input => {
+            input.value = '';
+        });
+
+        // Select the select elements
+        const selectElements = document.querySelectorAll('select');
+
+        // Loop through each select element and set its selectedIndex to 0 (default value)
+        selectElements.forEach(select => {
+            select.selectedIndex = 0;
+        });
+    }
+
+    // Attach clearFields function to the click event of the "Clear" button
+    document.getElementById("clear").addEventListener("click", clearFields);
+</script>
