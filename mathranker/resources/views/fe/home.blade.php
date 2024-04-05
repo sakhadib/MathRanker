@@ -1,0 +1,167 @@
+@extends('fe.layouts.main')
+
+@section('main-sec') 
+    <div class="main-home vh-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 vh-80 df dfc jcc aic">
+                    <h1 class="text-center display-1">Climb the hills <br>of the math skills</h1>
+                    <hr>
+                    <p class="text-center" style="font-size: 2rem;">A platform to practice and improve your math skills</p>
+                    <div class="text-center">
+                        <a href="login.php" class="btn btn-d btn-lg">Login</a> &nbsp;&nbsp;
+                        <a href="login.php" class="btn btn-l-outline btn-lg">Signup</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stat vh-20">
+        <div class="container">
+            <div class="row this-stat vh-25">
+                <div class="col-12 df dfc jcc aic">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4">
+                                <h1 class="text-center d display-1" id="q_ct">3597</h1>
+                                <h5 class="text-center">Questions</h5>
+                            </div>
+                            <div class="col-4">
+                                <h1 class="text-center l display-1" id="u_ct">5574</h1>
+                                <h5 class="text-center">Users</h5>
+                            </div>
+                            <div class="col-4">
+                                <h1 class="text-center d display-1" id="c_ct">240</h1>
+                                <h5 class="text-center">Contests</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hm-2 vh-80 df dfc jcc aic">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 df aic mt-5 mb-5">
+                    <img src="rsx/hm-2.svg" alt="" style="width: 400px;">
+                </div>
+                <div class="col-md-6">
+                    <h1 class="display-1 d">Practice and improve your math skills</h1>
+                    <p class="lead">MathRanker is a platform to practice and improve your math skills. You can practice questions, participate in contests and improve your math skills.</p>
+                    <a href="problems.html" class="btn btn-l-outline btn-lg">See Problems</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hm-3 vh-90 df dfc jcc aic">
+        <div class="container">
+          <div class="row d-lg-none d-md-none mb-4">
+            <div class="col-12">
+              <img src="rsx/hm-3.svg" alt="" style="width: 400px;">
+            </div>
+          </div> 
+            <div class="row ">
+                <div class="col-md-6">
+                    <h1 class="display-1 l">Participate in contests</h1>
+                    <p class="lead">You can participate in contests and challenge your ability. Climb up the rating stair by participating in contests. Gain more XP points than usual when you solve a problem within contest time.</p>
+                    <a href="contests.html" class="btn btn-d-outline btn-lg">See Contests</a>
+                </div>
+                <div class="col-md-6 df aic jcc">
+                    <img src="rsx/hm-3.svg" alt="" style="width: 400px;" class="d-none d-md-block">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hm-4 vh-80 df dfc jcc aic d-none d-md-block">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 mb-1 text-center">
+              <h1 class="display-1 text-center">LeaderBoard</h1>
+              <p class="lead text-center">Top 3 users of MathRanker</p>
+              <a href="leaderboard.html" class="btn btn-l-outline btn-lg">See Complete LeaderBoard</a>
+            </div>
+          </div>
+          <hr>
+          <div class="vh-10"></div>
+          <div class="row mt-5">
+              <div class="col-md-4 text-center scnd">
+                <h1 class="display-1 l">#2</h1>
+                <h2 class="d">Tahsin Islam</h2>
+                <p class="lead">Islamic University of Technology</p>
+              </div>
+              <div class="col-md-4 text-center frst">
+                <h1 class="display-1 l">#1</h1>
+                <h2 class="d">Abrar Mubeen</h2>
+                <p class="lead">University of Oxford</p>
+              </div>
+              <div class="col-md-4 text-center">
+                <h1 class="display-1 l">#3</h1>
+                <h2 class="d">Rakin Shahriar</h2>
+                <p class="lead">University of West England</p>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mt-5 text-center">
+              
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="hm-5 vh-70 df dfc jcc aic">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 df aic">
+                    <img src="rsx/hm-5.svg" alt="" style="width: 400px;">
+                </div>
+                <div class="col-md-6">
+                    <h1 class="display-1 d">Get help from the community</h1>
+                    <p class="lead">You can ask questions, answer questions and help others. You can also discuss about math problems and solutions. You can also share your knowledge with others.</p>
+                    <a href="community.html" class="btn btn-l-outline btn-lg">See Community</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hm-6 vh-40 df dfc jcc aic">
+      <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-1 text-center d">Why MathRanker?</h1>
+                <p class="lead text-center">MathRanker is a platform to practice and improve your math skills. You can practice questions, participate in contests and improve your math skills.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- foot -->
+    <div class="hm-7 vh-55 df dfc jcc aic bg-t">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 df dfc jcc aic">
+            <img src="rsx/logo.svg" alt="" style="width: 350px;">
+            <h1 class="display-1 l">MathRanker</h1>
+            <p class="lead">A new horizon awaits mathematical geniuses, where they can discover their hidden talents and showcase them to the world.</p>
+            <div class="container">
+              <div class="row">
+                <div class="col-12 df jcc">
+                  <a href="#" class="link-l">Adib Sakhawat</a> &nbsp;&nbsp;
+                  <a href="#" class="link-l">Tahsin Islam</a> &nbsp;&nbsp;
+                  <a href="#" class="link-l">Takia Farhin</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+@endsection

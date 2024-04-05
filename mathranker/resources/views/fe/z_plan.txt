@@ -1,0 +1,10 @@
+User
+    1. Name
+    2. username
+    3. Email
+    4. Password
+    5. Role
+    6. institution
+    7. City
+    8. Country
+    
