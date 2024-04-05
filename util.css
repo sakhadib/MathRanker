@@ -144,3 +144,46 @@
 #dm{
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+/*! Form */
+
+.form-control{
+    border: none;
+    /* background-color: rgb(235, 235, 235); */
+    border-bottom: 1px solid #cacaca;
+    min-height: 3rem;
+    border-radius: 0;
+}
+
+.form-control:focus{
+    border: none;
+    /* background-color: rgb(235, 235, 235); */
+    /* border-radius: 10px; */
+    box-shadow: none;
+    border-bottom: 1px solid #36449C;
+    /* transition: .1s all ease-in-out; */
+}
+
+.lab{
+    background-color: rgb(235, 235, 235);
+}
+
+
+
+
+
+/* Signup */
+.lbar {
+    background-image: url('rsx/reg.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
