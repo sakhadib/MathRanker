@@ -14,6 +14,8 @@
     <!-- Math -->
     <script defer type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
 
+    <!-- MD -->
+    <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <!-- Icons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
@@ -150,3 +152,11 @@
 <style>
 
 </style>
+
+
+
+<script>
+  const markdownText = `YOUR_RAW_MARKDOWN_TEXT_HERE`;
+  const htmlContent = marked(markdownText);
+  document.getElementById('markdown-content').innerHTML = htmlContent;
+</script>
