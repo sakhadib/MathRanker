@@ -1,4 +1,24 @@
-    
+   <!-- foot -->
+   <div class="hm-7 vh-55 df dfc jcc aic bg-t">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 df dfc jcc aic">
+          <img src="rsx/logo.svg" alt="" style="width: 350px;">
+          <h1 class="display-1 l">MathRanker</h1>
+          <p class="lead">A new horizon awaits mathematical geniuses, where they can discover their hidden talents and showcase them to the world.</p>
+          <div class="container">
+            <div class="row">
+              <div class="col-12 df jcc">
+                <a href="#" class="link-l">Adib Sakhawat</a> &nbsp;&nbsp;
+                <a href="#" class="link-l">Tahsin Islam</a> &nbsp;&nbsp;
+                <a href="#" class="link-l">Takia Farhin</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
     
 </body>
 </html>
@@ -18,9 +38,14 @@
     }
 
     .this-stat{
+
+        
+        margin-top: -4rem;
+    }
+
+    .glow{
         background: white;
         box-shadow: 0px 0px 10px 0px #c5c5c5;
-        margin-top: -4rem;
     }
 
     .frst{
@@ -74,10 +99,12 @@
   
       // Get the element with id "dmi"
       const dmiElement = document.getElementById("dmi");
+      const headelem = document.getElementById("homelem");
   
       // If boolVariable is true, add class "d_str", otherwise add class "l_str"
       if (boolVariable) {
         dmiElement.classList.remove('uil-moonset');
+        headelem.classList.remove('main-home');
         dmiElement.classList.add('uil-sun');
   
         html.classList.add('dark');
@@ -110,6 +137,8 @@
           html.classList.add("dark");
           html.setAttribute("data-bs-theme", "dark");
           dmiElement.classList.remove('uil-moonset');
+          headelem.classList.remove('main-home');
+          statelem.classList.remove('glow');
           dmiElement.classList.add('uil-sun');
         } else {
           html.classList.remove("dark");

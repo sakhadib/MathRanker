@@ -1,7 +1,7 @@
 @extends('fe.layouts.main')
 
 @section('main-sec') 
-    <div class="main-home vh-80">
+    <div class="main-home vh-80" id="homelem">
         <div class="container">
             <div class="row">
                 <div class="col-12 vh-80 df dfc jcc aic">
@@ -19,7 +19,7 @@
 
     <div class="stat vh-20">
         <div class="container">
-            <div class="row this-stat vh-25">
+            <div class="row this-stat glow vh-25" id="statelem">
                 <div class="col-12 df dfc jcc aic">
                     <div class="container">
                         <div class="row">
@@ -140,27 +140,7 @@
     </div>
 
 
-<!-- foot -->
-    <div class="hm-7 vh-55 df dfc jcc aic bg-t">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 df dfc jcc aic">
-            <img src="rsx/logo.svg" alt="" style="width: 350px;">
-            <h1 class="display-1 l">MathRanker</h1>
-            <p class="lead">A new horizon awaits mathematical geniuses, where they can discover their hidden talents and showcase them to the world.</p>
-            <div class="container">
-              <div class="row">
-                <div class="col-12 df jcc">
-                  <a href="#" class="link-l">Adib Sakhawat</a> &nbsp;&nbsp;
-                  <a href="#" class="link-l">Tahsin Islam</a> &nbsp;&nbsp;
-                  <a href="#" class="link-l">Takia Farhin</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
 
 
     

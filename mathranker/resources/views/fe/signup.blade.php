@@ -12,37 +12,78 @@
                             <hr>
                         </div>
                     </div>
-                   <form action="">
+                   <form action="{{url('/')}}/signup" method="POST">
+                    @csrf
                     <div class="row ">
                         <div class="col-md-6 mt-4">
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="First Name">
+                            <input name="fname" type="text" class="form-control" value="{{old('fname')}}" id="exampleFormControlInput1" placeholder="First Name">
+                            <span>
+                                @error('fname')
+                                    <p class="text-danger lead">{{$message}}</p>
+                                @enderror
+                            </span>
                         </div>
                         <div class="col-md-6 mt-4">
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Last Name">
+                            <input name="lname" type="text" class="form-control" value="{{old('lname')}}" id="exampleFormControlInput1" placeholder="Last Name">
+                            <span>
+                                @error('lname')
+                                    <p class="text-danger lead">{{$message}}</p>
+                                @enderror
+                            </span>
                         </div>
                     </div>
                     <div class="row ">
                         <div class="col-md-8 mt-4">
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+                            <input name="email" type="email" class="form-control" value="{{old('email')}}" id="exampleFormControlInput1" placeholder="Email">
+                            <span>
+                                @error('email')
+                                    <p class="text-danger lead">{{$message}}</p>
+                                @enderror
+                            </span>
                         </div>
                         <div class="col-md-4 mt-4">
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Username">
+                            <input name="uname" type="text" class="form-control" value="{{old('uname')}}" id="exampleFormControlInput1" placeholder="Username">
+                            <span>
+                                @error('uname')
+                                    <p class="text-danger lead">{{$message}}</p>
+                                @enderror
+                            </span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 mt-4">
-                            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Password">
+                            <input name="password" type="password" class="form-control" id="exampleFormControlInput1" placeholder="Password">
+                            <span>
+                                @error('password')
+                                    <p class="text-danger lead">{{$message}}</p>
+                                @enderror
+                            </span>
                         </div>
                         <div class="col-md-6 mt-4">
-                            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Confirm Password">
+                            <input name="password_confirmation" type="password" class="form-control" id="exampleFormControlInput1" placeholder="Confirm Password">
+                            <span>
+                                @error('password_confirmation')
+                                    <p class="text-danger lead">{{$message}}</p>
+                                @enderror
+                            </span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 mt-4">
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Institutuon">
+                            <input name="inst" type="text" class="form-control" value="{{old('inst')}}" id="exampleFormControlInput1" placeholder="Institutuon">
+                            <span>
+                                @error('inst')
+                                    <p class="text-danger lead">{{$message}}</p>
+                                @enderror
+                            </span>
                         </div>
                         <div class="col-md-6 mt-4">
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Country">
+                            <input name="country" type="text" class="form-control" value="{{old('country')}}" id="exampleFormControlInput1" placeholder="Country">
+                            <span>
+                                @error('country')
+                                    <p class="text-danger lead">{{$message}}</p>
+                                @enderror
+                            </span>
                         </div>
                     </div>
                     <div class="row">

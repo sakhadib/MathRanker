@@ -62,10 +62,10 @@
                     <a class="nav-link" id="dm"><i class="uil uil-moonset" id="dmi"></i></a>
                 </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Login</a>
+                <a class="nav-link" aria-current="page" href="/login">Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Signup</a>
+                <a class="nav-link" href="/signup">Signup</a>
               </li>
               
             </ul>
