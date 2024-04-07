@@ -93,12 +93,14 @@
 
     // Get the element with id "dmi"
     const dmiElement = document.getElementById("dmi");
+    const postContent = document.getElementById("typed-math");
 
     // If boolVariable is true, add class "d_str", otherwise add class "l_str"
     if (boolVariable) {
       dmiElement.classList.remove('uil-moonset');
       dmiElement.classList.add('uil-sun');
-
+      postContent.classList.remove('post-content-white');
+      postContent.classList.add('post-content-dark');
       html.classList.add('dark');
       html.setAttribute('data-bs-theme', 'dark');
       // Set cookie preference to "dark"
@@ -106,7 +108,8 @@
     } else {
       dmiElement.classList.remove('uil-sun');
       dmiElement.classList.add('uil-moonset');
-
+      postContent.classList.remove('post-content-dark');
+      postContent.classList.add('post-content-white');
       html.classList.remove('light');
       html.setAttribute('data-bs-theme', 'light');
       // Set cookie preference to "light"
@@ -122,6 +125,7 @@
     const html = document.querySelector("html");
 
     const dmiElement = document.getElementById("dmi");
+    const postContent = document.getElementById("typed-math");
 
     if (modeCookie) {
       const mode = modeCookie[1];
@@ -130,11 +134,16 @@
         html.setAttribute("data-bs-theme", "dark");
         dmiElement.classList.remove('uil-moonset');
         dmiElement.classList.add('uil-sun');
+        postContent.classList.remove('post-content-white');
+        postContent.classList.add('post-content-dark');
+        
       } else {
         html.classList.remove("dark");
         html.setAttribute("data-bs-theme", "light");
         dmiElement.classList.remove('uil-sun');
         dmiElement.classList.add('uil-moonset');
+        postContent.classList.remove('post-content-dark');
+        postContent.classList.add('post-content-white');
       }
     } else {
       // If cookie is not set, default to light mode and set cookie
