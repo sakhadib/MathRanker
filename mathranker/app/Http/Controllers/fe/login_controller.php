@@ -21,18 +21,27 @@ class login_controller extends Controller
             'uname' => 'required',
             'password' => 'required',
         ]);
-
-        $uname = $request['uname'];
-        $password = md5($request['password']);
-
-        $solver = Solver::where('uname', $uname)->where('password', $password)->first();
-
+    
+        $uname = $request->input('uname');
+        $password = md5($request->input('password')); // Hash the provided password
+    
+        $solver = Solver::where('uname', $uname)
+                        ->where('password', $password)
+                        ->first();
+    
         if($solver){
-            $request->session()->put('uname', $solver->uname);
+            $request->session()->put('uname', $uname);
             $request->session()->put('isLoggedIn', true);
             return redirect('/problems');
-        }else{
+        } else {
             return redirect('/login')->with('error', 'Invalid username or password.');
         }
     }
+
+    public function logout(Request $request){
+        $request->session()->forget('uname');
+        $request->session()->forget('isLoggedIn');
+        return redirect('/');
+    }
+    
 }

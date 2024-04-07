@@ -18,13 +18,22 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     
-    <!-- Data Tables -->
+    {{-- Data Table --}}
     <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script defer src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script defer src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
     <script defer src="{{url('fe/dt.js')}}"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>    
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    
+    
+    <!-- Data Tables -->
+    {{-- <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script defer src="{{url('fe/dt.js')}}"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css"> --}}
     <!-- Icons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
@@ -49,10 +58,10 @@
                 <a class="nav-link active" aria-current="page" href="./">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="problems.html">Problems</a>
+                <a class="nav-link" href="/problems">Problems</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contests.html">Contests</a>
+                <a class="nav-link" href="/contests">Contests</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">LeaderBoard</a>
@@ -68,12 +77,24 @@
                 <li class="nav-item">
                     <a class="nav-link" id="dm"><i class="uil uil-moonset" id="dmi"></i></a>
                 </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/login">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/signup">Signup</a>
-              </li>
+                @if (session('isLoggedIn'))
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/profile">{{session('uname')}}</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="/logout">Logout</a>
+                  </li>
+                @else
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/login">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/signup">Signup</a>
+                  </li>
+
+                    
+                @endif
+              
               
             </ul>
             

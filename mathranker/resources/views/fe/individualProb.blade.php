@@ -1,6 +1,9 @@
 @extends('fe.layouts.main')
 @section('main-sec')
-      <div class="vh-10"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="vh-10"></div>
         <div class="container mb-5">
             <div class="row">
                 <div class="col-12">
@@ -25,15 +28,18 @@
                                 {{$Prob->description}}
                             </p>
                             <div class="vh-5"></div>
-                            <h4 class="display-6 l">Submit Answer</h4>
-                            <hr>
-                            <form action=""> 
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                    <label for="floatingInput">Your Answer</label>
-                                </div>
-                                <button type="submit" style="width: 100%;" class="btn btn-d"><i class="uil uil-message"></i> Submit</button>
-                            </form>
+                            @if($availableXP > 0)
+                                <h4 class="display-6 l">Submit Answer</h4>
+                                <hr>
+                                <form action="{{url('/')}}/problem/{{$pid}}" method="POST"> 
+                                    @csrf
+                                    <div class="form-floating mb-3">
+                                        <input name="sub_ans" type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                        <label for="floatingInput">Your Answer</label>
+                                    </div>
+                                    <button type="submit" style="width: 100%;" class="btn btn-d"><i class="uil uil-message"></i> Submit</button>
+                                </form>
+                            @endif
                         </div>
                     </div> 
                 </div>
@@ -50,28 +56,47 @@
                                 </tr>
                                 <tr>
                                     <td>Available XP</td>
-                                    <td>100</td>
+                                    <td>{{$availableXP}}</td>
                                 </tr>
                                 <tr>
                                     <td>Attempt</td>
-                                    <td>632</td>
+                                    <td>{{$TotalAttempts}}</td>
                                 </tr>
                                 <tr>
                                     <td>Solved</td>
-                                    <td>21</td>
+                                    <td>{{$SuccessCount}}</td>
                                 </tr>
                                 <tr>
-                                    <td>First Solve</td>
-                                    <td>Rayshu</td>
+                                    <td>My Attempts</td>
+                                    <td>{{$myAttCount}}</td>
+                                </tr>
+                                <tr>
+                                    <td>My Status</td>
+                                    <td>
+                                        @if($status == 1)
+                                            <span class="badge bg-success">Solved</span>
+                                        @elseif($status == 0)
+                                            <span class="badge bg-danger">Unsolved</span>
+                                        @else
+                                            <span class="badge bg-secondary">Pending</span>
+                                        @endif
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Gained XP</td>
+                                    <td>{{$gainedxp}}</td>
                                 </tr>
                             </table>
 
-                            <a href="" style="width: 100%;" class="btn btn-l"><i class="uil uil-file-upload-alt"></i> Create Solution Post</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
+    </div>
+</div>
+      
 @endsection
 
 

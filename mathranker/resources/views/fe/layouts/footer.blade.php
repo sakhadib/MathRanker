@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 df dfc jcc aic">
-          <img src="rsx/logo.svg" alt="" style="width: 350px;">
+          <img src="{{url('rsx/logo.svg')}}" alt="" style="width: 350px;">
           <h1 class="display-1 l">MathRanker</h1>
           <p class="lead">A new horizon awaits mathematical geniuses, where they can discover their hidden talents and showcase them to the world.</p>
           <div class="container">
@@ -151,8 +151,6 @@
 </script>
 
 <!-- Foot end -->
-  
-</div>
 </body>
 </html>
 

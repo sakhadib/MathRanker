@@ -22,12 +22,11 @@ class signup_controller extends Controller
             'uname' => 'required|unique:solver,uname',
             'inst' => 'required',
             'country' => 'required',
-            'password' => 'required|confirmed|min:8|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/',
+            'password' => 'required|confirmed|min:8',
             'password_confirmation' => 'required',
         ], [
             'uname.unique' => 'The username has already been taken.',
-            'password.min' => 'The password must be at least 8 characters long.',
-            'password.regex' => 'The password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.',
+            'password.min' => 'The password must be at least 8 characters long.'
         ]);
     
         // If validation passes, proceed to save the new user
