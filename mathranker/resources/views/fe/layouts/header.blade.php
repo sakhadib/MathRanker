@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
+<html data-bs-theme="dark" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,7 +67,7 @@
                 <a class="nav-link" href="#">LeaderBoard</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Feed</a>
+                <a class="nav-link" href="/feed">Feed</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>

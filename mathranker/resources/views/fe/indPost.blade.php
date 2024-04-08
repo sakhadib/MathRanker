@@ -5,15 +5,18 @@
         
         <div class="row">
             <div class="col-md-6 p-4 vh-100">
-                <form action="" method="POST">
+                <form action="{{url('/')}}/post" method="POST">
                     @csrf
                     <div class="form-group mb-4">
-                        <textarea style="font-size: 2.5rem" rows="1" type="text" name="title" id="title" placeholder="Title" class="form-control"></textarea>
+                        <textarea style="font-size: 2.5rem" rows="1" type="text" name="title" id="title" placeholder="Title" class="form-control" required></textarea>
                     </div>
                     <div class="form-group mb-4">
-                        <textarea style="font-size: 24px; font-family: 'Times New Roman', Times, serif;" name="content" id="typed-math" rows="10" placeholder="Start Writing Here..." class="form-control post-content p-4"></textarea>
+                        <textarea style="font-size: 24px; font-family: 'Times New Roman', Times, serif;" name="content" id="typed-math" required rows="15" placeholder="Start Writing Here..." class="form-control post-content p-4"></textarea>
                     </div>
-                    <hr>
+                    <div class="form-group mb-4">
+                        <input style="font-size: 24px;" name="tag" id="tags" placeholder="separate tags with comma" class="form-control" required>
+                    </div>
+                    <button type="submit" style="width: 100%;" class="btn btn-l">Post</button>
                 </form>
             </div>
             <div class="col-md-6 p-4">
@@ -37,7 +40,16 @@
                     </div>
                     <div class="card-body">
                         <h1 class="card-title mb-2 math" id="post-title"></h1>
-                        <p class="lead mb-3">Post By <code>{{session('uname')}}</code> On <code>{{ date('Y-m-d') }} </code></p>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="lead mb-3">Post By <code>{{session('uname')}}</code> On <code>{{ date('Y-m-d') }} </code></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="lead mb-3 text-end" id="tag-view">Tags: </p>
+                                </div>
+                            </div>
+                        </div>
                         <hr>
                         <p class="math mt-2" style="font-family: 'Times New Roman', Times, serif; font-size:24px" id="math-preview">
                             
@@ -118,6 +130,58 @@
 
     // Add event listener to the textarea for input event
     document.getElementById('typed-math').addEventListener('input', updateMathPreview);
+</script>
+
+<script>
+    // Function to update and display tags in real-time
+function updateTagsPreview() {
+    // Get the input field for tags and the element where tags will be displayed
+    const tagsInput = document.getElementById('tags');
+    const tagView = document.getElementById('tag-view');
+
+    // Clear the current content of the tag view
+    tagView.innerHTML = '';
+
+    // Split the input value into an array of tags separated by commas
+    const tagsArray = tagsInput.value.split(',');
+
+    // Iterate through the tags array and add each tag as a Bootstrap badge
+    tagsArray.forEach(tag => {
+        if (tag.trim() !== '') {
+            const badge = document.createElement('span');
+            badge.className = 'badge bg-l me-1';
+            badge.textContent = tag.trim();
+            tagView.appendChild(badge);
+        }
+    });
+}
+
+// Function to handle form submission and validate tags input
+function handleSubmit(event) {
+    // Get the input field for tags
+    const tagsInput = document.getElementById('tags');
+
+    // Check if tags input field is empty
+    if (tagsInput.value.trim() === '') {
+        // Prevent form submission
+        event.preventDefault();
+
+        // Show custom error message
+        alert('Your post must have at least 1 tag.');
+    }
+}
+
+// Call the function to update tags preview when the document is fully loaded
+document.addEventListener("DOMContentLoaded", function() {
+    updateTagsPreview();
+});
+
+// Add event listener to the input field for input event
+document.getElementById('tags').addEventListener('input', updateTagsPreview);
+
+// Add event listener to the form for form submission
+document.querySelector('form').addEventListener('submit', handleSubmit);
+
 </script>
 
 

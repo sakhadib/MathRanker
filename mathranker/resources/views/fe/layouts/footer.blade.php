@@ -1,5 +1,12 @@
    <!-- foot -->
-   <div class="hm-7 vh-55 df dfc jcc aic bg-t">
+   <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+   </div>
+   <div class="hm-7 vh-55 df dfc jcc aic">
     <div class="container">
       <div class="row">
         <div class="col-md-12 df dfc jcc aic">
@@ -99,8 +106,10 @@
     if (boolVariable) {
       dmiElement.classList.remove('uil-moonset');
       dmiElement.classList.add('uil-sun');
-      postContent.classList.remove('post-content-white');
-      postContent.classList.add('post-content-dark');
+      if(postContent != null){
+        postContent.classList.remove('post-content-white');
+        postContent.classList.add('post-content-dark');
+      }
       html.classList.add('dark');
       html.setAttribute('data-bs-theme', 'dark');
       // Set cookie preference to "dark"
@@ -108,8 +117,10 @@
     } else {
       dmiElement.classList.remove('uil-sun');
       dmiElement.classList.add('uil-moonset');
-      postContent.classList.remove('post-content-dark');
-      postContent.classList.add('post-content-white');
+      if(postContent != null){
+        postContent.classList.remove('post-content-dark');
+        postContent.classList.add('post-content-white');
+      }
       html.classList.remove('light');
       html.setAttribute('data-bs-theme', 'light');
       // Set cookie preference to "light"
@@ -134,16 +145,21 @@
         html.setAttribute("data-bs-theme", "dark");
         dmiElement.classList.remove('uil-moonset');
         dmiElement.classList.add('uil-sun');
-        postContent.classList.remove('post-content-white');
-        postContent.classList.add('post-content-dark');
+        if(postContent != null){
+          postContent.classList.remove('post-content-white');
+          postContent.classList.add('post-content-dark');
+        }
+        
         
       } else {
         html.classList.remove("dark");
         html.setAttribute("data-bs-theme", "light");
         dmiElement.classList.remove('uil-sun');
         dmiElement.classList.add('uil-moonset');
-        postContent.classList.remove('post-content-dark');
-        postContent.classList.add('post-content-white');
+        if(postContent != null){
+          postContent.classList.remove('post-content-dark');
+          postContent.classList.add('post-content-white');
+        }
       }
     } else {
       // If cookie is not set, default to light mode and set cookie

@@ -1,78 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathRanker</title>
-
-    <link rel="icon" href="rsx/logo.ico" type="icon">
-
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    <!-- Math -->
-    <script defer type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="util.css">
-</head>
-<body>
-        <!-- Nav -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bs">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="rsx/logo.svg" alt="Bootstrap" width="50">
-                </a>
-              <a class="navbar-brand" href="#">MathRanker</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="problems.html">Problems</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="contests.html">Contests</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">LeaderBoard</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Feed</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                  </li>
-                </ul>
-                <ul class="navbar-nav me-0 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Login</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Signup</a>
-                  </li>
-                  
-                </ul>
-                
-              </div>
-            </div>
-          </nav>
-
-          <div class="vh-15"></div>
+@extends('fe.layouts.main')
+@section('main-sec')
     <!-- Main Content -->
-    
+        <div class="vh-10"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="display-5 d">Laminar Distribution on Semi-Probabilistic Expansion</h3>
-                    <p class="text-muted fs-4">Posted on 12th March, 2021 by <span class="l">Rayshu</span></p>
+                    <h3 class="display-5 l">{{$post->title}}</h3>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-muted fs-5">Posted on {{ $post->created_at->format('d F, Y') }} by <span class="l">{{$post->uname}}</span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="text-end fs-5">
+                                    Tags:
+                                        @foreach ($tags as $tag)
+                                            <span class="badge bg-secondary">{{$tag}}</span>
+                                        @endforeach
+                                    {{-- @php
+                                        print_r($tags);
+                                    @endphp --}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                     <hr>
                 </div>
             </div>
@@ -80,23 +31,19 @@
             <div class="row">
                 <div class="col-md-12">
                     <p class="math display s-content">
-                        Lorem ipsum dolor \(x^2\) sit amet, consectetur adipiscing elit. Nam ultrices venenatis ligula, quis consequat lorem efficitur at. Nullam mi tortor, ultricies vel risus in, consectetur condimentum mauris. Nunc euismod mi lectus, nec facilisis risus malesuada ut. Fusce laoreet interdum eleifend. Quisque iaculis dictum enim, quis posuere tortor maximus ac. Maecenas porta ipsum ligula, vitae vulputate turpis accumsan ut. Pellentesque placerat, enim id dictum commodo, sem sapien lacinia dui, euismod congue est odio in enim. Suspendisse malesuada rutrum libero, vel imperdiet nunc mattis non.
-                        \[ \int_{0}^{1} \frac{1}{1+x^2} \, dx \]
-                        Mauris placerat diam eget ex venenatis imperdiet. Maecenas sit amet molestie lectus. Curabitur tincidunt mauris mi, eget ultrices lacus ullamcorper interdum. Sed eu ullamcorper eros. Mauris condimentum erat eget imperdiet ullamcorper. Sed pretium, mauris id sodales egestas, arcu nisi varius lacus, et vestibulum diam ex id lorem. Morbi et elementum ex, placerat pharetra nisl. Nulla aliquam fermentum velit a facilisis. Sed non libero ex. Donec fermentum egestas quam, id pellentesque ipsum ultrices at. Nunc sed fermentum diam. Duis ullamcorper velit sit amet feugiat viverra. Ut ut diam sed orci laoreet laoreet. Donec rutrum id justo nec sodales. Etiam enim quam, molestie sit amet ipsum nec, congue cursus quam. Morbi maximus quam id purus egestas, eget tempus magna lobortis.
-                        \[ \sum_{n=0}^{9} \frac{(-1)^n}{(2n+1)!}x^{2n+1} \]
-                        Pellentesque pharetra urna mauris, eu lacinia ligula laoreet quis. Ut rutrum mi vel interdum scelerisque. Etiam bibendum tellus id neque dignissim, ut feugiat justo gravida. Duis mollis enim nulla, quis viverra dui mollis vitae. Aenean tincidunt metus sed eros aliquet, non faucibus lorem ultricies. Praesent vel mi ipsum. Proin blandit efficitur libero a semper.
+                        {{ $post->content }}
                     </p>
                     <br>
                     <div class="container">
                         <div class="row">
                             <div class="col-auto">
                                 <h2 class="display-5">
-                                    <a href=""><i class="uil uil-thumbs-up"></i></a> 105465
+                                    <a href="/post/{{$post->id}}/up"><i class="uil uil-thumbs-up"></i></a> {{$upVotes}}
                                 </h2>
                             </div>
                             <div class="col-auto">
                                 <h2 class="display-5">
-                                    <a href=""><i class="uil uil-thumbs-down"></i></a> 2
+                                    <a href="/post/{{$post->id}}/down"><i class="uil uil-thumbs-down"></i></a> {{$downVotes}}
                                 </h2>
                         </div>
                     </div>
@@ -111,45 +58,55 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
-                    <form>
+                <div class="col-md-6">
+                    <form action="{{url('/')}}/comment/submit" method="POST">
+                        @csrf
+                        <input type="text" name="post_id" value="{{$post->id}}" readonly hidden>
                         <div class="mb-3">
-                            <textarea placeholder="Write a comment. You can use LATEX notation in the comment..." class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea name="comment" placeholder="Write a comment. You can use LATEX notation in the comment..." class="form-control post-content-white p-4" id="typed-math" rows="5"></textarea>
                         </div>
                         <button type="submit" class="btn btn-d mb-5"><i class="uil uil-message"></i> Submit</button>
-                      </form>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="card  bs mb-4">
+                        <h4 class="card-header">Comment Preview</h4>
+                        <div class="card-body">
+                            <p class="text-muted fs-6">Comment on {{date('d F, Y')}} by <span class="l">{{session('uname')}}</span></p>
+                            <hr>
+                            <p class="card-text s-content math display" id="math-preview"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card  bs mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title display-6">Raks_OOPS</h5>
-                            <p class="text-muted fs-6">Posted on 12th March, 2021 by <span class="l">Rayshu</span></p>
-                            <hr>
-                            <p class="card-text s-content math display">Lorem ipsum dolor sit amet, \[ \int_{0}^{7} \frac{x^3 + 4x^2 - 2x + 7}{1+x^2} \, dx \] consectetur adipiscing elit. Nam ultrices venenatis ligula, quis consequat lorem efficitur at. Nullam mi tortor, ultricies vel risus in, consectetur condimentum mauris. Nunc euismod mi lectus, nec facilisis risus malesuada ut. Fusce laoreet interdum eleifend. Quisque iaculis dictum enim, quis posuere tortor maximus ac. Maecenas porta ipsum ligula, vitae vulputate turpis accumsan ut. Pellentesque placerat, enim id dictum commodo, sem sapien lacinia dui, euismod congue est odio in enim. Suspendisse malesuada rutrum libero, vel imperdiet nunc mattis non.</p>
+                    @foreach ($comments as $item)
+                        <div class="card  bs mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title display-6">{{$item->uname}}</h5>
+                                <p class="text-muted fs-6">Commented on {{ $item->created_at->format('d F, Y') }}
+                                    @if($item->updated_at != $item->created_at)
+                                        (edited on {{ $item->updated_at->format('d F, Y') }})
+                                    @endif
+                                </p>
+                                <hr>
+                                <p class="card-text s-content math display">{{$item->content}}</p>
+                                @if($item->uname == session('uname'))
+                                <div class="df jcfe">
+                                    <a href="/comment/{{$item->id}}/delete" class="btn btn-danger"><i class="uil uil-trash-alt"></i> Delete</a>
+                                </div>
+                                @endif
+                            </div>
                         </div>
-                    </div>
-                    <div class="card  bs mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title display-6">Raks_OOPS</h5>
-                            <p class="text-muted fs-6">Posted on 12th March, 2021 by <span class="l">Rayshu</span></p>
-                            <hr>
-                            <p class="card-text s-content math display">Lorem ipsum dolor sit amet, \[ \int_{0}^{7} \frac{x^3 + 4x^2 - 2x + 7}{1+x^2} \, dx \] consectetur adipiscing elit. Nam ultrices venenatis ligula, quis consequat lorem efficitur at. Nullam mi tortor, ultricies vel risus in, consectetur condimentum mauris. Nunc euismod mi lectus, nec facilisis risus malesuada ut. Fusce laoreet interdum eleifend. Quisque iaculis dictum enim, quis posuere tortor maximus ac. Maecenas porta ipsum ligula, vitae vulputate turpis accumsan ut. Pellentesque placerat, enim id dictum commodo, sem sapien lacinia dui, euismod congue est odio in enim. Suspendisse malesuada rutrum libero, vel imperdiet nunc mattis non.</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     <!-- End Main Content -->
 
     <div class="vh-30"></div>
-</body>
-</html>
-
-
-
 
 <!-- Add your Custom Styles here -->
 <style>
@@ -157,4 +114,58 @@
         font-size: 1.2rem;
         text-align: justify;
     }
+    
 </style>
+
+<style>
+    .post-content-white {
+        background-color: rgb(234, 234, 234);
+        border-radius: 10px;
+    }
+
+    .post-content-white:focus {
+        background-color: rgb(234, 234, 234);
+        border-radius: 10px;
+    }
+
+    .post-content-dark {
+        background-color: rgb(46, 52, 54);
+        color: white;
+        border-radius: 10px;
+    }
+    .post-content-dark:focus {
+        background-color: rgb(46, 52, 54);
+        color: white;
+        border-radius: 10px;
+    }
+</style>
+
+<script>
+    // Function to update MathJax rendering and display line breaks
+    function updateMathPreview() {
+        // Get references to the textarea and the preview element
+        const typedMath = document.getElementById('typed-math');
+        const mathPreview = document.getElementById('math-preview');
+
+        // Replace newline characters with HTML line break elements
+        const contentWithLineBreaks = typedMath.value.replace(/\n/g, '<br>');
+
+        // Update the content of the preview element with the content of the textarea
+        mathPreview.innerHTML = contentWithLineBreaks;
+
+        // Update MathJax rendering
+        MathJax.texReset();
+        MathJax.typesetClear();
+        MathJax.typesetPromise([mathPreview]);
+    }
+
+    // Call the function when the document is fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+        updateMathPreview();
+    });
+
+    // Add event listener to the textarea for input event
+    document.getElementById('typed-math').addEventListener('input', updateMathPreview);
+</script>
+
+@endsection
