@@ -17,6 +17,7 @@ Route::get('/logout', [login_controller::class, 'logout']);
 Route::get('/signup', [signup_controller::class, 'index']);
 Route::post('/signup', [signup_controller::class, 'signup']);
 
+Route::get('/profile', [profile_controller::class, 'myProfile']);
 Route::get('/profile/{uname}', [profile_controller::class, 'index']);
 
 Route::get('/problem/{pid}', [problem_controller::class, 'index']);

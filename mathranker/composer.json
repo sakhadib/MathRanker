@@ -6,8 +6,11 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "backpack/theme-tabler": "^1.2",
         "laravel/framework": "^11.0",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "livewire/livewire": "^3.4",
+        "illuminate/console": "^10.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -45,7 +48,8 @@
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
-        ]
+        ],
+        "post-install-cmd": ["@php artisan storage:link --quiet"]
     },
     "extra": {
         "laravel": {

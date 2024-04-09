@@ -11,7 +11,7 @@
                             <h3 class="display-2 l">{{$uname}}</h3>
                         </div>
                         <div class="col-4 df asfe jcfe">
-                            <h3 class="display-5 d">1895</h3>
+                            <h3 class="display-5 d">{{$XP}}</h3>
                         </div>
                     </div>
                 </div>
@@ -64,11 +64,11 @@
                     <div class="row mt-4">
                         <div class="col-md-4">
                             <h5>XP</h5>
-                            <h5 class="l">35437</h5>
+                            <h5 class="l">{{$XP}}</h5>
                         </div>
                         <div class="col-md-4">
-                            <h5>Contribution</h5>
-                            <h5 class="l">100</h5>
+                            <h5>Posts</h5>
+                            <h5 class="l">{{$PostCount}}</h5>
                         </div>
                     </div>
                 </div>
@@ -112,16 +112,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Archimedis on the run</td>
-                                        <td>Accepted</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Archimedis on the run</td>
-                                        <td>Accepted</td>
-                                    </tr>
+                                    @foreach($Attempted_Problems as $key => $problem)
+                                        <tr>
+                                            <td>{{$key+1}}</td>
+                                            <td><a href="{{'/problem/'. $problem->p_id}}">{{$problem->name}}</a></td>
+                                            <td>
+                                                @if($problem->verdict == 1)
+                                                    <span class="badge bg-success">Accepted</span>
+                                                @else
+                                                    <span class="badge bg-danger">Wrong Answer</span>
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -144,7 +148,7 @@
             labels: ['Accepted', 'Wrong Answer'],
             datasets: [{
                 label: 'Verdicts',
-                data: [140, 89],
+                data: [{{$AC}}, {{$WA}}],
                 backgroundColor: [
                     '#36449C',
                     '#1B75BC'
@@ -155,7 +159,7 @@
     });
 </script>
 
-<script>
+{{-- <script>
     //progress chart - line
     const prog_chart = document.querySelector('.prog-chart');
 
@@ -172,5 +176,5 @@
             }]
         }
     });
-</script>
+</script> --}}
 @endsection
