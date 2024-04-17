@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class solver extends Model
+class Post extends Model
 {
     use HasFactory;
-    protected $table = 'solvers';
-    protected $primaryKey = 'uname';
+    protected $table = 'post';
+    protected $primaryKey = 'id';
 }

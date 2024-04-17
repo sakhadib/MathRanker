@@ -24,11 +24,18 @@ class login_controller extends Controller
 
         $solver = Solver::where('uname', $uname)->where('password', $password)->first();
 
-        if($solver){
-            session(['solver' => $solver]);
-            return redirect('/dashboard');
+        if($solver){        
+            session(['uname' => $uname]);
+            session(['isLoggedIn' => true]);
+            return redirect('/problems');
         }else{
             return redirect('/login')->with('error', 'Invalid username or password');
         }
+    }
+
+    public function logout(Request $request){
+        $request->session()->forget('uname');
+        $request->session()->forget('isLoggedIn');
+        return redirect('/');
     }
 }

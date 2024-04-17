@@ -4,20 +4,22 @@ namespace App\Http\Controllers\fe;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\posts;
+use App\Models\Attempts;
+use App\Models\Post;
 use App\Models\Post_Tag;
-use App\Models\Votes;
-use App\Models\Comments;
+use App\Models\Comment;
+use App\Models\Vote;
 
-class post_controller extends Controller
+class Post_controller extends Controller
 {
     public function index($post_id)
     {
-        $post = posts::where('id', $post_id)->first();
+        $post = post::where('id', $post_id)->first();
         $tags = Post_Tag::where('post_id', $post_id)->pluck('tag_name')->toArray();
-        $upVotes = Votes::where('post_id', $post_id)->where('vote', 1)->count();
-        $downVotes = Votes::where('post_id', $post_id)->where('vote', 0)->count();
-        $comments = Comments::where('post_id', $post_id)->orderBy('created_at', 'desc')->get();
+        $upVotes = Vote::where('post_id', $post_id)->where('vote', 1)->count();
+        $downVotes = Vote::where('post_id', $post_id)->where('vote', 0)->count();
+        $Comments = Comment::where('post_id', $post_id)->orderBy('created_at', 'desc')->get();
+        // die($Comments);
         return view(
                     'fe/post', 
                     [
@@ -25,7 +27,7 @@ class post_controller extends Controller
                         'tags' => $tags,
                         'upVotes' => $upVotes,
                         'downVotes' => $downVotes,
-                        'comments' => $comments
+                        'Comments' => $Comments
                     ]
                 );
     }
@@ -38,6 +40,7 @@ class post_controller extends Controller
         else{
             return redirect('login');
         }
+        
     }
 
     public function store(Request $request)
@@ -56,7 +59,7 @@ class post_controller extends Controller
         $tag_array = explode(',', $tags);
         $tag_array = array_map('trim', $tag_array);
 
-        $post = new posts;
+        $post = new Post;
         $post->title = $title;
         $post->content = $content;
         $post->uname = $uname;
@@ -77,7 +80,7 @@ class post_controller extends Controller
     public function upvote($post_id)
     {
         $uname = session('uname');
-        $vote = Votes::where('post_id', $post_id)->where('uname', $uname)->first();
+        $vote = Vote::where('post_id', $post_id)->where('uname', $uname)->first();
         if($vote){
             if($vote->vote == 0){
                 $vote->vote = 1;
@@ -85,7 +88,7 @@ class post_controller extends Controller
             }
         }
         else{
-            $vote = new Votes;
+            $vote = new Vote;
             $vote->post_id = $post_id;
             $vote->uname = $uname;
             $vote->vote = 1;
@@ -97,7 +100,7 @@ class post_controller extends Controller
     public function downvote($post_id)
     {
         $uname = session('uname');
-        $vote = Votes::where('post_id', $post_id)->where('uname', $uname)->first();
+        $vote = Vote::where('post_id', $post_id)->where('uname', $uname)->first();
         if($vote){
             if($vote->vote == 1){
                 $vote->vote = 0;
@@ -105,7 +108,7 @@ class post_controller extends Controller
             }
         }
         else{
-            $vote = new Votes;
+            $vote = new Vote;
             $vote->post_id = $post_id;
             $vote->uname = $uname;
             $vote->vote = 0;
@@ -124,7 +127,7 @@ class post_controller extends Controller
         $post_id = $request->input('post_id');
         $uname = session('uname');
 
-        $comment = new Comments;
+        $comment = new Comment;
         $comment->post_id = $post_id;
         $comment->uname = $uname;
         $comment->content = $comm;
@@ -135,11 +138,10 @@ class post_controller extends Controller
 
     public function commentDelete($comment_id)
     {
-        $comment = Comments::where('id', $comment_id)->first();
+        $comment = Comment::where('id', $comment_id)->first();
         $post_id = $comment->post_id;
         $comment->delete();
         return redirect('post/' . $post_id);
     }
 
-    
 }

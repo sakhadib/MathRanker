@@ -19,7 +19,7 @@ class signup_controller extends Controller
             'fname' => 'required',
             'lname' => 'required',
             'email' => 'required|email',
-            'uname' => 'required|unique:solver,uname',
+            'uname' => 'required|unique:solvers,uname',
             'inst' => 'required',
             'country' => 'required',
             'password' => 'required|confirmed|min:8',
@@ -30,15 +30,15 @@ class signup_controller extends Controller
         ]);
     
         // If validation passes, proceed to save the new user
-        $solver = new Solver;
-        $solver->fname = $request['fname'];
-        $solver->lname = $request['lname'];
-        $solver->email = $request['email'];
-        $solver->uname = $request['uname'];
-        $solver->institution = $request['inst'];
-        $solver->country = $request['country'];
-        $solver->password = md5($request['password']);
-        $solver->save();
+        $solvers = new Solver;
+        $solvers->fname = $request['fname'];
+        $solvers->lname = $request['lname'];
+        $solvers->email = $request['email'];
+        $solvers->uname = $request['uname'];
+        $solvers->institution = $request['inst'];
+        $solvers->country = $request['country'];
+        $solvers->password = md5($request['password']);
+        $solvers->save();
     
         return redirect('/login');
     }

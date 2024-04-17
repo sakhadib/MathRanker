@@ -43,7 +43,7 @@
                               @foreach ($modifiedProbArray as $key => $item)
                                   <tr>
                                       <td>{{ $key + 1 }}</td> <!-- Increment the key to start numbering from 1 -->
-                                      <td><a href="/problem/{{$item->prob->p_id}}">{{ $item->prob->name }}</a></td> <!-- Access the name property of the prob object -->
+                                      <td><a href="/problem/{{$item->prob->p_id}}">{{ $item->prob->title }}</a></td> <!-- Access the name property of the prob object -->
                                       <td>{{ $item->prob->max_xp}}</td> <!-- Assuming max XP is always 100 -->
                                       <td>{{ $item->availableXP }}</td> <!-- Display the XP -->
                                       <td>{{ $item->ct }}</td> <!-- Display the success count -->

@@ -1,8 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\fe\home_controller;
 use App\Http\Controllers\fe\signup_controller;
 use App\Http\Controllers\fe\login_controller;
+use App\Http\Controllers\fe\Allproblem_controller;
+use App\Http\Controllers\fe\indProb_controller;
+use App\Http\Controllers\fe\Post_controller;
+use App\Http\Controllers\fe\Feed_controller;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +22,8 @@ use App\Http\Controllers\fe\login_controller;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Home
+Route::get('/', [home_controller::class, 'index']);
 
 // Signup
 Route::get('/signup', [signup_controller::class, 'index']);
@@ -27,5 +33,26 @@ Route::post('/signup', [signup_controller::class, 'signup']);
 Route::get('/login', [login_controller::class, 'index']);
 Route::post('/login', [login_controller::class, 'login']);
 
+// Logout
+Route::get('/logout', [login_controller::class, 'logout']);
+
 //Problems
+Route::get('/problems', [Allproblem_controller::class, 'index']);
+
+// Individual Problem
+Route::get('/problem/{pid}', [indProb_controller::class, 'index']);
+Route::post('/problem/{pid}', [indProb_controller::class, 'submit']);
+
+// Post
+Route::get('/post/{post_id}', [post_controller::class, 'index']);
+Route::get('/newpost', [post_controller::class, 'create']);
+Route::post('/post', [post_controller::class, 'store']);
+Route::get('/post/{post_id}/up', [post_controller::class, 'upvote']);
+Route::get('/post/{post_id}/down', [post_controller::class, 'downvote']);
+
+Route::get('/comment/{comment_id}/delete', [post_controller::class, 'commentDelete']);
+Route::post('/comment/submit', [post_controller::class, 'commentStore']);
+
+// Feed
+Route::get('/feed', [Feed_controller::class, 'index']);
 
