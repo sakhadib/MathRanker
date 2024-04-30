@@ -55,4 +55,5 @@ Route::post('/comment/submit', [post_controller::class, 'commentStore']);
 
 // Feed
 Route::get('/feed', [Feed_controller::class, 'index']);
+Route::post('/feed', [Feed_controller::class, 'search']);
 
