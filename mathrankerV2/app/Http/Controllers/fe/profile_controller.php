@@ -15,6 +15,10 @@ class profile_controller extends Controller
 {
     public function index()
     {
+        if(!session('uname'))
+        {
+            return redirect('/login');
+        }
         $uname = session('uname');
         $solver = Solver::where('uname', $uname)->first();
         $maxrating = Rating::where('uname', $uname)->max('rating');
@@ -54,6 +58,48 @@ class profile_controller extends Controller
             'allContestRatings' => $allContestRatings,
             'attempts' => $attempts
         ]);
+    }
+
+    public function profile($uname){
+        $solver = Solver::where('uname', $uname)->first();
+        $maxrating = Rating::where('uname', $uname)->max('rating');
+        $rank = $this->Rank($solver->rating);
+        $maxrank = $this->Rank($maxrating);
+        $postcount = Post::where('uname', $uname)->count();
+        $correct= Attempts::where('uname', $uname)->where('verdict', 1)->count();
+        $wrong= Attempts::where('uname', $uname)->where('verdict', 0)->count();
+        
+        $allContestRatings = $this->allContestRatings($uname);
+
+        $contestCountArray = $this->printformZeroToTotalContests($uname);
+
+        // $attempted = Attempts::where('uname', $uname)->count();
+
+        // $attempted = Attempts::where('uname', $uname)
+        //     ->distinct('problem_id') // Make the query distinct based on the problem_id column
+        //     ->orderBy('created_at', 'desc')->get(); // Order by created_at in descending order
+
+        $attempts = Attempts::where('attempts.uname', $uname)
+            ->join('problems', 'attempts.p_id', '=', 'problems.p_id')
+            ->select('problems.p_id','problems.title', 'attempts.verdict', 'attempts.created_at')
+            ->orderBy('attempts.created_at', 'desc')
+            ->get();
+        
+        return view('fe.profile',
+        [
+            'uname' => $uname,
+            'solver' => $solver,
+            'maxrating' => $maxrating,
+            'rank' => $rank,
+            'maxrank' => $maxrank,
+            'postcount' => $postcount,
+            'correct' => $correct,
+            'wrong' => $wrong,
+            'contestCountArray' => $contestCountArray,
+            'allContestRatings' => $allContestRatings,
+            'attempts' => $attempts
+        ]);
+
     }
 
     private function allContestRatings($uname)
