@@ -10,4 +10,9 @@ class solver extends Model
     use HasFactory;
     protected $table = 'solvers';
     protected $primaryKey = 'uname';
+
+    public function getRouteKeyName()
+    {
+        return 'username';
+    }
 }

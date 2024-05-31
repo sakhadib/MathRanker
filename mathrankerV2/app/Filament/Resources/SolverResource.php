@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\SolverResource\Pages;
 use App\Filament\Resources\SolverResource\RelationManagers;
 use App\Models\Solver;
+use Faker\Provider\ar_EG\Text;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -36,7 +37,7 @@ class SolverResource extends Resource
         return $table
             ->columns([
                 //
-                TextColumn::make('uname'),
+                TextColumn::make('username'),
                 TextColumn::make('fname'),
                 TextColumn::make('lname'),
                 TextColumn::make('email'),
@@ -47,7 +48,7 @@ class SolverResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                // Tables\Actions\EditAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -68,7 +69,7 @@ class SolverResource extends Resource
         return [
             'index' => Pages\ListSolvers::route('/'),
             'create' => Pages\CreateSolver::route('/create'),
-            'edit' => Pages\EditSolver::route('/{record}/edit'),
+            'edit' => Pages\EditSolver::route('/{record:username}/edit'),
         ];
     }
 }

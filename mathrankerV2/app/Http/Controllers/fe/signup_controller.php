@@ -33,6 +33,7 @@ class signup_controller extends Controller
         $solvers = new Solver;
         $solvers->fname = $request['fname'];
         $solvers->lname = $request['lname'];
+        $solvers->username = $request['uname'];
         $solvers->email = $request['email'];
         $solvers->uname = $request['uname'];
         $solvers->institution = $request['inst'];

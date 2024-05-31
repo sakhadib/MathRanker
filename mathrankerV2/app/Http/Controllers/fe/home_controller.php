@@ -19,13 +19,13 @@ class home_controller extends Controller
         $Contestsct = Contests::count();
 
         $Top_solver = Solver::orderBy('XP', 'desc')->take(3)->get();
+        // $Top_solver = [];
         return view('fe.home',
         [
             'solverct' => $solverct,
             'Problemct' => $Problemct,
             'Contestsct' => $Contestsct,
             'Top_solver' => $Top_solver
-            
         ]
     );
     }
