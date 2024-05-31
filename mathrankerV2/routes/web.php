@@ -65,4 +65,5 @@ Route::get('/about', [about_controller::class, 'index']);
 
 //profile
 Route::get('/profile', [profile_controller::class, 'index']);
+Route::get('/profile/{username}', [profile_controller::class, 'profile']);
 
