@@ -77,41 +77,43 @@
         </div>
     </div>
 
-    <div class="hm-4 vh-80 df dfc jcc aic d-none d-md-block">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 mb-1 text-center">
-              <h1 class="display-1 text-center">LeaderBoard</h1>
-              <p class="lead text-center">Top 3 users of MathRanker</p>
-              <a href="leaderboard.html" class="btn btn-l-outline btn-lg">See Complete LeaderBoard</a>
+    @if($Top_solver->count() > 0)
+        <div class="hm-4 vh-80 df dfc jcc aic d-none d-md-block">
+            <div class="container">
+            <div class="row">
+                <div class="col-12 mb-1 text-center">
+                <h1 class="display-1 text-center">LeaderBoard</h1>
+                <p class="lead text-center">Top 3 users of MathRanker</p>
+                <a href="leaderboard.html" class="btn btn-l-outline btn-lg">See Complete LeaderBoard</a>
+                </div>
             </div>
-          </div>
-          <hr>
-          <div class="vh-10"></div>
-          <div class="row mt-5">
-              <div class="col-md-4 text-center scnd">
-                <h1 class="display-1 l">#2</h1>
-                <h2 class="d">{{ ($Top_solver[1]->fname . ' ' . $Top_solver[1]->lname) ?? '' }}</h2>
-                <p class="lead">{{$Top_solver[1]->institution}}</p>
-              </div>
-              <div class="col-md-4 text-center frst">
-                <h1 class="display-1 l">#1</h1>
-                <h2 class="d">{{ ($Top_solver[0]->fname . ' ' . $Top_solver[0]->lname) ?? '' }}</h2>
-                <p class="lead">{{$Top_solver[0]->institution}}</p>
-              </div>
-              <div class="col-md-4 text-center">
-                <h1 class="display-1 l">#3</h1>
-                <h2 class="d">{{ ($Top_solver[2]->fname . ' ' . $Top_solver[2]->lname) ?? '' }}</h2>
-                <p class="lead">{{$Top_solver[2]->institution}}</p>
-              </div>
-          </div>
-          <div class="row">
-            <div class="col-12 mt-5 text-center">
-              
+            <hr>
+            <div class="vh-10"></div>
+            <div class="row mt-5">
+                <div class="col-md-4 text-center scnd">
+                    <h1 class="display-1 l">#2</h1>
+                    <h2 class="d">{{ ($Top_solver[1]->fname . ' ' . $Top_solver[1]->lname) ?? '' }}</h2>
+                    <p class="lead">{{$Top_solver[1]->institution}}</p>
+                </div>
+                <div class="col-md-4 text-center frst">
+                    <h1 class="display-1 l">#1</h1>
+                    <h2 class="d">{{ ($Top_solver[0]->fname . ' ' . $Top_solver[0]->lname) ?? '' }}</h2>
+                    <p class="lead">{{$Top_solver[0]->institution}}</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h1 class="display-1 l">#3</h1>
+                    <h2 class="d">{{ ($Top_solver[2]->fname . ' ' . $Top_solver[2]->lname) ?? '' }}</h2>
+                    <p class="lead">{{$Top_solver[2]->institution}}</p>
+                </div>
             </div>
-          </div>
+            <div class="row">
+                <div class="col-12 mt-5 text-center">
+                
+                </div>
+            </div>
+            </div>
         </div>
-    </div>
+    @endif
 
     <div class="hm-5 vh-70 df dfc jcc aic">
         <div class="container">
