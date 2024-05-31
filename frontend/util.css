@@ -1,0 +1,189 @@
+/* Flex */
+.df {display: flex;}
+.dfc {flex-direction: column;}
+.dfr {flex-direction: row;}
+.jcfs {justify-content: flex-start;}
+.jcc {justify-content: center;}
+.jcfe {justify-content: flex-end;}
+.jcsb {justify-content: space-between;}
+.jcsa {justify-content: space-around;}
+.aifs {align-items: flex-start;}
+.aic {align-items: center;}
+.aife {align-items: flex-end;}
+.aist {align-items: stretch;}
+.aib {align-items: baseline;}
+.asfs {align-self: flex-start;}
+.asc {align-self: center;}
+.asfe {align-self: flex-end;}
+.asfs {align-self: stretch;}
+.asb {align-self: baseline;}
+.fw {flex-wrap: wrap;}
+.fwn {flex-wrap: nowrap;}
+.fwr {flex-wrap: reverse;}
+.fws {flex-wrap: wrap-reverse;}
+
+/* Grid */
+.gtc {grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));}
+
+/* Heights */
+.vh-100 {min-height: 100vh;}
+.vh-95 {min-height: 95vh;}
+.vh-90 {min-height: 90vh;}
+.vh-85 {min-height: 85vh;}
+.vh-80 {min-height: 80vh;}
+.vh-75 {min-height: 75vh;}
+.vh-70 {min-height: 70vh;}
+.vh-65 {min-height: 65vh;}
+.vh-60 {min-height: 60vh;}
+.vh-55 {min-height: 55vh;}
+.vh-50 {min-height: 50vh;}
+.vh-45 {min-height: 45vh;}
+.vh-40 {min-height: 40vh;}
+.vh-35 {min-height: 35vh;}
+.vh-30 {min-height: 30vh;}
+.vh-25 {min-height: 25vh;}
+.vh-20 {min-height: 20vh;}
+.vh-15 {min-height: 15vh;}
+.vh-10 {min-height: 10vh;}
+.vh-5 {min-height: 5vh;}
+
+/* Widths */
+.w100{width: 100%;}
+
+
+
+/* Forms */
+
+
+.bs{
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+}
+
+.btn-d{
+    background-color: #36449C;
+    color: white;
+}
+
+.btn-d:hover{
+    background-color: #1B75BC;
+    color: white;
+}
+
+.btn-d-outline{
+    background-color: transparent;
+    color: #36449C;
+    border: 1px solid #36449C;
+}
+
+.btn-d-outline:hover{
+    background-color: #36449C;
+    color: white;
+}
+
+.btn-l{
+    background-color: #1B75BC;
+    color: white;
+}
+
+.btn-l:hover{
+    background-color: #36449C;
+    color: white;
+}
+
+.btn-l-outline{
+    background-color: transparent;
+    color: #1B75BC;
+    border: 1px solid #1B75BC;
+}
+
+.btn-l-outline:hover{
+    background-color: #1B75BC;
+    color: rgb(255, 255, 255);
+}
+
+.d{
+    color: #36449C;
+}
+
+.l{
+    color: #1B75BC;
+}
+
+.bg-l{
+    background-color: #1B75BC;
+    color: white;
+}
+
+.bg-d{
+    background-color: #36449C;
+    color: white;
+}
+
+.bg-t{
+    background-color: #e8e8e8;
+}
+
+.link-l{
+    color: #1B75BC;
+}
+
+.link-l:hover{
+    color: #36449C;
+}
+
+.link-d{
+    color: #36449C;
+}
+
+.link-d:hover{
+    color: #1B75BC;
+}
+
+
+
+#dm{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/*! Form */
+
+.form-control{
+    border: none;
+    /* background-color: rgb(235, 235, 235); */
+    border-bottom: 1px solid #cacaca;
+    min-height: 3rem;
+    border-radius: 0;
+}
+
+.form-control:focus{
+    border: none;
+    /* background-color: rgb(235, 235, 235); */
+    /* border-radius: 10px; */
+    box-shadow: none;
+    border-bottom: 1px solid #36449C;
+    /* transition: .1s all ease-in-out; */
+}
+
+.lab{
+    background-color: rgb(235, 235, 235);
+}
+
+
+
+
+
+/* Signup */
+.lbar {
+    background-image: url('rsx/reg.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
