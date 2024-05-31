@@ -9,6 +9,7 @@ use App\Http\Controllers\fe\Allproblem_controller;
 use App\Http\Controllers\fe\indProb_controller;
 use App\Http\Controllers\fe\Post_controller;
 use App\Http\Controllers\fe\Feed_controller;
+use App\Http\Controllers\fe\about_controller;
 
 
 /*
@@ -56,4 +57,8 @@ Route::post('/comment/submit', [post_controller::class, 'commentStore']);
 // Feed
 Route::get('/feed', [Feed_controller::class, 'index']);
 Route::post('/feed', [Feed_controller::class, 'search']);
+
+
+//about
+Route::get('/about', [about_controller::class, 'index']);
 
