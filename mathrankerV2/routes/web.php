@@ -10,6 +10,7 @@ use App\Http\Controllers\fe\indProb_controller;
 use App\Http\Controllers\fe\Post_controller;
 use App\Http\Controllers\fe\Feed_controller;
 use App\Http\Controllers\fe\about_controller;
+use App\Http\Controllers\fe\profile_controller;
 
 
 /*
@@ -61,4 +62,7 @@ Route::post('/feed', [Feed_controller::class, 'search']);
 
 //about
 Route::get('/about', [about_controller::class, 'index']);
+
+//profile
+Route::get('/profile', [profile_controller::class, 'index']);
 
