@@ -20,7 +20,7 @@
             <p class="lead text-center">
                 "Where Math Meets Passion: Join the Equation at MathRanker!"
             </p>
-            <p class="fs-6">Welcome to MathRanker – where math enthusiasts thrive! Our platform offers engaging contests, challenging problems, and a vibrant community to connect with globally. We're dedicated to inspiring and empowering users to explore the beauty of mathematics. With inclusive features like contests, forums, and personalized suggestions, we foster growth and recognition. Join our diverse community today, whether you're a seasoned mathematician or just starting your journey. Let's redefine math aficionados together – join MathRanker and embark on an exciting journey of discovery and growth!</p>
+            <p class="fs-6">Welcome to MathRanker – where math lovers unite! Our platform provides interesting challenges, exciting competitions, and a vibrant global community to interact with. Our goal is to pique people' interest and encourage them to explore the wonders of mathematics. We foster learning and enjoyment with interactive features like competitions, discussion boards, and personalized recommendations. Whether you're a novice or an experienced mathematician, come and interact with our lively community now. Together, let's redefine math fans! Sign up for MathRanker and start your exciting adventure of discovery and progress.</p>
         </div>
        </div>
     </div>
@@ -123,7 +123,7 @@ At MathRanker, we're dedicated to inspiring a love for mathematics and empowerin
                 <a href="https://www.linkedin.com/in/tahsin-islam-3a8182280/"><i class="bi bi-linkedin"></i></a>
                 <a href="https://www.instagram.com/tahsinrayshad/"><i class="bi bi-instagram"></i></a>
                 <a href="https://github.com/tahsin11rayshad"><i class="bi bi-github"></i></a>
-               <p class="fs-6"> An Software Engineering student of Islamic University of Technology and developer of MathRanker.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a urna vitae eros dictum consectetur eget eget felis.  </p>
+               <p class="fs-6">A Software Engineering student of Islamic University of Technology and the visionary developer behind MathRanker, where the magic of coding meets the beauty of mathematics!</p>
             </div>
            </div>
         </div>
@@ -140,7 +140,7 @@ At MathRanker, we're dedicated to inspiring a love for mathematics and empowerin
                 <a href="https://www.linkedin.com/in/sakhadib/"><i class="bi bi-linkedin"></i></a>
                 <a href="https://www.instagram.com/adib_sakhawat/"><i class="bi bi-instagram"></i></a>
                 <a href="https://github.com/sakhadib"><i class="bi bi-github"></i></a>
-               <p class="fs-6"> An Software Engineering student of Islamic University of Technology and developer of MathRanker.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a urna vitae eros dictum consectetur eget eget felis.  </p>
+               <p class="fs-6"> A Software Engineering student of Islamic University of Technology and the visionary developer behind MathRanker, where the magic of coding meets the beauty of mathematics!</p>
             </div>
            </div>
         </div>
@@ -157,12 +157,13 @@ At MathRanker, we're dedicated to inspiring a love for mathematics and empowerin
                 <a href="https://www.linkedin.com/in/takia-farhin-70aa4b256/"><i class="bi bi-linkedin"></i></a>
                 <a href="https://www.instagram.com/farhinlabiba/"><i class="bi bi-instagram"></i></a>
                 <a href="https://github.com/Takia03"><i class="bi bi-github"></i></a>
-               <p class="fs-6"> An Software Engineering student of Islamic University of Technology and developer of MathRanker.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a urna vitae eros dictum consectetur eget eget felis.</p>
+               <p class="fs-6"> A Software Engineering student of Islamic University of Technology and the visionary developer behind MathRanker, where the magic of coding meets the beauty of mathematics!</p>
             </div>
            </div>
         </div>
       </div>
     </div>
+    <div class="vh-10"></div>
 </div> 
 
 

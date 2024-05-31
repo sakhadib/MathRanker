@@ -105,28 +105,31 @@
                 <div class="container mt-2">
                     <div class="row">
                         <div class="col mt-4">
-                            <table id="stable" class="table table-striped" style="width:100%">
-                                <thead>
-                                    <tr>
-                                        <th>Sl</th>
-                                        <th>Problem</th>
-                                        <th>Verdict</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                     
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Archimedis on the run</td>
-                                        <td>Accepted</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Archimedis on the run</td>
-                                        <td>Accepted</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            
+                            <table  id="stable" class="table table-striped" style="width:100%">
+                          <thead>
+                              <tr>
+                                    <th>Problem</th>
+                                    <th>Verdict</th>
+                                    <th>Time</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              @foreach ($attempts as $att)
+                                  <tr>
+                                      <td><a href="/problem/{{$att->p_id}}">{{ $att->title }}</a></td> <!-- Access the name property of the prob object -->
+                                      <td>
+                                        @if($att->verdict == 1)
+                                        <span class="badge bg-success" >Accepted</span>
+                                        @else
+                                        <span class="badge bg-danger">Wrong Answer</span>
+                                        @endif
+                                    </td> <!-- Assuming max XP is always 100 -->
+                                      <td>{{ $att->created_at }}</td> <!-- Display the XP -->
+                                  </tr>
+                              @endforeach
+                          </tbody>
+                      </table>
                         </div>
                     </div>
                 </div>
@@ -170,10 +173,14 @@
     new Chart(prog_chart, {
         type: 'line',
         data: {
-            labels: [1, 2, 3, 4, 5, 6, 7, 8],
+            labels: [<?php 
+                        echo $contestCountArray; 
+                    ?>],
             datasets: [{
                 label: 'Progress',
-                data: [453, 342, 765, 877, 982, 823, 912, 920],
+                data: [<?php 
+                        echo $allContestRatings; 
+                    ?>],
                 fill: true,
                 borderColor: '#1B75BC',
                 tension: 0.1
