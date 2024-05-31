@@ -36,7 +36,7 @@ class SolverResource extends Resource
         return $table
             ->columns([
                 //
-                TextColumn::make('uname'),
+                TextColumn::make('username'),
                 TextColumn::make('fname'),
                 TextColumn::make('lname'),
                 TextColumn::make('email'),
@@ -48,6 +48,7 @@ class SolverResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                // Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

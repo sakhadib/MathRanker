@@ -91,19 +91,19 @@
             <div class="vh-10"></div>
             <div class="row mt-5">
                 <div class="col-md-4 text-center scnd">
-                    <h1 class="display-1 l">#2</h1>
-                    <h2 class="d">{{ ($Top_solver[1]->fname . ' ' . $Top_solver[1]->lname) ?? '' }}</h2>
+                    <h1 class="display-1 d">#2</h1>
+                    <h2 class="d"><a class="link-l" href="/profile/{{$Top_solver[1]->username}}">{{$Top_solver[1]->username}}</a></h2>
                     <p class="lead">{{$Top_solver[1]->institution}}</p>
                 </div>
                 <div class="col-md-4 text-center frst">
-                    <h1 class="display-1 l">#1</h1>
-                    <h2 class="d">{{ ($Top_solver[0]->fname . ' ' . $Top_solver[0]->lname) ?? '' }}</h2>
-                    <p class="lead">{{$Top_solver[0]->institution}}</p>
+                    <h1 class="display-1 d">#1</h1>
+                    <h2 class="d"><a class="link-l" href="/profile/{{$Top_solver[0]->username}}">{{$Top_solver[0]->username}}</a></h2>
+                    <p class="lead">{{$Top_solver[1]->institution}}</p>
                 </div>
                 <div class="col-md-4 text-center">
-                    <h1 class="display-1 l">#3</h1>
-                    <h2 class="d">{{ ($Top_solver[2]->fname . ' ' . $Top_solver[2]->lname) ?? '' }}</h2>
-                    <p class="lead">{{$Top_solver[2]->institution}}</p>
+                    <h1 class="display-1 d">#3</h1>
+                    <h2 class="d"><a class="link-l" href="/profile/{{$Top_solver[2]->username}}">{{$Top_solver[2]->username}}</a></h2>
+                    <p class="lead">{{$Top_solver[1]->institution}}</p>
                 </div>
             </div>
             <div class="row">
