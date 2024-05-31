@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Columns\TextColumn;
 
 class ContestsResource extends Resource
 {
@@ -23,7 +24,20 @@ class ContestsResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('c_id')
+                    ->required(),
+                Forms\Components\TextInput::make('title')
+                    ->required()
+                    ->placeholder('Enter the title of the contest'),
+                Forms\Components\Textarea::make('description')
+                    ->required()
+                    ->placeholder('Enter the description of the contest'),
+                Forms\Components\DateTimePicker::make('start_time')
+                    ->required()
+                    ->placeholder('Enter the start time of the contest'),
+                Forms\Components\DateTimePicker::make('end_time')
+                    ->required()
+                    ->placeholder('Enter the end time of the contest'),
             ]);
     }
 
@@ -31,7 +45,15 @@ class ContestsResource extends Resource
     {
         return $table
             ->columns([
-                //
+               
+               
+                TextColumn::make('c_id'), 
+                TextColumn::make('title'),
+                TextColumn::make('description'),
+                TextColumn::make('start_time'),
+                TextColumn::make('end_time'),
+
+
             ])
             ->filters([
                 //
