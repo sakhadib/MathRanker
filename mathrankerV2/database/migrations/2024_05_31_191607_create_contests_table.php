@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('contests', function (Blueprint $table) {
-            $table->string('c_id', 100)->primary();
-            $table->string('title', 100);
-            $table->string('description', 255);
+            $table->id();
+            $table->string('title');
+            $table->text('description');
             $table->dateTime('start_time');
             $table->dateTime('end_time');
             $table->timestamps();

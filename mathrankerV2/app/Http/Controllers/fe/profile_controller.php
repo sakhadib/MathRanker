@@ -39,8 +39,8 @@ class profile_controller extends Controller
         //     ->orderBy('created_at', 'desc')->get(); // Order by created_at in descending order
 
         $attempts = Attempts::where('attempts.uname', $uname)
-            ->join('problems', 'attempts.p_id', '=', 'problems.p_id')
-            ->select('problems.p_id','problems.title', 'attempts.verdict', 'attempts.created_at')
+            ->join('problems', 'attempts.p_id', '=', 'problems.id')
+            ->select('problems.id','problems.title', 'attempts.verdict', 'attempts.created_at')
             ->orderBy('attempts.created_at', 'desc')
             ->get();
         
@@ -61,6 +61,11 @@ class profile_controller extends Controller
     }
 
     public function profile($uname){
+        if (session('uname')) {
+            if (session('uname') == $uname) {
+                return redirect('/profile');
+            }
+        }
         $solver = Solver::where('uname', $uname)->first();
         $maxrating = Rating::where('uname', $uname)->max('rating');
         $rank = $this->Rank($solver->rating);
@@ -80,8 +85,8 @@ class profile_controller extends Controller
         //     ->orderBy('created_at', 'desc')->get(); // Order by created_at in descending order
 
         $attempts = Attempts::where('attempts.uname', $uname)
-            ->join('problems', 'attempts.p_id', '=', 'problems.p_id')
-            ->select('problems.p_id','problems.title', 'attempts.verdict', 'attempts.created_at')
+            ->join('problems', 'attempts.p_id', '=', 'problems.id')
+            ->select('problems.id','problems.title', 'attempts.verdict', 'attempts.created_at')
             ->orderBy('attempts.created_at', 'desc')
             ->get();
         

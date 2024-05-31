@@ -18,20 +18,19 @@ class ContestsResource extends Resource
 {
     protected static ?string $model = Contests::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-s-book-open';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('c_id')
-                    ->required(),
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->placeholder('Enter the title of the contest'),
-                Forms\Components\Textarea::make('description')
+                Forms\Components\TextInput::make('description')
                     ->required()
-                    ->placeholder('Enter the description of the contest'),
+                    ->placeholder('Contest Division')
+                    ->label('Division'),
                 Forms\Components\DateTimePicker::make('start_time')
                     ->required()
                     ->placeholder('Enter the start time of the contest'),
@@ -47,7 +46,7 @@ class ContestsResource extends Resource
             ->columns([
                
                
-                TextColumn::make('c_id'), 
+                TextColumn::make('id'), 
                 TextColumn::make('title'),
                 TextColumn::make('description'),
                 TextColumn::make('start_time'),

@@ -12,7 +12,7 @@ class indProb_controller extends Controller
 {
     public function index($pid)
     {
-        $Prob = Prob::where('p_id', $pid)->first();
+        $Prob = Prob::where('id', $pid)->first();
         $TotalAttempts = Attempts::where('p_id', $pid)->count();
         $myAttCount = Attempts::where('p_id', $pid)->where('uname', session('uname'))->count();
         $SuccessCount = Attempts::where('p_id', $pid)->where('verdict', 1)->count();
@@ -50,7 +50,7 @@ class indProb_controller extends Controller
             return redirect('/login')->with('error', 'Please login to submit your answer.');
         }
 
-        $Prob = Prob::where('p_id', $pid)->first();
+        $Prob = Prob::where('id', $pid)->first();
         
 
         try{
@@ -78,6 +78,7 @@ class indProb_controller extends Controller
             $attempt->p_id = $pid;
             $attempt->verdict = $verdict;
             $attempt->xp = $xp;
+
             $attempt->save();
             return redirect('/problem/'.$pid)->with('success', 'Submission successful.');
         }

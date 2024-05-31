@@ -14,13 +14,12 @@ return new class extends Migration
         Schema::create('ratings', function (Blueprint $table) {
             $table->id();
             $table->string('uname');
-            $table->string('c_id');
+            $table->unsignedBigInteger('c_id');  // Use the correct data type for the foreign key
             $table->integer('rating');
             $table->foreign('uname')->references('uname')->on('solvers')->onDelete('cascade');
-            $table->foreign('c_id')->references('c_id')->on('contests')->onDelete('cascade');
+            $table->foreign('c_id')->references('id')->on('contests')->onDelete('cascade');  // Correct foreign key reference
             $table->timestamps();
         });
-        
     }
 
     /**
@@ -31,3 +30,4 @@ return new class extends Migration
         Schema::dropIfExists('ratings');
     }
 };
+

@@ -9,5 +9,10 @@ class Attempts extends Model
 {
     use HasFactory;
     protected $table = 'attempts';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'c_id';
+
+    public function getRouteKeyName()
+    {
+        return 'c_id';
+    }
 }
