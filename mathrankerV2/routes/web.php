@@ -14,6 +14,7 @@ use App\Http\Controllers\fe\profile_controller;
 use App\Http\Controllers\fe\leaderboard_controller;
 use App\Http\Controllers\mail\mail_controller;
 use App\Http\Controllers\mail\verify_controller;
+use App\Http\Controllers\fe\allContest_controller;
 
 
 /*
@@ -78,3 +79,8 @@ Route::get('/leaderboard', [leaderboard_controller::class, 'index']);
 Route::get('/leaderboard/{username}', [leaderboard_controller::class, 'profile']);
 
 
+// Contests
+Route::get('/contests', [allContest_controller::class, 'index']);
+Route::get('/allcontest', [allContest_controller::class, 'allcontest']);
+Route::get('/cr/{contest_id}', [allContest_controller::class, 'registerPage']);
+Route::post('/registerContest', [allContest_controller::class, 'register']);
