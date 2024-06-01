@@ -53,7 +53,7 @@
                                         @elseif($item->status == 0)
                                             <span class="badge bg-danger">Unsolved</span>
                                         @else
-                                            <span class="badge bg-secondary">Pending</span>
+                                            <span class="badge bg-secondary">Not Attempted</span>
                                         @endif
                                       </td> <!-- Display status based on user success flag -->
                                   </tr>

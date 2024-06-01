@@ -12,6 +12,9 @@ use App\Http\Controllers\fe\Feed_controller;
 use App\Http\Controllers\fe\about_controller;
 use App\Http\Controllers\fe\profile_controller;
 use App\Http\Controllers\fe\leaderboard_controller;
+use App\Http\Controllers\mail\mail_controller;
+use App\Http\Controllers\mail\verify_controller;
+use App\Http\Controllers\fe\allContest_controller;
 
 
 /*
@@ -31,6 +34,9 @@ Route::get('/', [home_controller::class, 'index']);
 // Signup
 Route::get('/signup', [signup_controller::class, 'index']);
 Route::post('/signup', [signup_controller::class, 'signup']);
+Route::get('/verify/{uname}', [mail_controller::class, 'index']);
+Route::get('/verification/{uname}', [verify_controller::class, 'index']);
+Route::post('/verification/{uname}', [verify_controller::class, 'verify']);
 
 // Login
 Route::get('/login', [login_controller::class, 'index']);
@@ -73,3 +79,8 @@ Route::get('/leaderboard', [leaderboard_controller::class, 'index']);
 Route::get('/leaderboard/{username}', [leaderboard_controller::class, 'profile']);
 
 
+// Contests
+Route::get('/contests', [allContest_controller::class, 'index']);
+Route::get('/allcontest', [allContest_controller::class, 'allcontest']);
+Route::get('/cr/{contest_id}', [allContest_controller::class, 'registerPage']);
+Route::post('/registerContest', [allContest_controller::class, 'register']);

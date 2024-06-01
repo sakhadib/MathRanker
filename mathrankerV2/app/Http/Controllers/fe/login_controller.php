@@ -10,6 +10,9 @@ class login_controller extends Controller
 {
     public function index()
     {
+        if(session('isLoggedIn')){
+            return redirect('/problems');
+        }
         return view('fe.login');
     }
 
@@ -24,7 +27,10 @@ class login_controller extends Controller
 
         $solver = Solver::where('uname', $uname)->where('password', $password)->first();
 
-        if($solver){        
+        if($solver){
+            if($solver->isVerified != "yes"){
+                return redirect('/verification/'.$uname);
+            }
             session(['uname' => $uname]);
             session(['isLoggedIn' => true]);
             return redirect('/problems');
