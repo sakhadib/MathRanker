@@ -12,7 +12,12 @@ use App\Http\Controllers\fe\Feed_controller;
 use App\Http\Controllers\fe\about_controller;
 use App\Http\Controllers\fe\profile_controller;
 use App\Http\Controllers\fe\leaderboard_controller;
+
 use App\Http\Controllers\fe\homeii_controller;
+
+use App\Http\Controllers\mail\mail_controller;
+use App\Http\Controllers\mail\verify_controller;
+
 
 
 /*
@@ -32,6 +37,9 @@ Route::get('/', [home_controller::class, 'index']);
 // Signup
 Route::get('/signup', [signup_controller::class, 'index']);
 Route::post('/signup', [signup_controller::class, 'signup']);
+Route::get('/verify/{uname}', [mail_controller::class, 'index']);
+Route::get('/verification/{uname}', [verify_controller::class, 'index']);
+Route::post('/verification/{uname}', [verify_controller::class, 'verify']);
 
 // Login
 Route::get('/login', [login_controller::class, 'index']);
