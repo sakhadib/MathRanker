@@ -10,6 +10,10 @@ use App\Models\Post_Tag;
 use App\Models\Comment;
 use App\Models\Vote;
 
+
+
+use Illuminate\Http\JsonResponse;
+
 class Post_controller extends Controller
 {
     public function index($post_id)

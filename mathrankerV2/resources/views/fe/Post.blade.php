@@ -59,14 +59,14 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <form action="{{url('/')}}/comment/submit" method="POST">
-                        @csrf
-                        <input type="text" name="post_id" value="{{$post->id}}" readonly hidden>
-                        <div class="mb-3">
-                            <textarea name="comment" placeholder="Write a comment. You can use LATEX notation in the comment..." class="form-control post-content-white p-4" id="typed-math" rows="5"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-d mb-5"><i class="uil uil-message"></i> Submit</button>
-                    </form>
+                <form action="{{ url('/comment/submit') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="post_id" value="{{ $post->id }}">
+                    <div class="mb-3">
+                        <textarea name="comment" placeholder="Write a comment. You can use LATEX notation in the comment..." class="form-control post-content-white p-4" id="typed-math" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-d mb-5"><i class="uil uil-message"></i> Submit</button>
+                </form>
                 </div>
                 <div class="col-md-6">
                     <div class="card  bs mb-4">
@@ -168,4 +168,30 @@
     document.getElementById('typed-math').addEventListener('input', updateMathPreview);
 </script>
 
+<script>
+    // JavaScript code to handle upvoting without page reload
+    $(document).ready(function(){
+        $('.upvote-btn').click(function(e){
+            e.preventDefault(); // Prevent default link behavior
+            var post_id = $(this).data('post-id');
+            $.ajax({
+                type: 'POST',
+                url: '/post/' + post_id + '/upvote',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Include CSRF token
+                },
+                success: function(data){
+                    // Update UI to reflect upvote
+                    console.log('Upvoted successfully');
+                },
+                error: function(xhr, status, error){
+                    console.error('Error upvoting:', error);
+                }
+            });
+        });
+    });
+
+</script>
+
+    
 @endsection

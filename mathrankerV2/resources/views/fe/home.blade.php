@@ -98,7 +98,7 @@
                 <div class="col-md-4 text-center frst">
                     <h1 class="display-1 d">#1</h1>
                     <h2 class="d"><a class="link-l" href="/profile/{{$Top_solver[0]->username}}">{{$Top_solver[0]->username}}</a></h2>
-                    <p class="lead">{{$Top_solver[1]->institution}}</p>
+                    <p class="lead">{{$Top_solver[0]->institution}}</p>
                 </div>
                 <div class="col-md-4 text-center">
                     <h1 class="display-1 d">#3</h1>
