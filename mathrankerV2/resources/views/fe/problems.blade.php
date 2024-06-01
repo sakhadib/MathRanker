@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="display-1 text-center">Problems</h1>
+                <h1 class="display-3 text-center">{{$contest_title}}</h1>
                 <p class="lead text-center">Solve the problems you haven't solved yet. gain XP points and showcase your profile</p>
                 <hr>
             </div>
@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <table data-order='[[3, "asc"]]' data-page-length='25' id="stable" class="table table-striped" style="width:100%">
+                        <table data-order='[[0, "asc"]]' data-page-length='25' id="stable" class="table table-striped" style="width:100%">
                           <thead>
                               <tr>
                                   <th>#</th>

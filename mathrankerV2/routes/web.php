@@ -84,3 +84,4 @@ Route::get('/contests', [allContest_controller::class, 'index']);
 Route::get('/allcontest', [allContest_controller::class, 'allcontest']);
 Route::get('/cr/{contest_id}', [allContest_controller::class, 'registerPage']);
 Route::post('/registerContest', [allContest_controller::class, 'register']);
+Route::get('/contest/{contest_id}', [Allproblem_controller::class, 'contestProblems']);

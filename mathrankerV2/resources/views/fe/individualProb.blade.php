@@ -6,10 +6,14 @@
             <div class="vh-10"></div>
         <div class="container mb-5">
             <div class="row">
-                <div class="col-12">
+                <div class="col-md-8">
                     <h3 class="display-5 d">{{$Prob->title}}</h3>
-                    <p class="lead">Created at <code>{{$created}}</code> For Contest <code>{{$Prob->c_id}}</code></p>
+                    <p class="lead">Created at <code>{{$created}}</code> For Contest <code><a href="/contest/{{$Prob->c_id}}" class="link-l">{{$contest->title}}</a></code></p>
                     <hr>
+                </div>
+                <div class="col-md-4 df dfc jcc aife">
+                    <p class="lead" style="margin-bottom:0">Time Remaining</p>
+                    <h1 class="display-5">00:00:00</h1>
                 </div>
             </div>
             <div class="row">

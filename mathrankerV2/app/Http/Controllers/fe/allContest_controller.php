@@ -14,7 +14,7 @@ class allContest_controller extends Controller
 {
     public function index()
     {
-        $currentTime = Carbon::now();
+        $currentTime = Carbon::now()->addHours(6);
 
         $ContestArray = Contests::where('end_time', '>', $currentTime)->get();
         // $ContestArray = Contests::where('end_time', '>', $currentTime)->orderBy('end_time', 'asc')->get();

@@ -9,18 +9,31 @@ use App\Models\tags;
 use App\Models\Attempts;
 use App\Models\solver;
 use Carbon\Carbon;
+use App\Models\Contests;
 
 class indProb_controller extends Controller
 {
     public function index($pid)
     {
         $Prob = Prob::where('id', $pid)->first();
+
+        $contest = Contests::where('id', $Prob->c_id)->first();
+        $start_time = Carbon::parse($contest->start_time);
+        $start_time->subHours(6);
+
+        // die($start_time);
+
+        if($start_time->isFuture()){
+            return redirect('/problems');
+        }
+
         $TotalAttempts = Attempts::where('p_id', $pid)->count();
         $myAttCount = Attempts::where('p_id', $pid)->where('uname', session('uname'))->count();
         $SuccessCount = Attempts::where('p_id', $pid)->where('verdict', 1)->count();
         $gainedxp = $this->gainedXP($pid, session('uname'));
         $availableXP = $this->getAvailableXP($pid, $Prob->max_xp, session('uname'));
         $status = $this->getStatus($availableXP, $Prob->max_xp);
+        $contest = Contests::where('id', $Prob->c_id)->first();
 
         $gainedxp = round($gainedxp, 2);
         $availableXP = round($availableXP, 2);
@@ -39,7 +52,8 @@ class indProb_controller extends Controller
                     'myAttCount' => $myAttCount,
                     'gainedxp' => $gainedxp,
                     'status' => $status,
-                    'availableXP' => $availableXP
+                    'availableXP' => $availableXP,
+                    'contest' => $contest
                 ]
             );
         }
