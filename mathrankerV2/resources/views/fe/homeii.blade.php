@@ -24,7 +24,7 @@
     </div>
 
 
-    <div class="container">
+    <div class="container-fluid bg-ll">
         <div class="row" id="statelem">
             <div class="col-12">
                 <div class="container">
@@ -104,6 +104,7 @@
         </div>
     </div>
 
+    <!-- Practice -->
     <div class="hm-3 vh-90 df dfc jcc aic">
         <div class="container">
             <div class="row d-lg-none d-md-none mb-4">
@@ -114,7 +115,7 @@
             <div class="row ">
                 <div class="col-md-6">
                 <h1 class="display-1 d">Practice and improve your math skills</h1>
-                    <p class="lead">MathRanker is a platform to practice and improve your math skills. You can practice questions, participate in contests and improve your math skills.</p>
+                    <p class="lead" style="font-size: 22px;">MathRanker is a platform to practice and improve your math skills. You can practice questions, participate in contests and improve your math skills.</p>
                     <a href="problems.html" class="btn btn-l-outline btn-lg">See Problems</a>
                 </div>
                 <div class="col-md-6 df aic jcc">
@@ -124,6 +125,7 @@
         </div>
     </div>
 
+    <!-- Contest -->
     <div class="hm-2 vh-80 df dfc jcc aic">
         <div class="container">
             <div class="row">
@@ -139,6 +141,71 @@
         </div>
     </div>
 
+
+    @if($Top_solver->count() > 0)
+        <div class="hm-2 vh-90">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-12" style="background-color: brown;">
+                        <p class="lead text-center" style="font-size: 28px;">Top <span class="l" style="font-weight: 600;">3</span> users of MathRanker</p>
+                        <hr>
+                        <div class="container">
+                            <div class="row df jcc aic">
+                                <div class="col-4">
+                                    <h1 class="display-1 d">#1</h1>
+                                </div>
+                                <div class="col-8">
+                                    <h2 class="d"><a class="link-l" href="/profile/{{$Top_solver[0]->username}}">{{$Top_solver[0]->username}}</a></h2>
+                                    <p class="lead" style="font-size: 22px;">{{$Top_solver[0]->institution}}</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row df jcc aic" style="background-color: powderblue">
+                                <div class="col-4">
+                                    <h1 class="display-1 d">#2</h1>
+                                </div>
+                                <div class="col-8">
+                                    <h2 class="d"><a class="link-l" href="/profile/{{$Top_solver[1]->username}}">{{$Top_solver[1]->username}}</a></h2>
+                                    <p class="lead" style="font-size: 22px;">{{$Top_solver[1]->institution}}</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row df jcc aic">
+                                <div class="col-4">
+                                    <h1 class="display-1 d">#3</h1>
+                                </div>
+                                <div class="col-8">
+                                    <h2 class="d"><a class="link-l" href="/profile/{{$Top_solver[2]->username}}">{{$Top_solver[2]->username}}</a></h2>
+                                    <p class="lead" style="font-size: 22px;">{{$Top_solver[2]->institution}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-none d-md-flex col-12 vh-80 df dfc jcc aic">
+                        <img src="rsx/home_1.svg" alt="" style="width: 600px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
+
+
+    
+    <div class="hm-2 vh-80 df dfc jcc aic">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 df aic mt-5 mb-5">
+                    <img src="rsx/community.svg" alt="" style="width: 400px;">
+                </div>
+                <div class="col-md-6">
+                    <h1 class="display-1 d">Get help from the community</h1>
+                    <p class="lead">You can ask questions, answer questions and help others. You can also discuss about math problems and solutions. You can also share your knowledge with others.</p>
+                    <a href="community.html" class="btn btn-l-outline btn-lg">See Community</a>
+                </div>
+            </div>
+        </div>
+    </div>
 <style>
     .stata-box {
         min-height: 30vh;
@@ -166,6 +233,10 @@
 
     .ttxt{
         font-size: 24px;
+    }
+
+    .bg-ll{
+        background-color: rgba(27,117,188, 0.1);
     }
 </style>
 
