@@ -28,6 +28,8 @@ class signup_controller extends Controller
             'uname.unique' => 'The username has already been taken.',
             'password.min' => 'The password must be at least 8 characters long.'
         ]);
+
+        $OTP = $this->OTP();
     
         // If validation passes, proceed to save the new user
         $solvers = new Solver;
@@ -39,8 +41,14 @@ class signup_controller extends Controller
         $solvers->institution = $request['inst'];
         $solvers->country = $request['country'];
         $solvers->password = md5($request['password']);
+        $solvers->isVerified = $OTP;
         $solvers->save();
     
-        return redirect('/login');
+        return redirect('/verify/'.$request['uname']);
+    }
+
+    private function OTP(){
+        $RandomOTP = rand(100000,999999);
+        return $RandomOTP;
     }
 }
