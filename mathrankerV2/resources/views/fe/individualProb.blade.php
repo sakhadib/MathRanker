@@ -12,8 +12,8 @@
                     <hr>
                 </div>
                 <div class="col-md-4 df dfc jcc aife">
-                    <p class="lead" style="margin-bottom:0">Time Remaining</p>
-                    <h1 class="display-5">00:00:00</h1>
+                    <p class="lead" id="woops" style="margin-bottom:0">Time Remaining</p>
+                    <h1 class="display-5" id="time">00:00:00</h1>
                 </div>
             </div>
             <div class="row">
@@ -100,6 +100,37 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    // Use the PHP variable to set the end time
+    var endTime = new Date("<?php echo $end_time->toIso8601String(); ?>");
+
+    // Function to update the countdown
+    function updateCountdown() {
+        var now = new Date();
+        var timeRemaining = endTime - now;
+
+        if (timeRemaining >= 0) {
+            var hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+            var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.getElementById("time").innerText = 
+                String(hours).padStart(2, '0') + ":" + 
+                String(minutes).padStart(2, '0') + ":" + 
+                String(seconds).padStart(2, '0');
+        } else {
+            document.getElementById("time").innerText = "Contest Over!";
+            document.getElementById("woops").innerText = "Woops!";
+            clearInterval(timerInterval);
+        }
+    }
+
+    // Update the countdown every second
+    var timerInterval = setInterval(updateCountdown, 1000);
+    updateCountdown(); // initial call to set the correct time immediately
+</script>
       
 @endsection
 

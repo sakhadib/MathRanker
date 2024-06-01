@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="display-1 text-center">Standing</h1>
+                <h1 class="display-3 text-center">{{$contest->title}} Standing</h1>
                 <p class="lead text-center">See Your Position in the list. search by your name in the search bar</p>
                 <hr>
             </div>
@@ -20,39 +20,26 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <table data-order='[[3, "asc"]]' data-page-length='25' id="stable" class="table table-striped" style="width:100%">
+                        <table data-order='[[3, "asc"]]' data-page-length='100' id="stable" class="table table-striped" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>username</th>
-                                    <th>A</th>
-                                    <th>B</th>
-                                    <th>C</th>
-                                    <th>D</th>
-                                    <th>E</th>
-                                    <th>F</th>
-                                    <th>G</th>
-                                    <th>H</th>
-                                    <th>I</th>
-                                    <th>J</th>
+                                    <th>Solve Count</th>
+                                    <th>Total Attempts</th>
+                                    <th>Total Penalty</th>
+                                    <th>Total Gained Xp (in contest)</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                 
+                                @foreach($ModifiedAttemptArray as $item)   
                                 <tr>
-                                    <td>1</td>
-                                    <td>Adib</td>
-                                    <td>-2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                    <td>8</td>
-                                    <td>9</td>
-                                    <td>10</td>
-                                    <td>11</td>
+                                    <td><span class="badge bg-l">{{$item->rate}} </span> <a href="/profile/{{$item->user}}" class="link-l">{{$item->user}}</a></td>
+                                    <td>{{$item->SolveCount}}</td>
+                                    <td>{{$item->totalAttempt}}</td>
+                                    <td>{{$item->totalPenalty}}</td>
+                                    <td>{{$item->totalXP}}</td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>   

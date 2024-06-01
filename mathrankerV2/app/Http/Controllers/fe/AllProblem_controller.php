@@ -21,6 +21,8 @@ class AllProblem_controller extends Controller
         $modifiedProbArray = [];
 
 
+
+
         foreach ($Prob_array as $prob) {
             
             $successCount = Attempts::where('p_id', $prob->id)->where('verdict', 1)->count();
@@ -49,9 +51,14 @@ class AllProblem_controller extends Controller
 
         $contest_title = 'All Problems';
 
+        $isContestPage = false;
+        $end_Time = Carbon::now()->addHours(6);
+
         return view('fe.problems', [
             'modifiedProbArray' => $modifiedProbArray,
-            'contest_title' => $contest_title
+            'contest_title' => $contest_title,
+            'isContestPage' => $isContestPage,
+            'end_Time' => $end_Time
         ]);
     }
 
@@ -62,6 +69,11 @@ class AllProblem_controller extends Controller
             return redirect('/login');
         }
         $contest = Contests::where('id', $cid)->first();
+
+        if(!$contest){
+            return redirect('/contests');
+        }
+
         $end_Time = Carbon::parse($contest->end_time);
         $end_Time->subHours(6);
 
@@ -100,12 +112,19 @@ class AllProblem_controller extends Controller
 
             $modifiedProbArray[] = $modifiedProb;
         }
-
+        $contest_title_2 = $contest_title;
         $contest_title = "Contest: $contest_title";
+        
+
+        $isContestPage = true;
 
         return view('fe.problems', [
             'modifiedProbArray' => $modifiedProbArray,
-            'contest_title' => $contest_title
+            'contest_title' => $contest_title,
+            'isContestPage' => $isContestPage,
+            'end_Time' => $end_Time,
+            'contest_title_2' => $contest_title_2,
+            'contest' => $contest
         ]);
 
 

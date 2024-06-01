@@ -76,7 +76,7 @@ Route::get('/profile/{username}', [profile_controller::class, 'profile']);
 
 // Leaderboard
 Route::get('/leaderboard', [leaderboard_controller::class, 'index']);
-Route::get('/leaderboard/{username}', [leaderboard_controller::class, 'profile']);
+Route::get('/contest/leaderboard/{cid}', [leaderboard_controller::class, 'contestLeaderBoard']);
 
 
 // Contests

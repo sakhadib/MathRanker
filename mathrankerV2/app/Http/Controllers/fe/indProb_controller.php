@@ -21,6 +21,8 @@ class indProb_controller extends Controller
         $start_time = Carbon::parse($contest->start_time);
         $start_time->subHours(6);
 
+        $end_time = Carbon::parse($contest->end_time)->subHours(6);
+
         // die($start_time);
 
         if($start_time->isFuture()){
@@ -53,7 +55,8 @@ class indProb_controller extends Controller
                     'gainedxp' => $gainedxp,
                     'status' => $status,
                     'availableXP' => $availableXP,
-                    'contest' => $contest
+                    'contest' => $contest,
+                    'end_time' => $end_time
                 ]
             );
         }
@@ -92,6 +95,16 @@ class indProb_controller extends Controller
                 $xp = 0;
             }
 
+            $contest = Contests::where('id', $Prob->c_id)->first();
+            $start_time = Carbon::parse($contest->start_time);
+            $end_time = Carbon::parse($contest->end_time);
+            if($start_time->isPast() && $end_time->isFuture()){
+                $penalty = $start_time->diffInMinutes(now());
+            }
+            else{
+                $penalty = 0;
+            }
+
             $attempt = new Attempts;
             $attempt->uname = $uname;
             $attempt->p_id = $pid;
@@ -100,7 +113,7 @@ class indProb_controller extends Controller
             $attempt->penalty = 0;
             $attempt->xp = $xp;
             $attempt->save();
-
+            $attempt->penalty = $penalty;
             $Solver = solver::where('uname', $uname)->first();
             $Solver->xp += $xp;
             $Solver->save();
@@ -112,28 +125,7 @@ class indProb_controller extends Controller
         }
     }
 
-    // private function calculatePenalty($pid, $uname){
-    //     // Retrieve the current time
-    //     $current_time = Carbon::now();
-
-    //     // Retrieve contest times and verdict from database or configuration
-    //     $contest_start_time = Carbon::parse(config('contest.start_time')); // Assuming the contest start time is stored in the config
-    //     $contest_end_time = Carbon::parse(config('contest.end_time')); // Assuming the contest end time is stored in the config
-    //     $verdict = Attempts::where('p_id', $pid)->where('uname', $uname)->first()->verdict;
-
-    //     // Check if the current time is within the contest period
-    //     if ($current_time->between($contest_start_time, $contest_end_time)) {
-    //         // Check the verdict
-    //         if ($verdict == 1) {
-    //             // Calculate the penalty in minutes
-    //             $penalty = $current_time->diffInMinutes($contest_start_time);
-    //             return $penalty;
-    //         }
-    //     }
-
-    //     // Return 0 if current time is outside contest period or verdict is not 1
-    //     return 0; 
-    // }
+    
 
 
     // ? Have Later work on this
