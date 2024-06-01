@@ -11,6 +11,7 @@ use App\Http\Controllers\fe\Post_controller;
 use App\Http\Controllers\fe\Feed_controller;
 use App\Http\Controllers\fe\about_controller;
 use App\Http\Controllers\fe\profile_controller;
+use App\Http\Controllers\fe\leaderboard_controller;
 
 
 /*
@@ -66,4 +67,9 @@ Route::get('/about', [about_controller::class, 'index']);
 //profile
 Route::get('/profile', [profile_controller::class, 'index']);
 Route::get('/profile/{username}', [profile_controller::class, 'profile']);
+
+// Leaderboard
+Route::get('/leaderboard', [leaderboard_controller::class, 'index']);
+Route::get('/leaderboard/{username}', [leaderboard_controller::class, 'profile']);
+
 

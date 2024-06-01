@@ -22,7 +22,7 @@ class ProblemResource extends Resource
 {
     protected static ?string $model = Problem::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-bolt';
+    protected static ?string $navigationIcon = 'heroicon-o-question-mark-circle';
 
     public static function form(Form $form): Form
     {
@@ -32,11 +32,7 @@ class ProblemResource extends Resource
                 TextInput::make('title')->required(),
                 TextInput::make('max_xp')->required(),
                 TextInput::make('uname')
-                    ->label('Author')
-                    ->default(function () { // Use a closure to set the default value dynamically
-                        return Auth::user()->name; // Retrieve the current user's name
-                    })
-                    ->disabled(true),
+                    ->label('Author'),
                 TextInput::make('created_at')
                     ->label('Created At')
                     ->default(now())
@@ -44,6 +40,8 @@ class ProblemResource extends Resource
                 Textarea::make('description')->required()
                 ->rows(10),
                 TextInput::make('answer')->required(),
+                TextInput::make('c_id')->required()
+                ->label('Contest ID'),
 
             ]);
     }

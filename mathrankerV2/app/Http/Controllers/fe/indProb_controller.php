@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 use App\Models\Problem as Prob;
 use App\Models\tags;
 use App\Models\Attempts;
+use Carbon\Carbon;
 
 class indProb_controller extends Controller
 {
     public function index($pid)
     {
-        $Prob = Prob::where('p_id', $pid)->first();
+        $Prob = Prob::where('id', $pid)->first();
         $TotalAttempts = Attempts::where('p_id', $pid)->count();
         $myAttCount = Attempts::where('p_id', $pid)->where('uname', session('uname'))->count();
         $SuccessCount = Attempts::where('p_id', $pid)->where('verdict', 1)->count();
@@ -50,7 +51,7 @@ class indProb_controller extends Controller
             return redirect('/login')->with('error', 'Please login to submit your answer.');
         }
 
-        $Prob = Prob::where('p_id', $pid)->first();
+        $Prob = Prob::where('id', $pid)->first();
         
 
         try{
@@ -77,7 +78,9 @@ class indProb_controller extends Controller
             $attempt->uname = $uname;
             $attempt->p_id = $pid;
             $attempt->verdict = $verdict;
+            $attempt->penalty = $this->calculatePenalty($pid, $uname);
             $attempt->xp = $xp;
+
             $attempt->save();
             return redirect('/problem/'.$pid)->with('success', 'Submission successful.');
         }
@@ -86,6 +89,28 @@ class indProb_controller extends Controller
         }
     }
 
+    private function calculatePenalty($pid, $uname){
+        // Retrieve the current time
+        $current_time = Carbon::now();
+
+        // Retrieve contest times and verdict from database or configuration
+        $contest_start_time = Carbon::parse(config('contest.start_time')); // Assuming the contest start time is stored in the config
+        $contest_end_time = Carbon::parse(config('contest.end_time')); // Assuming the contest end time is stored in the config
+        $verdict = Attempts::where('p_id', $pid)->where('uname', $uname)->first()->verdict;
+
+        // Check if the current time is within the contest period
+        if ($current_time->between($contest_start_time, $contest_end_time)) {
+            // Check the verdict
+            if ($verdict == 1) {
+                // Calculate the penalty in minutes
+                $penalty = $current_time->diffInMinutes($contest_start_time);
+                return $penalty;
+            }
+        }
+
+        // Return 0 if current time is outside contest period or verdict is not 1
+        return 0; 
+    }
 
 
     // ? Have Later work on this

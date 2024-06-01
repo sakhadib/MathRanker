@@ -12,13 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('problems', function (Blueprint $table) {
-            $table->string('p_id', 100)->primary();
-            $table->string('uname', 100)->references('uname')->on('solvers')->onDelete('cascade');
-            $table->string('c_id', 100)->references('c_id')->on('contests')->onDelete('cascade');
-            $table->string('title', 100);
-            $table->string('description', 1000);
-            $table->decimal('answer');
+            $table->id();
+            $table->string('title');
+            $table->text('description');
+            $table->string('answer');
             $table->decimal('max_xp');
+            $table->string('uname');
+            $table->unsignedBigInteger('c_id');
+            $table->foreign('c_id')->references('id')->on('contests')->onDelete('cascade');
             $table->timestamps();
         });
     }

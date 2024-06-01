@@ -9,7 +9,7 @@ class Problem extends Model
 {
     use HasFactory;
     protected $table = 'problems';
-    protected $primaryKey = 'p_id';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'title',
@@ -18,5 +18,6 @@ class Problem extends Model
         'created_at',
         'description',
         'answer',
+        'c_id',
     ];
 }
