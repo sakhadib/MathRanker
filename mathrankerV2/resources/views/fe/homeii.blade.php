@@ -116,7 +116,7 @@
                 <div class="col-md-6">
                 <h1 class="display-1 d">Practice and improve your math skills</h1>
                     <p class="lead" style="font-size: 22px;">MathRanker is a platform to practice and improve your math skills. You can practice questions, participate in contests and improve your math skills.</p>
-                    <a href="problems.html" class="btn btn-l-outline btn-lg">See Problems</a>
+                    <a href="/problems" class="btn btn-l-outline btn-lg">See Problems</a>
                 </div>
                 <div class="col-md-6 df aic jcc">
                     <img src="rsx/prac2.svg" alt="" style="width: 400px;" class="d-none d-md-block">
@@ -135,7 +135,7 @@
                 <div class="col-md-6">
                 <h1 class="display-1 l">Participate in contests</h1>
                     <p class="lead">You can participate in contests and challenge your ability. Climb up the rating stair by participating in contests. Gain more XP points than usual when you solve a problem within contest time.</p>
-                    <a href="contests.html" class="btn btn-d-outline btn-lg">See Contests</a>
+                    <a href="/contests" class="btn btn-d-outline btn-lg">See Contests</a>
                 </div>
             </div>
         </div>
@@ -200,7 +200,7 @@
                                         <div class="row">
                                             <div class="col-12 df dfc jcc aic">
                                                 <h1 class="display-1 text-center">Leader Board</h1>
-                                                <a href="leaderboard.html" class="btn btn-l-outline btn-lg mt-3">See Complete LeaderBoard</a>
+                                                <a href="/leaderboard" class="btn btn-l-outline btn-lg mt-3">See Complete LeaderBoard</a>
                                             </div>
                                         </div>
                                     </div>
@@ -225,7 +225,7 @@
                 <div class="col-md-6">
                     <h1 class="display-1 d">Get help from the community</h1>
                     <p class="lead">You can ask questions, answer questions and help others. You can also discuss about math problems and solutions. You can also share your knowledge with others.</p>
-                    <a href="community.html" class="btn btn-l-outline btn-lg">See Community</a>
+                    <a href="/feed" class="btn btn-l-outline btn-lg">See Community</a>
                 </div>
             </div>
         </div>

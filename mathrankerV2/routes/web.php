@@ -33,7 +33,7 @@ use App\Http\Controllers\fe\allContest_controller;
 */
 
 // Home
-Route::get('/', [home_controller::class, 'index']);
+// Route::get('/', [home_controller::class, 'index']);
 
 // Signup
 Route::get('/signup', [signup_controller::class, 'index']);
@@ -87,7 +87,7 @@ Route::get('/leaderboard', [leaderboard_controller::class, 'index']);
 Route::get('/contest/leaderboard/{cid}', [leaderboard_controller::class, 'contestLeaderBoard']);
 
 // Homeii
-Route::get('/homeii', [homeii_controller::class, 'index']);
+Route::get('/', [homeii_controller::class, 'index']);
 
 
 // Contests
