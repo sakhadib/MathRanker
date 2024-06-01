@@ -28,6 +28,7 @@
                         <div class="row">
                             <div class="col-md-12 mt-4">
                                 <button type="submit" class="btn btn-primary">Verify</button>
+                                <a href="/verify/{{$uname}}" class="btn btn-secondary">Resend Mail</a>
                             </div>
                         </div>
                     </form>
