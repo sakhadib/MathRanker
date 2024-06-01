@@ -20,10 +20,10 @@ class AllProblem_controller extends Controller
         // Iterate through each problem
         foreach ($Prob_array as $prob) {
             // Count successful attempts for the current problem
-            $successCount = Attempts::where('p_id', $prob->p_id)->where('verdict', 1)->count();
+            $successCount = Attempts::where('p_id', $prob->id)->where('verdict', 1)->count();
 
             // Check if the current session user has any successful attempt for the current problem
-            $availableXP = $this->getAvailableXP($prob->p_id, $prob->max_xp, session('uname'));
+            $availableXP = $this->getAvailableXP($prob->id, $prob->max_xp, session('uname'));
             $status = $this->getStatus($availableXP, $prob->max_xp);
 
             // Create a new object with problem details, success count, and user success flag

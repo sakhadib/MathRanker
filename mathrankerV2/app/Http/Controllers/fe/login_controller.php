@@ -10,6 +10,9 @@ class login_controller extends Controller
 {
     public function index()
     {
+        if(session('isLoggedIn')){
+            return redirect('/problems');
+        }
         return view('fe.login');
     }
 
