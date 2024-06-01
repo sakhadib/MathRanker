@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\problem;
 use App\Models\solver;
 use App\Models\Contests;
+use App\Models\Post;
 use App\Models\Attempts;
 use Illuminate\Support\Facades\DB;
 
@@ -17,6 +18,7 @@ class homeii_controller extends Controller
         $solverct = Solver::count();
         $Problemct = Problem::count();
         $Contestsct = Contests::count();
+        $Postsct = Post::count();
 
         $Top_solver = Solver::orderBy('XP', 'desc')->take(3)->get();
         // $Top_solver = [];
@@ -25,6 +27,7 @@ class homeii_controller extends Controller
             'solverct' => $solverct,
             'Problemct' => $Problemct,
             'Contestsct' => $Contestsct,
+            'Postsct' => $Postsct,
             'Top_solver' => $Top_solver
         ]
     );
