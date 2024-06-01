@@ -12,9 +12,13 @@ use App\Http\Controllers\fe\Feed_controller;
 use App\Http\Controllers\fe\about_controller;
 use App\Http\Controllers\fe\profile_controller;
 use App\Http\Controllers\fe\leaderboard_controller;
+
+use App\Http\Controllers\fe\homeii_controller;
+
 use App\Http\Controllers\mail\mail_controller;
 use App\Http\Controllers\mail\verify_controller;
 use App\Http\Controllers\fe\allContest_controller;
+
 
 
 /*
@@ -62,6 +66,10 @@ Route::get('/post/{post_id}/down', [post_controller::class, 'downvote']);
 Route::get('/comment/{comment_id}/delete', [post_controller::class, 'commentDelete']);
 Route::post('/comment/submit', [post_controller::class, 'commentStore']);
 
+
+
+
+
 // Feed
 Route::get('/feed', [Feed_controller::class, 'index']);
 Route::post('/feed', [Feed_controller::class, 'search']);
@@ -77,6 +85,9 @@ Route::get('/profile/{username}', [profile_controller::class, 'profile']);
 // Leaderboard
 Route::get('/leaderboard', [leaderboard_controller::class, 'index']);
 Route::get('/contest/leaderboard/{cid}', [leaderboard_controller::class, 'contestLeaderBoard']);
+
+// Homeii
+Route::get('/homeii', [homeii_controller::class, 'index']);
 
 
 // Contests

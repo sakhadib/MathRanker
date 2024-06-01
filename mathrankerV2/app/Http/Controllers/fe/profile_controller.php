@@ -164,7 +164,7 @@ class profile_controller extends Controller
         {
             return 'Colonel';
         }
-        else if($rating < 2300)
+        else if($rating < 2400)
         {
             return 'Brigadier General';
         }
