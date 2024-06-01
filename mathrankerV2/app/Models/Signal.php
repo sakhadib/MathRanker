@@ -12,4 +12,8 @@ class Signal extends Model
     protected $table = 'signals';
     protected $primaryKey = 'id';
 
+    protected $fillable = [
+        'contest_id',
+    ];
+
 }

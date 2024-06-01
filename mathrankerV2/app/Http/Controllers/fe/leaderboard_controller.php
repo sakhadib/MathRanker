@@ -9,6 +9,8 @@ use App\Models\Contests;
 use App\Models\Attempts;
 use App\Models\Problem;
 use App\Models\solver;
+use App\Models\User;
+use App\Models\Rating;
 
 class leaderboard_controller extends Controller
 {
@@ -68,6 +70,52 @@ class leaderboard_controller extends Controller
                 'ModifiedAttemptArray' => $ModifiedAttemptArray,
                 'contest' => $contest
             ]);
+    }
+
+
+
+    public function setRating($cid){
+        $user = User::where('name', session('uname'))->first();
+        if(!$user){
+            return redirect('/login');
+        }
+
+        $Problems = Problem::where('c_id', $cid)->get();
+
+        $AttemptArray = Attempts::where('verdict', 1)
+            ->where('penalty', '!=', 0)
+            ->whereIn('p_id', $Problems->pluck('id'))
+            ->distinct('uname')
+            ->pluck('uname');
+
+        foreach($AttemptArray as $attempt){
+            $user = $attempt;
+            $totalXP = Attempts::where('uname', $user)->where('verdict', 1)->sum('xp');
+            $maxPenalty = Attempts::where('uname', $user)->where('verdict', 1)->max('penalty');
+
+            $ratingJ = $this->calculateRating($totalXP, $maxPenalty);
+
+            $solver = solver::where('uname', $user)->first();
+            $newRating = $solver->rating + $ratingJ;
+            $solver->rating = $newRating;
+            $solver->save();
+
+            $rating = new Rating;
+            $rating->uname = $user;
+            $rating->c_id = $cid;
+            $rating->rating = $ratingJ;
+            $rating->save();
+        }
+
+        return redirect('/');
+
+    }
+
+
+    private function calculateRating($totalXP, $maxPenalty){
+        $rating = $totalXP - $maxPenalty;
+
+        return $rating;
     }
 
 
