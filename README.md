@@ -108,10 +108,27 @@ MathRanker offers a dynamic platform designed to engage, challenge, and inspire 
 3. Users can give upvotes/downvotes.
 4. Users can provide solutions to problems in the forum section.
 
-#### Rating and XP Point Management
+#### XP Point Management
 1. All problems will have certain difficulty points.
 2. By solving that problem users will gain XP points.
 3. Based on XP points, frequency of solving, and performance in the contest user will have a rating.
+
+### Ranking System
+MathRanker employs a detailed ranking system to recognize and reward users based on their performance. The ranks and corresponding ratings are as follows:
+
+- **Sergent:** 0 - 999
+- **Second Lieutenant:** 1000 - 1199
+- **First Lieutenant:** 1200 - 1399
+- **Captain:** 1400 - 1599
+- **Major:** 1600 - 1799
+- **Lieutenant Colonel:** 1800 - 1999
+- **Colonel:** 2000 - 2199
+- **Brigadier General:** 2200 - 2399
+- **Major General:** 2400 - 2699
+- **Lieutenant General:** 2700 - 2999
+- **General:** 3000+
+
+This structured ranking system not only motivates users to improve their skills but also provides a clear path for progression, ensuring continuous engagement and development.
 
 #### Analytics
 1. Users can see their activity graph.
@@ -137,6 +154,7 @@ MathRanker is a web-based application accessible from any device with an interne
     - Bootstrap (for making website responsive)
 2. Back end:
     - PHP,
+    - Laravel,
     - MySQL
 
 #### Performance
@@ -148,34 +166,34 @@ MathRanker is a web-based application accessible from any device with an interne
 2. Data Protection: Sensitive data is encrypted.
 
 #### Design Theme
-Material UI design elements for enhanced aesthetics.
+1. Material UI design elements for enhanced aesthetics.
 
 #### Accessibility
-Responsive design ensuring optimal experience across various devices.
+1. Responsive design ensuring optimal experience across various devices.
 
 #### Reliability
 1. System Availability: Platform should be available without significant downtime.
 2. Data Integrity: Measures to ensure integrity and consistency of user data and contest results.
 
 #### Usability
-User-friendly and intuitive interface.
+1. User-friendly and intuitive interface.
 
 #### Scalability
-Capable of scaling to accommodate increasing user demand and data volume.
+1. Capable of scaling to accommodate increasing user demand and data volume.
 
 #### Performance Optimization
-Optimization techniques to enhance system performance and response times.
+1. Optimization techniques to enhance system performance and response times.
 
 #### Compliance
-Comply with relevant regulations and standards regarding data privacy and security.
+1. Comply with relevant regulations and standards regarding data privacy and security.
 
 #### Documentation
-Comprehensive documentation to aid users, administrators, and developers.
+1. Comprehensive documentation to aid users, administrators, and developers.
 
 ## Tools and Technologies
 
 ### Programming Language
-MathRanker utilizes a combination of HTML, CSS, and JavaScript for the frontend, ensuring a dynamic and responsive user interface. PHP and MySQL are employed for backend development and database management, offering robust and efficient processing capabilities.
+MathRanker utilizes a combination of HTML, CSS, and JavaScript for the frontend, ensuring a dynamic and responsive user interface. PHP, Laravel and MySQL are employed for backend development and database management, offering robust and efficient processing capabilities.
 
 ### Development Environment
 The development environment includes:
@@ -204,12 +222,12 @@ MathRanker represents a transformative approach to mathematical competition and 
 
 
 For further information or to get involved with MathRanker, please contact:
-- **Adib Sakhawat:** adib.sakhawat@example.com
-- **Takia Farhin:** takia.farhin@example.com
-- **Tahsin Islam:** tahsin.islam@example.com
+- **Adib Sakhawat:** adibsakhawat@iut-dhaka.edu
+- **Takia Farhin:** takiafarhin@iut-dhaka.edu
+- **Tahsin Islam:** tahsinislam@iut-dhaka.edu
 
 **Supervised by:**
-- **Asaduzzaman Herok:** asaduzzaman.herok@example.com
+- **Asaduzzaman Herok:** asaduzzaman34@iut-dhaka.edu
 
 Thank you for your interest in MathRanker!
 
