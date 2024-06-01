@@ -64,6 +64,9 @@
                 <a class="nav-link" href="/contests">Contests</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="/leaderboard">LeaderBoard</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="/feed">Feed</a>
               </li>
               <li class="nav-item">

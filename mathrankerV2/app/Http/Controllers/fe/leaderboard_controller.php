@@ -16,10 +16,34 @@ class leaderboard_controller extends Controller
 {
     public function index()
     {
-        
+        $solvers = solver::orderBy('rating', 'desc')->get();
+        $modifiedSolvers = [];
+        foreach($solvers as $solver){
+            $uname = $solver->username;
+            if(Attempts::where('uname', $uname)->where('verdict', 1)->count() == 0){
+                continue;
+            }
+            $SolveCount = Attempts::where('uname', $uname)->where('verdict', 1)->count();
+            $totalXP = Attempts::where('uname', $uname)->where('verdict', 1)->sum('xp');
+            $totalPenalty = Attempts::where('uname', $uname)->where('verdict', 1)->sum('penalty');
+            $totalAttempt = Attempts::where('uname', $uname)->count();
+            $rating = $solver->rating;
+            $rate = $this->Rank($rating);
 
-        
-        return view('fe.leaderboard');
+            $modifiedSolver = (object) [
+                'uname' => $uname,
+                'SolveCount' => $SolveCount,
+                'totalXP' => $totalXP,
+                'totalPenalty' => $totalPenalty,
+                'totalAttempt' => $totalAttempt,
+                'rate' => $rate,
+                'rating' => $rating
+            ];
+
+            $modifiedSolvers[] = $modifiedSolver;
+
+        }
+        return view('fe.lb', ['modifiedsolvers' => $modifiedSolvers]);
     }
 
     public function contestLeaderBoard($cid){
