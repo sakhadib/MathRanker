@@ -6,10 +6,14 @@
             <div class="vh-10"></div>
         <div class="container mb-5">
             <div class="row">
-                <div class="col-12">
+                <div class="col-md-8">
                     <h3 class="display-5 d">{{$Prob->title}}</h3>
-                    <p class="lead">Created at <code>{{$created}}</code> For Contest <code>{{$Prob->c_id}}</code></p>
+                    <p class="lead">Created at <code>{{$created}}</code> For Contest <code><a href="/contest/{{$Prob->c_id}}" class="link-l">{{$contest->title}}</a></code></p>
                     <hr>
+                </div>
+                <div class="col-md-4 df dfc jcc aife">
+                    <p class="lead" id="woops" style="margin-bottom:0">Time Remaining</p>
+                    <h1 class="display-5" id="time">00:00:00</h1>
                 </div>
             </div>
             <div class="row">
@@ -96,6 +100,37 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    // Use the PHP variable to set the end time
+    var endTime = new Date("<?php echo $end_time->toIso8601String(); ?>");
+
+    // Function to update the countdown
+    function updateCountdown() {
+        var now = new Date();
+        var timeRemaining = endTime - now;
+
+        if (timeRemaining >= 0) {
+            var hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+            var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.getElementById("time").innerText = 
+                String(hours).padStart(2, '0') + ":" + 
+                String(minutes).padStart(2, '0') + ":" + 
+                String(seconds).padStart(2, '0');
+        } else {
+            document.getElementById("time").innerText = "Contest Over!";
+            document.getElementById("woops").innerText = "Woops!";
+            clearInterval(timerInterval);
+        }
+    }
+
+    // Update the countdown every second
+    var timerInterval = setInterval(updateCountdown, 1000);
+    updateCountdown(); // initial call to set the correct time immediately
+</script>
       
 @endsection
 

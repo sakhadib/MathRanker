@@ -17,6 +17,7 @@ use App\Http\Controllers\fe\homeii_controller;
 
 use App\Http\Controllers\mail\mail_controller;
 use App\Http\Controllers\mail\verify_controller;
+use App\Http\Controllers\fe\allContest_controller;
 
 
 
@@ -82,10 +83,20 @@ Route::get('/profile', [profile_controller::class, 'index']);
 Route::get('/profile/{username}', [profile_controller::class, 'profile']);
 
 // Leaderboard
-Route::get('/leaderboard', [leaderboard_controller::class, 'index']);
-Route::get('/leaderboard/{username}', [leaderboard_controller::class, 'profile']);
+// Route::get('/leaderboard', [leaderboard_controller::class, 'index']);
+Route::get('/contest/leaderboard/{cid}', [leaderboard_controller::class, 'contestLeaderBoard']);
 
 // Homeii
 Route::get('/homeii', [homeii_controller::class, 'index']);
 
 
+// Contests
+Route::get('/contests', [allContest_controller::class, 'index']);
+Route::get('/allcontest', [allContest_controller::class, 'allcontest']);
+Route::get('/cr/{contest_id}', [allContest_controller::class, 'registerPage']);
+Route::post('/registerContest', [allContest_controller::class, 'register']);
+Route::get('/contest/{contest_id}', [Allproblem_controller::class, 'contestProblems']);
+
+
+//Rating
+Route::get('/rating/set/for/contest/{cid}', [leaderboard_controller::class, 'setRating']);
