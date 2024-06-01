@@ -140,49 +140,73 @@
             </div>
         </div>
     </div>
-
-
+    <div class="vh-5"></div>
+<!-- Leaderboard -->
     @if($Top_solver->count() > 0)
-        <div class="hm-2 vh-90">
-            <div class="container">
+        <div class="hm-2 vh-90 df dfc jcc aic bg-ll">
+            <div class="container-fluid vh-90">
                 <div class="row">
-                    <div class="col-md-6 col-12" style="background-color: brown;">
-                        <p class="lead text-center" style="font-size: 28px;">Top <span class="l" style="font-weight: 600;">3</span> users of MathRanker</p>
-                        <hr>
-                        <div class="container">
-                            <div class="row df jcc aic">
-                                <div class="col-4">
-                                    <h1 class="display-1 d">#1</h1>
-                                </div>
-                                <div class="col-8">
-                                    <h2 class="d"><a class="link-l" href="/profile/{{$Top_solver[0]->username}}">{{$Top_solver[0]->username}}</a></h2>
-                                    <p class="lead" style="font-size: 22px;">{{$Top_solver[0]->institution}}</p>
+                    <div class="col-12">
+                        <div class="container  vh-90 ">
+                            <div class="row d-lg-none d-md-none mb-2 mt-5">
+                                <div class="col-12 df dfc jcc aic">
+                                    <h1 class="display-1 text-center">Leader Board</h1>
+                                    <a href="leaderboard.html" class="btn btn-l-outline btn-lg mt-3 mb-3">See Complete LeaderBoard</a>
                                 </div>
                             </div>
-                            <hr>
-                            <div class="row df jcc aic" style="background-color: powderblue">
-                                <div class="col-4">
-                                    <h1 class="display-1 d">#2</h1>
-                                </div>
-                                <div class="col-8">
-                                    <h2 class="d"><a class="link-l" href="/profile/{{$Top_solver[1]->username}}">{{$Top_solver[1]->username}}</a></h2>
-                                    <p class="lead" style="font-size: 22px;">{{$Top_solver[1]->institution}}</p>
-                                </div>
-                            </div>
-                            <hr>
                             <div class="row df jcc aic">
-                                <div class="col-4">
-                                    <h1 class="display-1 d">#3</h1>
+                                <div class="col-md-6 col-12">
+                                    <p class="lead text-center" style="font-size: 28px;">Top <span class="l" style="font-weight: 600;">3</span> users of MathRanker</p>
+                                    <hr>
+                                    <div class="container">
+                                        <div class="row df jcc aic">
+                                            <div class="col-4">
+                                                <h1 class="display-1 d">#1</h1>
+                                            </div>
+                                            <div class="col-8">
+                                                <h2 class="d"><a class="link-l" href="/profile/{{$Top_solver[0]->username}}">{{$Top_solver[0]->username}}</a></h2>
+                                                <p class="lead" style="font-size: 22px;">{{$Top_solver[0]->institution}}</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row df jcc aic">
+                                            <div class="col-4">
+                                                <h1 class="display-1 d">#2</h1>
+                                            </div>
+                                            <div class="col-8">
+                                                <h2 class="d"><a class="link-l" href="/profile/{{$Top_solver[1]->username}}">{{$Top_solver[1]->username}}</a></h2>
+                                                <p class="lead" style="font-size: 22px;">{{$Top_solver[1]->institution}}</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row df jcc aic">
+                                            <div class="col-4">
+                                                <h1 class="display-1 d">#3</h1>
+                                            </div>
+                                            <div class="col-8">
+                                                <h2 class="d"><a class="link-l" href="/profile/{{$Top_solver[2]->username}}">{{$Top_solver[2]->username}}</a></h2>
+                                                <p class="lead" style="font-size: 22px;">{{$Top_solver[2]->institution}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-8">
-                                    <h2 class="d"><a class="link-l" href="/profile/{{$Top_solver[2]->username}}">{{$Top_solver[2]->username}}</a></h2>
-                                    <p class="lead" style="font-size: 22px;">{{$Top_solver[2]->institution}}</p>
+                                <div class="col-md-6 d-none d-md-flex col-12 vh-80 df dfc jcc aic d-none d-md-block">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-12 df dfc jcc aic">
+                                                <img src="rsx/leaderboard.svg" alt="" style="width: 400px;">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 df dfc jcc aic">
+                                                <h1 class="display-1 text-center">Leader Board</h1>
+                                                <a href="leaderboard.html" class="btn btn-l-outline btn-lg mt-3">See Complete LeaderBoard</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 d-none d-md-flex col-12 vh-80 df dfc jcc aic">
-                        <img src="rsx/home_1.svg" alt="" style="width: 600px;">
                     </div>
                 </div>
             </div>
