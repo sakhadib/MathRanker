@@ -1,29 +1,46 @@
-# MathRanker: Revolutionizing Mathematical Competition and Problem-Solving
-
-## Abstract
+# MathRanker
+### [Visit the live website](https://mathranker.com)
 MathRanker is an innovative web platform designed to cater to the needs of mathematical enthusiasts, providing a dynamic space for contests, problem-solving, and community engagement. Utilizing HTML, CSS, JavaScript, MySQL, PHP, and Bootstrap, MathRanker offers a robust frontend and backend infrastructure, ensuring an interactive and user-friendly experience. With a focus on precision, reliability, and responsiveness, MathRanker aims to redefine the landscape of math competition platforms, fostering collaboration, recognition, and growth within the mathematical community.
 
-## Team Voyager
-- **Adib Sakhawat**  
+## Development : Team Voyager
+- **[Adib Sakhawat](https://portfolio.sakhawatadib.com)**  
   ID: 210042106  
   BSc. in Software Engineering  
   Department of Computer Science and Engineering
 
-- **Takia Farhin**  
+- **[Takia Farhin](https://www.linkedin.com/in/takia-farhin-70aa4b256/)**  
   ID: 210042117  
   BSc. in Software Engineering  
   Department of Computer Science and Engineering
 
-- **Tahsin Islam**  
+- **[Tahsin Islam](https://tahsinrayshad.com)**  
   ID: 210042137  
   BSc. in Software Engineering  
   Department of Computer Science and Engineering
 
 **Supervised by:**
-- **Asaduzzaman Herok**  
+- **[Asaduzzaman Herok](https://cse.iutoic-dhaka.edu/profile/asaduzzaman/education)**  
   Lecturer  
   Department of Computer Science and Engineering  
   Islamic University of Technology
+
+# To Contribute
+## Installations
+### Composer
+you will need to install composer to operate on Laravel project
+```bash
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php composer-setup.php --install-dir=C:\usr\local\bin --filename=composer
+php -r "unlink('composer-setup.php');"
+```
+Also add `zip` and `intl` extensions to your `php.ini` file
+## Fork
+- Fork the repository to your git
+- in your folder initiate git with `git init`
+- then pull the project by `git remote add origin {http link}`
+- Add your additions and fix raised issues
+- then push to your branch with `git push -u origin main`
+- Open a pull request and you are good to go. Wait for the acceptance
 
 
 ## Project Introduction and Motivation
@@ -40,7 +57,6 @@ Our platform is built upon a foundation of inclusivity, collaboration, and excel
 - **Dynamic Community Interaction:** A vibrant community where users can engage in discussions, share insights, and collaborate on problem-solving strategies.
 - **Robust Ranking and Rating System:** Transparent rating and ranking systems to recognize and showcase achievements, motivating users to strive for excellence.
 - **User-Friendly Interface:** Accessible from any device, ensuring a seamless experience with intuitive navigation.
-- **Efficient User Management:** Streamlined processes for user registration, role assignment, and secure data handling.
 - **Secure and Reliable Platform:** Strong security measures to protect user data and contest integrity, including password hashing and data encryption.
 
 With these features, MathRanker sets the standard for excellence in mathematical competitions. Our goal is to create a space where mathematical talent flourishes, challenges are met with enthusiasm, and the pursuit of knowledge is boundless.
@@ -69,52 +85,7 @@ The motivation behind MathRanker stems from several key observations and goals:
 
 MathRanker is more than just a platform; it’s a movement to redefine the way students perceive and interact with mathematics. Join us to explore, connect, and excel in the world of mathematics.
 
-## Key Features
-MathRanker offers a dynamic platform designed to engage, challenge, and inspire math enthusiasts of all levels. Through regular contests and thought-provoking problem sets, users can develop their skills while engaging in collaborative problem-solving within a vibrant community. Key features include:
-
-- **Regular Contests:** Frequent contests with diverse problem sets.
-- **Challenging Problems:** Problems across various mathematical disciplines.
-- **Dynamic Community Interaction:** Engage in discussions, share insights, and collaborate.
-- **Robust Ranking and Rating System:** Transparent rating system to recognize achievements.
-- **User-Friendly Interface:** Responsive design accessible from any device.
-- **Efficient User Management:** Streamlined user management processes.
-- **Secure and Reliable Platform:** Robust security measures for user data and contest integrity.
-- **Material UI Design:** Visually appealing and modern user interface.
-
-## Requirement Analysis
-
-### Functional Requirements
-
-#### User Management
-1. Users can register with the system.
-2. Users will have a ‘solver’ role by default.
-3. Admin can update user roles to ‘moderator’ or ‘problem setter.’
-4. Admin can remove/ban users.
-
-#### Contest Management
-1. Admin and moderators can create new contests.
-2. Admin, moderators, and problem setters can set problems for contests.
-3. Solvers can register for contests before registration closes.
-
-#### Answer Submission and Rating
-1. Solvers can submit answers during contests.
-2. Verdicts will be stored based on judgment.
-3. Correct answers increase the solver’s rating; wrong answers decrease it.
-4. Solvers can solve problems after the contest without affecting their rating.
-
-#### Community Interaction
-1. Post section for users to create posts.
-2. Users can comment on posts.
-3. Users can give upvotes/downvotes.
-4. Users can provide solutions to problems in the forum section.
-
-#### XP Point Management
-1. All problems will have certain difficulty points.
-2. By solving that problem users will gain XP points.
-3. Based on XP points, frequency of solving, and performance in the contest user will have a rating.
-
-### Ranking System
-MathRanker employs a detailed ranking system to recognize and reward users based on their performance. The ranks and corresponding ratings are as follows:
+## Rating Criteria
 
 - **Sergent:** 0 - 999
 - **Second Lieutenant:** 1000 - 1199
@@ -130,91 +101,27 @@ MathRanker employs a detailed ranking system to recognize and reward users based
 
 This structured ranking system not only motivates users to improve their skills but also provides a clear path for progression, ensuring continuous engagement and development.
 
-#### Analytics
-1. Users can see their activity graph.
-2. Users can see the progress graph.
-3. Problem setters can see the analytics for their set problems.
-4. Admin can see analytics of problems that are frequently solved.
-5. Admins and moderators will see certain user interaction analytics.
-
-#### Personalized Suggestion
-1. Certain problem tags and forum tags will be stored as cookies to give personalized feeds.
-
-
-### Non-Functional Requirements
-
-#### Platform
-MathRanker is a web-based application accessible from any device with an internet connection.
-
-#### Technologies
-1. Front end:
-    - HTML,
-    - CSS,
-    - JS,
-    - Bootstrap (for making website responsive)
-2. Back end:
-    - PHP,
-    - Laravel,
-    - MySQL
-
-#### Performance
-1. Scalability: Capable of handling a load of users during contests.
-2. Concurrent Processing: Efficiently process and update answer verdicts within contest timeframes.
-
-#### Security
-1. Password Security: User passwords are securely hashed.
-2. Data Protection: Sensitive data is encrypted.
-
-#### Design Theme
-1. Material UI design elements for enhanced aesthetics.
-
-#### Accessibility
-1. Responsive design ensuring optimal experience across various devices.
-
-#### Reliability
-1. System Availability: Platform should be available without significant downtime.
-2. Data Integrity: Measures to ensure integrity and consistency of user data and contest results.
-
-#### Usability
-1. User-friendly and intuitive interface.
-
-#### Scalability
-1. Capable of scaling to accommodate increasing user demand and data volume.
-
-#### Performance Optimization
-1. Optimization techniques to enhance system performance and response times.
-
-#### Compliance
-1. Comply with relevant regulations and standards regarding data privacy and security.
-
-#### Documentation
-1. Comprehensive documentation to aid users, administrators, and developers.
-
 ## Tools and Technologies
 
 ### Programming Language
-MathRanker utilizes a combination of HTML, CSS, and JavaScript for the frontend, ensuring a dynamic and responsive user interface. PHP, Laravel and MySQL are employed for backend development and database management, offering robust and efficient processing capabilities.
+- Html
+- CSS
+- JS
+- PHP
+- MySQL
+
+### Frameworks
+- Laravel 10
+- Filament 3
+- Liveware 4.6
 
 ### Development Environment
 The development environment includes:
-- Integrated Development Environments (IDEs) like Visual Studio Code.
+- Integrated Development Environments (IDEs) like **Visual Studio Code**.
 - Local server setup using tools like XAMPP for PHP and MySQL testing.
 
 ### Version Control
 GitHub serves as the version control platform, enabling seamless collaboration, code versioning, and project management.
-
-### Documentation Tools
-Comprehensive documentation is maintained using Markdown and tools like Sphinx for generating clear and structured documentation.
-
-### Collaboration Tools
-Slack and Microsoft Teams facilitate communication and collaboration among team members, ensuring efficient project management and coordination.
-
-### Progress Tracking Tools
-Trello and Jira are utilized for tracking project progress, task management, and milestone achievements, ensuring timely project completion.
-
-### Performance Optimization
-Techniques such as code minification, database indexing, and caching are employed to enhance system performance and response times, ensuring a smooth and efficient user experience.
-
 
 
 ## Conclusion
@@ -230,5 +137,4 @@ For further information or to get involved with MathRanker, please contact:
 - **Asaduzzaman Herok:** asaduzzaman34@iut-dhaka.edu
 
 Thank you for your interest in MathRanker!
-
 
