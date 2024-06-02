@@ -104,7 +104,7 @@
 
     <style>
         .lbar {
-            background-image: url('{{url('rsx/reg.jpg')}}');
+            background-image: url('{{url("rsx/reg.jpg")}}');
             background-size: cover;
             background-position: top;
             background-repeat: no-repeat;
