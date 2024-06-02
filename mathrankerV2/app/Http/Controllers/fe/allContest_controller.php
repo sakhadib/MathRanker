@@ -100,7 +100,8 @@ class allContest_controller extends Controller
         return view('fe.contests', [
             'ModifiedContestArray' => $ModifiedContestArray,
             'tag' => $tag,
-            'flag' => $flag
+            'flag' => $flag,
+            'ccflag' => 1
         ]);
     }
 
