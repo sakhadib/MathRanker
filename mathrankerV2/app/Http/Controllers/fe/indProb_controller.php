@@ -17,6 +17,10 @@ class indProb_controller extends Controller
     {
         $Prob = Prob::where('id', $pid)->first();
 
+        if($Prob == null){
+            return redirect('/404');
+        }
+
         $contest = Contests::where('id', $Prob->c_id)->first();
         $start_time = Carbon::parse($contest->start_time);
         $start_time->subHours(6);
@@ -61,7 +65,7 @@ class indProb_controller extends Controller
             );
         }
         else{
-            return redirect('/')->with('error', 'Problem not found.');
+            return redirect('/404');
         }
     }
 
@@ -98,10 +102,10 @@ class indProb_controller extends Controller
             $penalty = 0;
 
             $contest = Contests::where('id', $Prob->c_id)->first();
-            $start_time = Carbon::parse($contest->start_time);
-            $end_time = Carbon::parse($contest->end_time);
+            $start_time = Carbon::parse($contest->start_time)->subHours(6);
+            $end_time = Carbon::parse($contest->end_time)->subHours(6);
             if($start_time->isPast() && $end_time->isFuture()){
-                $penalty = $start_time->diffInMinutes(now());
+                $penalty = Carbon::now()->diffInMinutes($start_time);
             }
             else{
                 $penalty = 0;

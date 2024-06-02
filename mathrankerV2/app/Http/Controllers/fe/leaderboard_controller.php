@@ -66,10 +66,10 @@ class leaderboard_controller extends Controller
         foreach($AttemptArray as $attempt){
             $user = $attempt;
             $solver = solver::where('uname', $user)->first();
-            $SolveCount = Attempts::where('uname', $user)->where('verdict', 1)->count();
-            $totalXP = Attempts::where('uname', $user)->where('verdict', 1)->sum('xp');
-            $totalPenalty = Attempts::where('uname', $user)->where('verdict', 1)->sum('penalty');
-            $totalAttempt = Attempts::where('uname', $user)->count();
+            $SolveCount = Attempts::where('uname', $user)->whereIn('p_id', $Problems->pluck('id'))->where('verdict', 1)->count();
+            $totalXP = Attempts::where('uname', $user)->whereIn('p_id', $Problems->pluck('id'))->where('verdict', 1)->sum('xp');
+            $totalPenalty = Attempts::where('uname', $user)->whereIn('p_id', $Problems->pluck('id'))->where('verdict', 1)->sum('penalty');
+            $totalAttempt = Attempts::where('uname', $user)->whereIn('p_id', $Problems->pluck('id'))->count();
 
             $rate = $this->Rank($solver->rating);
 
@@ -114,21 +114,29 @@ class leaderboard_controller extends Controller
 
         foreach($AttemptArray as $attempt){
             $user = $attempt;
-            $totalXP = Attempts::where('uname', $user)->where('verdict', 1)->sum('xp');
-            $maxPenalty = Attempts::where('uname', $user)->where('verdict', 1)->max('penalty');
+            $totalXP = Attempts::where('uname', $user)->whereIn('p_id', $Problems->pluck('id'))->where('verdict', 1)->sum('xp');
+            $maxPenalty = Attempts::where('uname', $user)->whereIn('p_id', $Problems->pluck('id'))->where('verdict', 1)->max('penalty');
 
             $ratingJ = $this->calculateRating($totalXP, $maxPenalty);
-
+            
+            $isRatingExist = Rating::where('uname', $user)->where('c_id', $cid)->exists();
+            if($isRatingExist){
+                $rating = Rating::where('uname', $user)->where('c_id', $cid)->first();
+                $rating->rating = $ratingJ;
+                $rating->save();
+            }
+            else{
+                $rating = new Rating;
+                $rating->uname = $user;
+                $rating->c_id = $cid;
+                $rating->rating = $ratingJ;
+                $rating->save();
+            }
+            
             $solver = solver::where('uname', $user)->first();
-            $newRating = $solver->rating + $ratingJ;
+            $newRating = Rating::where('uname', $user)->sum('rating');
             $solver->rating = $newRating;
             $solver->save();
-
-            $rating = new Rating;
-            $rating->uname = $user;
-            $rating->c_id = $cid;
-            $rating->rating = $ratingJ;
-            $rating->save();
         }
 
         return redirect('/');

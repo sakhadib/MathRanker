@@ -1,31 +1,86 @@
    <!-- foot -->
-   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <hr>
-      </div>
-    </div>
-   </div>
-   <div class="hm-7 vh-55 df dfc jcc aic">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 df dfc jcc aic">
-          <img src="{{url('rsx/logo.svg')}}" alt="" style="width: 350px;">
-          <h1 class="display-1 l">MathRanker</h1>
-          <p class="lead">A new horizon awaits mathematical geniuses, where they can discover their hidden talents and showcase them to the world.</p>
+   <div class="vh-10"></div>
+   <div class="hm-7 vh-55 df dfc jcc aic footer-bg">
+    <div class="container-fluid mt-5">
+      <div class="row ">
+        <div class="col-md-4 offset-md-1  df dfc jcfe">
+          <div class="container ">
+            <div class="row">
+              <div class="col-md-12 df jcfs aic">
+                <img src="{{url('rsx/logo.svg')}}" alt="" style="width: 280px;">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="display-3">MathRanker</h1>
+                <p class="lead">A new horizon awaits mathematical geniuses, where they can discover their hidden talents and showcase them to the world.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
           <div class="container">
             <div class="row">
-              <div class="col-12 df jcc">
-                <a href="#" class="link-l">Adib Sakhawat</a> &nbsp;&nbsp;
-                <a href="#" class="link-l">Tahsin Islam</a> &nbsp;&nbsp;
-                <a href="#" class="link-l">Takia Farhin</a>
+              <div class="col-4">
+                <h3 class="display-6">Quick Links</h3>
+                <hr>
+                <ul class="list-unstyled">
+                  <li><a href="/" class="link-l">Home</a></li>
+                  <li><a href="/contests" class="link-l">Contests</a></li>
+                  <li><a href="/leaderboard" class="link-l">Leaderboard</a></li>
+                  <li><a href="/profile" class="link-l">Profile</a></li>
+                  <li><a href="/about" class="link-l">About</a></li>
+                  <li><a href="/contact" class="link-l">Contact</a></li>
+                </ul>
+              </div>
+              <div class="col-4">
+                <h3 class="display-6">Contact Us</h3>
+                <hr>
+                <ul class="list-unstyled">
+                  <li><a href="mailto:sakhawatadib@gmail.com" class="link-l">Email Us</a></li>
+                  <li><a href="https://www.facebook.com/adib.sakhawat" class="link-l">Facebook</a></li>
+                  <li><a href="https://www.linkedin.com/in/sakhadib" class="link-l">LinkedIn</a></li>
+                </ul>
+              </div>
+              <div class="col-4">
+                <h3 class="display-6">Legal</h3>
+                <hr>
+                <ul class="list-unstyled">
+                  <li><a href="/privacypolicy" class="link-l">Privacy Policy</a></li>
+                  <li><a href="/privacypolicy" class="link-l">Terms of Service</a></li>
+                  <li><a href="/privacypolicy" class="link-l">Cookie Policy</a></li>
+                </ul>
+              </div>
+
+            </div>
+            <div class="row mt-5">
+              <div class="col-12 df jcfs aic">
+                <p class="lead">An SPL Project Developed By 
+                  <a href="https://portfolio.sakhawatadib.com" class="link-l">Adib Sakhawat</a> ,
+                  <a href="https://tahsinrayshad.com" class="link-l">Tahsin Islam Rayshad</a> &
+                  <a href="https://www.linkedin.com/in/takia-farhin-70aa4b256/" class="link-l">Takia Farhin</a> <br>
+                  at <a href="https://www.iut-dhaka.edu" class="link-success bold">Islamic University of Technology</a>
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-12 df jcc aic">
+          
+          <p class="lead">© <span id="current-date"></span> MathRanker. All rights reserved.</p>
+        </div>
+      </div>
     </div>
   </div> 
+
+
+  <style>
+    .footer-bg{
+      background-color: rgba(27,117,188,0.1)
+    }
+  </style>
 
 <!-- Add your Custom Styles here -->
 <style>
@@ -173,6 +228,23 @@
 
   // Check cookie preference on page load
   checkCookiePreference();
+</script>
+
+<script>
+  // Function to format the date nicely
+  function formatDate(date) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return date.toLocaleDateString(undefined, options);
+  }
+
+  // Get the current date
+  const currentDate = new Date();
+
+  // Format the current date
+  const formattedDate = formatDate(currentDate);
+
+  // Set the formatted date to the span with id "current-date"
+  document.getElementById('current-date').textContent = formattedDate;
 </script>
 
 <!-- Foot end -->

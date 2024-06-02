@@ -100,3 +100,16 @@ Route::get('/contest/{contest_id}', [Allproblem_controller::class, 'contestProbl
 
 //Rating
 Route::get('/rating/set/for/contest/{cid}', [leaderboard_controller::class, 'setRating']);
+
+
+//leagal
+Route::get('/privacypolicy', function(){
+    return view('fe.privacy');
+});
+
+
+
+//fallback
+Route::fallback(function(){
+    return view('fe.404');
+});
