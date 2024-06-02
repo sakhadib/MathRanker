@@ -76,10 +76,16 @@ class AllProblem_controller extends Controller
 
         $end_Time = Carbon::parse($contest->end_time);
         $end_Time->subHours(6);
+        $start_time = Carbon::parse($contest->start_time);
+        $start_time->subHours(6);
 
         $isParticipating = ContestParticipate::where('contest_id', $cid)->where('uname', session('uname'))->exists();
 
         if(!$isParticipating && $end_Time->isFuture()){
+            return redirect('/contests');
+        }
+
+        if($start_time->isFuture()){
             return redirect('/contests');
         }
 

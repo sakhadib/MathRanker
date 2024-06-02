@@ -66,10 +66,10 @@ class leaderboard_controller extends Controller
         foreach($AttemptArray as $attempt){
             $user = $attempt;
             $solver = solver::where('uname', $user)->first();
-            $SolveCount = Attempts::where('uname', $user)->where('verdict', 1)->count();
-            $totalXP = Attempts::where('uname', $user)->where('verdict', 1)->sum('xp');
-            $totalPenalty = Attempts::where('uname', $user)->where('verdict', 1)->sum('penalty');
-            $totalAttempt = Attempts::where('uname', $user)->count();
+            $SolveCount = Attempts::where('uname', $user)->whereIn('p_id', $Problems->pluck('id'))->where('verdict', 1)->count();
+            $totalXP = Attempts::where('uname', $user)->whereIn('p_id', $Problems->pluck('id'))->where('verdict', 1)->sum('xp');
+            $totalPenalty = Attempts::where('uname', $user)->whereIn('p_id', $Problems->pluck('id'))->where('verdict', 1)->sum('penalty');
+            $totalAttempt = Attempts::where('uname', $user)->whereIn('p_id', $Problems->pluck('id'))->count();
 
             $rate = $this->Rank($solver->rating);
 

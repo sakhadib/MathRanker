@@ -44,11 +44,25 @@ class allContest_controller extends Controller
         
         $tag = 'Upcoming';
         $flag = 0;
+
+        $closestContest = Contests::where('start_time', '>', $currentTime)->orderBy('start_time', 'asc')->first();
+        if(!$closestContest){
+            return view('fe.contests', [
+                'ModifiedContestArray' => $ModifiedContestArray,
+                'tag' => 'Upcoming',
+                'flag' => 0,
+                'ccflag' => 1,
+            ]);
+        }
+
+        $closestContestStartTime = Carbon::parse($closestContest->start_time);
         
         return view('fe.contests', [
             'ModifiedContestArray' => $ModifiedContestArray,
             'tag' => $tag,
-            'flag' => $flag
+            'flag' => $flag,
+            'ccflag' => 0,
+            'closestContestStartTime' => $closestContestStartTime
         ]);
     }
 

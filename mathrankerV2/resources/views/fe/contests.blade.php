@@ -83,4 +83,29 @@
     }
 </style>
 
+@if($ccflag == 0)
+<script>
+    // Retrieve the contest start time passed from PHP
+    var closestContestStartTime = "<?php echo $closestContestStartTime; ?>";
+
+    // Create a Date object from the contest start time
+    var contestStartDate = new Date(closestContestStartTime);
+
+    // Function to check if the contest has started
+    function checkContestStart() {
+        var now = new Date();
+        // Check if the current time matches the contest start time
+        if (now >= contestStartDate) {
+            alert("Contest started");
+            // Clear the interval once the contest has started
+            clearInterval(checkInterval);
+        }
+    }
+
+    // Set an interval to check the contest start time every second
+    var checkInterval = setInterval(checkContestStart, 1000);
+</script>
+@endif
+
+
 @endsection

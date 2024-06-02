@@ -100,3 +100,10 @@ Route::get('/contest/{contest_id}', [Allproblem_controller::class, 'contestProbl
 
 //Rating
 Route::get('/rating/set/for/contest/{cid}', [leaderboard_controller::class, 'setRating']);
+
+
+
+//fallback
+Route::fallback(function(){
+    return view('fe.404');
+});
