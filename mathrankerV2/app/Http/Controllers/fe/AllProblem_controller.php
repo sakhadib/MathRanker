@@ -71,7 +71,7 @@ class AllProblem_controller extends Controller
         $contest = Contests::where('id', $cid)->first();
 
         if(!$contest){
-            return redirect('/contests');
+            return redirect('/404');
         }
 
         $end_Time = Carbon::parse($contest->end_time);

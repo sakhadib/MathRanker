@@ -19,6 +19,11 @@ class Post_controller extends Controller
     public function index($post_id)
     {
         $post = post::where('id', $post_id)->first();
+
+        if($post == null){
+            return redirect('/404');
+        }
+
         $tags = Post_Tag::where('post_id', $post_id)->pluck('tag_name')->toArray();
         $upVotes = Vote::where('post_id', $post_id)->where('vote', 1)->count();
         $downVotes = Vote::where('post_id', $post_id)->where('vote', 0)->count();

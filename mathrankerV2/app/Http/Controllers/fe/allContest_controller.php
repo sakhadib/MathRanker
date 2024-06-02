@@ -109,7 +109,7 @@ class allContest_controller extends Controller
         $contest = Contests::where('id', $contest_id)->first();
 
         if(!$contest){
-            return redirect('/contests');
+            return redirect('/404');
         }
 
         $start_time = Carbon::parse($contest->start_time);
