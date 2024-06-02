@@ -122,7 +122,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="imgBox">
-                                <img src="rsx/tahsinfaltu.jpg" alt="MathRanker">
+                                <img src="rsx/tahsin.jpg" alt="MathRanker">
                             </div>
                         </div>
                     </div>
@@ -209,7 +209,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="imgBox">
-                                <img src="rsx/IMG_20240327_003838.jpg" alt="MathRanker">
+                                <img src="rsx/takia.jpg" alt="MathRanker">
                             </div>
                         </div>
                     </div>
