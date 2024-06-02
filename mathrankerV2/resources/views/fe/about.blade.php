@@ -296,14 +296,13 @@
      text-align: center;
  }
  .point1{
-     background-color: #e9eff3;
+    background-color: rgba(27,117,188, 0.1);
      margin-bottom: 20px; 
      border-radius: 15px;
      padding: 5px;
  }
 
  .point-2{
-        background-color: #e9eff3;
         margin-bottom: 10px; 
         font-weight: 500;
         color: #1B75BC;
