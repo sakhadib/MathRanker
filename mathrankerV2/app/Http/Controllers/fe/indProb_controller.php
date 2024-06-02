@@ -95,6 +95,8 @@ class indProb_controller extends Controller
                 $xp = 0;
             }
 
+            $penalty = 0;
+
             $contest = Contests::where('id', $Prob->c_id)->first();
             $start_time = Carbon::parse($contest->start_time);
             $end_time = Carbon::parse($contest->end_time);
@@ -109,13 +111,12 @@ class indProb_controller extends Controller
             $attempt->uname = $uname;
             $attempt->p_id = $pid;
             $attempt->verdict = $verdict;
-            // $attempt->penalty = $this->calculatePenalty($pid, $uname);
-            $attempt->penalty = 0;
+            $attempt->penalty = $penalty;
             $attempt->xp = $xp;
             $attempt->save();
-            $attempt->penalty = $penalty;
+            
             $Solver = solver::where('uname', $uname)->first();
-            $Solver->xp += $xp;
+            $Solver->xp = Attempts::where('uname', $uname)->sum('xp');
             $Solver->save();
 
             return redirect('/problem/'.$pid)->with('success', 'Submission successful.');
